@@ -15,6 +15,7 @@
 		4471D4162110E845006D8C14 /* PlacesServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4471D4152110E845006D8C14 /* PlacesServices.swift */; };
 		4471D4182110EA73006D8C14 /* DisplayResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4471D4172110EA73006D8C14 /* DisplayResultsViewController.swift */; };
 		4471D41A2110F212006D8C14 /* DisplayResultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4471D4192110F212006D8C14 /* DisplayResultsTableViewCell.swift */; };
+		4471D41D2110F711006D8C14 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4471D41C2110F711006D8C14 /* Route.swift */; };
 		665DC6A25134141D3744C625 /* Pods_RunMate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B91F8FE48A49DAA17ED40192 /* Pods_RunMate.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		4471D4152110E845006D8C14 /* PlacesServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesServices.swift; sourceTree = "<group>"; };
 		4471D4172110EA73006D8C14 /* DisplayResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayResultsViewController.swift; sourceTree = "<group>"; };
 		4471D4192110F212006D8C14 /* DisplayResultsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayResultsTableViewCell.swift; sourceTree = "<group>"; };
+		4471D41C2110F711006D8C14 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		B91F8FE48A49DAA17ED40192 /* Pods_RunMate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RunMate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -75,6 +77,7 @@
 		4471D3FF2110D7F3006D8C14 /* RunMate */ = {
 			isa = PBXGroup;
 			children = (
+				4471D41B2110F6F5006D8C14 /* Models */,
 				4471D4142110E82A006D8C14 /* View Controllers */,
 				4471D4132110E821006D8C14 /* Views */,
 				4471D4122110E80B006D8C14 /* Services */,
@@ -110,6 +113,14 @@
 				4471D4172110EA73006D8C14 /* DisplayResultsViewController.swift */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		4471D41B2110F6F5006D8C14 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4471D41C2110F711006D8C14 /* Route.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		D94216AA741B4323F87C0624 /* Pods */ = {
@@ -240,6 +251,7 @@
 				4471D4182110EA73006D8C14 /* DisplayResultsViewController.swift in Sources */,
 				4471D4162110E845006D8C14 /* PlacesServices.swift in Sources */,
 				4471D4032110D7F3006D8C14 /* ViewController.swift in Sources */,
+				4471D41D2110F711006D8C14 /* Route.swift in Sources */,
 				4471D41A2110F212006D8C14 /* DisplayResultsTableViewCell.swift in Sources */,
 				4471D4012110D7F3006D8C14 /* AppDelegate.swift in Sources */,
 			);

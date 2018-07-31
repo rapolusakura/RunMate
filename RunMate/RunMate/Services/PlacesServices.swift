@@ -18,12 +18,21 @@ struct PlacesService {
 //        case:
 //    }
     
-    static func findNearbyPlaces(lat: Double, lng: Double, radius: Double) {
-        let parameters = ["key":apiKey,"location":"34.0254248,-118.2873805","radius":"3218.69","type":"park"]
+    static func findNearbyPlaces(lat: Double, lng: Double, radius: Double) -> [Route] {
+        var routes: [Route]
+        let parameters = ["key":apiKey,"location":"\(lat),\(lng)","radius":"\(radius)","type":"park"]
         Alamofire.request("https://maps.googleapis.com/maps/api/place/nearbysearch/json?", parameters: parameters).responseJSON(options:.mutableContainers) {response in
             let response = try! JSON(data: response.data!)
+            for response in response["results"] {
+                let name = response["name"]
+                let endLat = response["geometry"]["location"]["lat"].stringValue
+                let endLng = response["geometry"]["location"]["lng"].stringValue
+                let route = Route(name: name, startLat: lat, startLng: lng, endLat: endLat, endLng: endLng)
+                routes.append(route)
+            }
             print(response)
         }
+        return routes
     }
     
 }

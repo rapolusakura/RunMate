@@ -10,16 +10,16 @@ import Foundation
 import UIKit
 
 class DisplayResultsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    var results = [String]()
+    var routes = [Route]()
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //return results.count
-        return 4
+        return routes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! DisplayResultTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! DisplayResultTableViewCell
         cell.placeNameLabel.text = "hello this is a cell"
         return cell
     }
