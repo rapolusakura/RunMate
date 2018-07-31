@@ -10,14 +10,17 @@ import Foundation
 import UIKit
 
 class DisplayResultsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    var results = [String]()
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        //return results.count
+        return 4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        var cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! DisplayResultTableViewCell
+        cell.placeNameLabel.text = "hello this is a cell"
         return cell
     }
     
