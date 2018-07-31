@@ -14,7 +14,6 @@ class DisplayResultsViewController: UIViewController, UITableViewDelegate, UITab
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(routes.count)
         return routes.count
     }
     

@@ -30,7 +30,7 @@ struct PlacesService {
                 let route = Route(name: name, startLat: lat, startLng: lng, endLat: endLat, endLng: endLng)
                 routes.append(route)
             }
-            print(response)
+            //print(response)
             completion(routes)
         }
     }

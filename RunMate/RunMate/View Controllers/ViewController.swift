@@ -19,7 +19,8 @@ class ViewController: UIViewController {
     
     @IBAction func viewResultsButton(_ sender: Any) {
         let miles = Double(distanceTextField.text!)!
-        let distance = miles*1609.34 //distance in meters 
+        let distance = miles*1609.34 //distance in meters
+        //hardcoded location, need to update! 
         PlacesService.findNearbyPlaces(lat: 37.7808727, lng: -122.4183261, radius: distance) { (routes) in
              self.performSegue(withIdentifier: "viewResults", sender: routes)
         }
