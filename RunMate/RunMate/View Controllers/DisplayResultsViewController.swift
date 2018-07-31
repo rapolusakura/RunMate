@@ -14,13 +14,14 @@ class DisplayResultsViewController: UIViewController, UITableViewDelegate, UITab
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //return results.count
+        print(routes.count)
         return routes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! DisplayResultTableViewCell
-        cell.placeNameLabel.text = "hello this is a cell"
+        let route = routes[indexPath.row]
+        cell.placeNameLabel.text = route.name
         return cell
     }
     

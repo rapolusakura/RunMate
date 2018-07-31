@@ -13,7 +13,7 @@ struct Route {
     let startLat: Double
     let startLng: Double
     let endLat: Double
-    let endLng: Doube
+    let endLng: Double
     
     init(name: String, startLat: Double, startLng: Double, endLat: Double, endLng: Double){
         self.name = name
