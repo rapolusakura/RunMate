@@ -74,13 +74,16 @@
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="ZxM-tZ-jM4" kind="show" identifier="viewResults" id="sdm-au-WGC"/>
+                                    <action selector="viewResultsButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VOH-Ge-49f"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.58471943520000003" green="1" blue="0.72584326720000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <segue destination="ZxM-tZ-jM4" kind="show" identifier="viewResults" id="8l6-u4-oep"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -93,33 +96,7 @@
                     <view key="view" contentMode="scaleToFill" id="CCb-gO-p8N">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GoI-NG-v2M">
-                                <rect key="frame" x="15" y="35" width="345" height="617"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="C3P-jk-iI8">
-                                        <rect key="frame" x="0.0" y="28" width="345" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="C3P-jk-iI8" id="Yrl-VD-C7P">
-                                            <rect key="frame" x="0.0" y="0.0" width="345" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="ZxM-tZ-jM4" id="MB9-Cb-swR"/>
-                                    <outlet property="delegate" destination="ZxM-tZ-jM4" id="9XQ-Iz-Kxy"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
                         <color key="backgroundColor" red="0.56801428919999997" green="0.64490850779999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="GoI-NG-v2M" firstAttribute="top" secondItem="i0Q-qd-j76" secondAttribute="top" constant="15" id="DHD-AQ-u80"/>
-                            <constraint firstItem="i0Q-qd-j76" firstAttribute="trailing" secondItem="GoI-NG-v2M" secondAttribute="trailing" constant="15" id="XYj-7s-4SA"/>
-                            <constraint firstItem="i0Q-qd-j76" firstAttribute="bottom" secondItem="GoI-NG-v2M" secondAttribute="bottom" constant="15" id="Xzc-dv-Vgx"/>
-                            <constraint firstItem="GoI-NG-v2M" firstAttribute="leading" secondItem="i0Q-qd-j76" secondAttribute="leading" constant="15" id="lfU-3L-iRO"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="i0Q-qd-j76"/>
                     </view>
                 </viewController>
