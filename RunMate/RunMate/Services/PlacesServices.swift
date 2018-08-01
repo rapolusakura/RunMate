@@ -49,15 +49,10 @@ struct PlacesService {
         Alamofire.request("https://maps.googleapis.com/maps/api/place/nearbysearch/json?", parameters: parameters).responseJSON(options:.mutableContainers) { response in
             let response = try! JSON(data: response.data!)
             let locationsCount = response["results"].arrayValue.count
-            
-
             for resp in response["results"].arrayValue {
-                
                 let name = resp["name"].stringValue
                 let endLat = resp["geometry"]["location"]["lat"].doubleValue
                 let endLng = resp["geometry"]["location"]["lng"].doubleValue
-                
-                
                 DirectionsServices.findRoundTripRoute(startLat: lat, startLng: lng, waypointLat: endLat, waypointLng: endLng, completion: { (responseDistance) in
                     distance = responseDistance
                     print(responseDistance)
