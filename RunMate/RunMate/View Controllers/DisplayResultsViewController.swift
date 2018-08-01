@@ -12,7 +12,6 @@ import UIKit
 class DisplayResultsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var routes = [Route]()
     
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return routes.count
     }
@@ -21,6 +20,8 @@ class DisplayResultsViewController: UIViewController, UITableViewDelegate, UITab
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! DisplayResultTableViewCell
         let route = routes[indexPath.row]
         cell.placeNameLabel.text = route.name
+        cell.distanceLabel.text = String(route.distance)
+        print(String(route.distance))
         return cell
     }
     

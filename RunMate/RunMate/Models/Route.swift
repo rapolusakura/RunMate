@@ -14,13 +14,15 @@ struct Route {
     let startLng: Double
     let endLat: Double
     let endLng: Double
+    let distance: Double
     
-    init(name: String, startLat: Double, startLng: Double, endLat: Double, endLng: Double){
+    init(name: String, startLat: Double, startLng: Double, endLat: Double, endLng: Double, distance: Double){
         self.name = name
         self.startLat = startLat
         self.startLng = startLng
         self.endLat = endLat
         self.endLng = endLng
+        self.distance = distance
     }
     
     func convertCoordToString(lat: Double, lng: Double) -> String {
