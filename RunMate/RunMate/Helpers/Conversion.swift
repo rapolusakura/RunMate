@@ -12,4 +12,8 @@ struct Conversion {
     static func metersToMiles(meters: Double) -> Double {
         return meters*0.000621371
     }
+    
+    static func milesToMeters(miles: Double) -> Double {
+        return miles*1609.34
+    }
 }
