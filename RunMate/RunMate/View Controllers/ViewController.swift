@@ -24,11 +24,11 @@ class ViewController: UIViewController {
         let index = tripSettingSegmentedControl.selectedSegmentIndex
         switch index {
         case 1:
-            PlacesService.findNearbyPlaces(lat: 37.7808727, lng: -122.4183261, radius: (distance/2)+300) { (routes) in
+            PlacesService.findRoundTripNearbyPlaces(lat: 37.7808727, lng: -122.4183261, radius: distance) { (routes) in
                 self.performSegue(withIdentifier: "viewResults", sender: routes)
             }
         default:
-            PlacesService.findNearbyPlaces(lat: 37.7808727, lng: -122.4183261, radius: distance) { (routes) in
+            PlacesService.findOneWayNearbyPlaces(lat: 37.7808727, lng: -122.4183261, radius: distance) { (routes) in
                 self.performSegue(withIdentifier: "viewResults", sender: routes)
             }
         }

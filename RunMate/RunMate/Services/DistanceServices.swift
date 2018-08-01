@@ -20,7 +20,6 @@ struct DistanceServices {
         
         Alamofire.request("https://maps.googleapis.com/maps/api/distancematrix/json?", parameters: parameters).responseJSON(options:.mutableContainers) { response in
             let response = try! JSON(data: response.data!)
-            print(response)
             var distances = [Double]()
             for route in response["rows"][0]["elements"].arrayValue {
                 distances.append(route["distance"]["value"].doubleValue)

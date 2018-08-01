@@ -26,6 +26,16 @@ struct Route {
         self.distance = distance
     }
     
+    init(name: String, startLat: Double, startLng: Double, endLat: Double, endLng: Double, distance: Double, isOneWay: Bool){
+        self.name = name
+        self.startLat = startLat
+        self.startLng = startLng
+        self.endLat = endLat
+        self.endLng = endLng
+        self.distance = distance
+        self.isOneWay = isOneWay
+    }
+    
     func convertCoordToString(lat: Double, lng: Double) -> String {
         return "\(lat),\(lng)"
     }
