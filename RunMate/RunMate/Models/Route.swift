@@ -22,4 +22,8 @@ struct Route {
         self.endLat = endLat
         self.endLng = endLng
     }
+    
+    func convertCoordToString(lat: Double, lng: Double) -> String {
+        return "\(lat),\(lng)"
+    }
 }

@@ -11,5 +11,6 @@ import UIKit
 
 class DisplayResultTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var placeNameLabel: UILabel!
 }

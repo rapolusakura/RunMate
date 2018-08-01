@@ -22,7 +22,11 @@ class ViewController: UIViewController {
         let distance = miles*1609.34 //distance in meters
         //hardcoded location, need to update! 
         PlacesService.findNearbyPlaces(lat: 37.7808727, lng: -122.4183261, radius: distance) { (routes) in
-             self.performSegue(withIdentifier: "viewResults", sender: routes)
+            DistanceServices.findDistance(routes: routes, completion: { (prettyText, actualDistance) in
+                print(prettyText)
+                print(actualDistance)
+                self.performSegue(withIdentifier: "viewResults", sender: routes)
+            })
         }
     }
     
