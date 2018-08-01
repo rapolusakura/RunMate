@@ -19,6 +19,7 @@
 		4471D41F2110FC46006D8C14 /* LocationManagerServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4471D41E2110FC46006D8C14 /* LocationManagerServices.swift */; };
 		4471D421211110D4006D8C14 /* DistanceServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4471D420211110D4006D8C14 /* DistanceServices.swift */; };
 		4471D4242111815B006D8C14 /* Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4471D4232111815B006D8C14 /* Conversion.swift */; };
+		4471D42621118667006D8C14 /* ShowRouteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4471D42521118667006D8C14 /* ShowRouteViewController.swift */; };
 		665DC6A25134141D3744C625 /* Pods_RunMate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B91F8FE48A49DAA17ED40192 /* Pods_RunMate.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		4471D41E2110FC46006D8C14 /* LocationManagerServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerServices.swift; sourceTree = "<group>"; };
 		4471D420211110D4006D8C14 /* DistanceServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceServices.swift; sourceTree = "<group>"; };
 		4471D4232111815B006D8C14 /* Conversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversion.swift; sourceTree = "<group>"; };
+		4471D42521118667006D8C14 /* ShowRouteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowRouteViewController.swift; sourceTree = "<group>"; };
 		B91F8FE48A49DAA17ED40192 /* Pods_RunMate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RunMate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -120,6 +122,7 @@
 			children = (
 				4471D4022110D7F3006D8C14 /* ViewController.swift */,
 				4471D4172110EA73006D8C14 /* DisplayResultsViewController.swift */,
+				4471D42521118667006D8C14 /* ShowRouteViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 				4471D41D2110F711006D8C14 /* Route.swift in Sources */,
 				4471D41A2110F212006D8C14 /* DisplayResultsTableViewCell.swift in Sources */,
 				4471D4012110D7F3006D8C14 /* AppDelegate.swift in Sources */,
+				4471D42621118667006D8C14 /* ShowRouteViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

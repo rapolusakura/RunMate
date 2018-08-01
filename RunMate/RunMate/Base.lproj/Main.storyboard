@@ -139,6 +139,7 @@
                                         <connections>
                                             <outlet property="distanceLabel" destination="W0x-f3-sT5" id="gBz-Gt-NE1"/>
                                             <outlet property="placeNameLabel" destination="X7u-0P-cNG" id="PdY-Qz-mhq"/>
+                                            <segue destination="Lgf-so-QSh" kind="show" identifier="showPlaceDetails" id="mVd-pX-YGf"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -158,23 +159,43 @@
                         <viewLayoutGuide key="safeArea" id="i0Q-qd-j76"/>
                     </view>
                     <connections>
-                        <segue destination="Lgf-so-QSh" kind="show" identifier="showPlaceDetails" id="LJY-h8-1t0"/>
+                        <outlet property="tableView" destination="5Tf-El-B0M" id="fse-qp-Zxc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p9b-Og-Srt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1796" y="110.19490254872565"/>
         </scene>
-        <!--View Controller-->
+        <!--Show Route View Controller-->
         <scene sceneID="3Aa-f1-3Pe">
             <objects>
-                <viewController id="Lgf-so-QSh" sceneMemberID="viewController">
+                <viewController id="Lgf-so-QSh" customClass="ShowRouteViewController" customModule="RunMate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sso-G4-98l">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ZQ-3g-xu5">
+                                <rect key="frame" x="123" y="172" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r51-m6-5yJ">
+                                <rect key="frame" x="140" y="353" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.56801428919999997" green="0.64490850779999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="uPf-ly-SIV"/>
                     </view>
+                    <connections>
+                        <outlet property="routeDistanceLabel" destination="r51-m6-5yJ" id="b2Y-ob-m07"/>
+                        <outlet property="routeNameLabel" destination="6ZQ-3g-xu5" id="uu5-ku-GbB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rKb-gZ-mY9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

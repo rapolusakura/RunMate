@@ -12,6 +12,8 @@ import UIKit
 class DisplayResultsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var routes = [Route]()
     
+    @IBOutlet weak var tableView: UITableView!
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return routes.count
     }
@@ -23,6 +25,23 @@ class DisplayResultsViewController: UIViewController, UITableViewDelegate, UITab
         cell.distanceLabel.text = String(format: "%.2f", Conversion.metersToMiles(meters: route.distance))
         + " mi"
         return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let identifier = segue.identifier else {return}
+        
+        switch identifier {
+        case "showPlaceDetails":
+            guard let indexPath = tableView.indexPathForSelectedRow else {return}
+            let route = routes[indexPath.row]
+            let destination = segue.destination as! ShowRouteViewController
+            destination.route = route
+//            destination.routeNameLabel.text = route.name
+//            destination.routeDistanceLabel.text = String(format: "%.2f", Conversion.metersToMiles(meters: route.distance))
+//                + " mi"
+        default:
+            print("i dont recognize this")
+        }
     }
     
     

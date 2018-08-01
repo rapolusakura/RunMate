@@ -26,12 +26,8 @@ struct PlacesService {
                 let endLng = resp["geometry"]["location"]["lng"].doubleValue
                 intermediate.append((name, endLat, endLng, nil))
                 coordinates.append("\(endLat),\(endLng)")
-                //let route = Route(name: name, startLat: lat, startLng: lng, endLat: endLat, endLng: endLng)
-                //routes.append(route)
             }
             DistanceServices.findDistance(startLat: lat, startLng: lng, coordinates: coordinates, completion: { (distances) in
-                print(distances.count)
-                print(intermediate.count)
                 for i in 1...distances.count {
                     intermediate[i-1].3 = distances[i-1]
                 }
