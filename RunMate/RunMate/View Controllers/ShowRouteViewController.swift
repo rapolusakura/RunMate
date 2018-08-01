@@ -10,11 +10,24 @@ import Foundation
 import UIKit
 
 class ShowRouteViewController: UIViewController {
-    var route = Route(name: "", startLat: 0, startLng: 0, endLat: 0, endLng: 0, distance: 0)
+    var route: Route?
     
     @IBOutlet weak var routeNameLabel: UILabel!
     
     @IBOutlet weak var routeDistanceLabel: UILabel!
     
+    override func viewWillAppear(_ animated: Bool){
+        super.viewWillAppear(animated)
+        
+        if let route = route {
+            routeNameLabel.text = route.name
+            routeDistanceLabel.text = String(format: "%.2f", Conversion.metersToMiles(meters: route.distance))
+                + " mi"
+        } else {
+            routeNameLabel.text = ""
+            routeDistanceLabel.text = ""
+        }
+        
+    }
     
 }

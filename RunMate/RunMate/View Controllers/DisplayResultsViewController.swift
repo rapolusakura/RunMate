@@ -36,9 +36,6 @@ class DisplayResultsViewController: UIViewController, UITableViewDelegate, UITab
             let route = routes[indexPath.row]
             let destination = segue.destination as! ShowRouteViewController
             destination.route = route
-//            destination.routeNameLabel.text = route.name
-//            destination.routeDistanceLabel.text = String(format: "%.2f", Conversion.metersToMiles(meters: route.distance))
-//                + " mi"
         default:
             print("i dont recognize this")
         }
