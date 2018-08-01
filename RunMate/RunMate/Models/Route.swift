@@ -15,6 +15,7 @@ struct Route {
     let endLat: Double
     let endLng: Double
     let distance: Double
+    var isOneWay: Bool = true
     
     init(name: String, startLat: Double, startLng: Double, endLat: Double, endLng: Double, distance: Double){
         self.name = name

@@ -86,6 +86,7 @@
                     <navigationItem key="navigationItem" id="6EE-Hw-g9o"/>
                     <connections>
                         <outlet property="distanceTextField" destination="MLm-CA-q9I" id="i5q-lZ-SFb"/>
+                        <outlet property="tripSettingSegmentedControl" destination="z3i-gC-g6A" id="Xz7-0F-bIi"/>
                         <segue destination="ZxM-tZ-jM4" kind="show" identifier="viewResults" id="8l6-u4-oep"/>
                     </connections>
                 </viewController>

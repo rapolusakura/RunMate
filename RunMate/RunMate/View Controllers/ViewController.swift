@@ -20,13 +20,22 @@ class ViewController: UIViewController {
     @IBAction func viewResultsButton(_ sender: Any) {
         let miles = Double(distanceTextField.text!)!
         let distance = miles*1609.34 //distance in meters
-        //hardcoded location, need to update! 
-        PlacesService.findNearbyPlaces(lat: 37.7808727, lng: -122.4183261, radius: distance) { (routes) in
-            self.performSegue(withIdentifier: "viewResults", sender: routes)
+        //hardcoded location, need to update!
+        let index = tripSettingSegmentedControl.selectedSegmentIndex
+        switch index {
+        case 1:
+            PlacesService.findNearbyPlaces(lat: 37.7808727, lng: -122.4183261, radius: (distance/2)+300) { (routes) in
+                self.performSegue(withIdentifier: "viewResults", sender: routes)
+            }
+        default:
+            PlacesService.findNearbyPlaces(lat: 37.7808727, lng: -122.4183261, radius: distance) { (routes) in
+                self.performSegue(withIdentifier: "viewResults", sender: routes)
+            }
         }
     }
     
     @IBOutlet weak var distanceTextField: UITextField!
+    @IBOutlet weak var tripSettingSegmentedControl: UISegmentedControl!
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let identifier = segue.identifier else {return}
