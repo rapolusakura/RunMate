@@ -11,7 +11,7 @@ import Alamofire
 import SwiftyJSON
 
 struct ElevationServices {
-    static let apiKey = "AIzaSyDP_vdpdBSqJobAnUOJTz-hlYKlHKQwDYw"
+    static let apiKey = Constants.apiKey
     
     static func findElevationDifference(startLat: Double, startLng: Double, endLat: Double, endLng: Double, completion: @escaping (Double) -> Void) {
         let parameters = ["key":apiKey,"locations":"\(startLat),\(startLng)|\(endLat),\(endLng)"]

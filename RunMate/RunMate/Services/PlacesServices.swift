@@ -11,7 +11,7 @@ import Alamofire
 import SwiftyJSON
 
 struct PlacesService {
-    static let apiKey = "AIzaSyDP_vdpdBSqJobAnUOJTz-hlYKlHKQwDYw"
+    static let apiKey = Constants.apiKey
     
     static func findOneWayNearbyPlaces(lat: Double, lng: Double, radius: Double, travelMode: String, completion: @escaping ([Route]) -> Void) {
         var routes = [Route]()

@@ -11,7 +11,7 @@ import Alamofire
 import SwiftyJSON
 struct DistanceServices {
     
-    static let apiKey = "AIzaSyDP_vdpdBSqJobAnUOJTz-hlYKlHKQwDYw"
+    static let apiKey = Constants.apiKey
     
     static func findDistance(startLat: Double, startLng: Double, coordinates: [String], travelMode: String, completion: @escaping ([Double]) -> Void) {
         let coordString = coordinates.joined(separator: "|")
