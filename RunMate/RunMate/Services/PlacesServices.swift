@@ -36,13 +36,15 @@ struct PlacesService {
                     let route = Route(name: rawRoute.0, startLat: lat, startLng: lng, endLat: rawRoute.1, endLng: rawRoute.2, distance: rawRoute.3!, travelMode: travelMode)
                     routes.append(route)
                 }
+                
+                routes = routes.sorted(by: {abs($0.distance - radius) < abs($1.distance - radius)})
                 completion(routes)
             })
         }
     }
     
-    static func findRoundTripNearbyPlaces(lat: Double, lng: Double, radius: Double, travelMode: String, completion: @escaping ([Route]) -> Void) {
-        let radius = (radius/2)+300
+    static func findRoundTripNearbyPlaces(lat: Double, lng: Double, originalRadius: Double, travelMode: String, completion: @escaping ([Route]) -> Void) {
+        let radius = (originalRadius/2)+300
         var routes = [Route]()
         var distance: Double = 0
         
@@ -70,6 +72,7 @@ struct PlacesService {
             }
             
             dg.notify(queue: DispatchQueue.main, execute: {
+                routes = routes.sorted(by: {abs($0.distance - originalRadius) < abs($1.distance - originalRadius)})
                 completion(routes)
             })
         }

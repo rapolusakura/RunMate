@@ -32,7 +32,7 @@ class ViewController: UIViewController {
         let tripSettingIndex = tripSettingSegmentedControl.selectedSegmentIndex
         switch tripSettingIndex {
         case 1:
-            PlacesService.findRoundTripNearbyPlaces(lat: 37.7808727, lng: -122.4183261, radius: distance, travelMode: travelMode) { (routes) in
+            PlacesService.findRoundTripNearbyPlaces(lat: 37.7808727, lng: -122.4183261, originalRadius: distance, travelMode: travelMode) { (routes) in
                 self.performSegue(withIdentifier: "viewResults", sender: routes)
             }
         default:
