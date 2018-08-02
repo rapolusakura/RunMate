@@ -22,14 +22,21 @@ class ViewController: UIViewController {
         let distance = miles*1609.34 //distance in meters
         //hardcoded location, need to update!
         let travelModeIndex = travelModeSegmentedControl.selectedSegmentIndex
+        let travelMode: String
+        switch travelModeIndex {
+        case 1:
+            travelMode = "bicycling"
+        default:
+            travelMode = "walking"
+        }
         let tripSettingIndex = tripSettingSegmentedControl.selectedSegmentIndex
         switch tripSettingIndex {
         case 1:
-            PlacesService.findRoundTripNearbyPlaces(lat: 37.7808727, lng: -122.4183261, radius: distance) { (routes) in
+            PlacesService.findRoundTripNearbyPlaces(lat: 37.7808727, lng: -122.4183261, radius: distance, travelMode: travelMode) { (routes) in
                 self.performSegue(withIdentifier: "viewResults", sender: routes)
             }
         default:
-            PlacesService.findOneWayNearbyPlaces(lat: 37.7808727, lng: -122.4183261, radius: distance) { (routes) in
+            PlacesService.findOneWayNearbyPlaces(lat: 37.7808727, lng: -122.4183261, radius: distance, travelMode: travelMode) { (routes) in
                 self.performSegue(withIdentifier: "viewResults", sender: routes)
             }
         }

@@ -13,7 +13,7 @@ import SwiftyJSON
 struct PlacesService {
     static let apiKey = "AIzaSyDP_vdpdBSqJobAnUOJTz-hlYKlHKQwDYw"
     
-    static func findOneWayNearbyPlaces(lat: Double, lng: Double, radius: Double, completion: @escaping ([Route]) -> Void) {
+    static func findOneWayNearbyPlaces(lat: Double, lng: Double, radius: Double, travelMode: String, completion: @escaping ([Route]) -> Void) {
         var routes = [Route]()
         var intermediate = [(String, Double, Double, Double?)]()
         var coordinates = [String]()
@@ -28,12 +28,12 @@ struct PlacesService {
                 intermediate.append((name, endLat, endLng, nil))
                 coordinates.append("\(endLat),\(endLng)")
             }
-            DistanceServices.findDistance(startLat: lat, startLng: lng, coordinates: coordinates, completion: { (distances) in
+            DistanceServices.findDistance(startLat: lat, startLng: lng, coordinates: coordinates, travelMode: travelMode, completion: { (distances) in
                 for i in 1...distances.count {
                     intermediate[i-1].3 = distances[i-1]
                 }
                 for rawRoute in intermediate {
-                    let route = Route(name: rawRoute.0, startLat: lat, startLng: lng, endLat: rawRoute.1, endLng: rawRoute.2, distance: rawRoute.3!)
+                    let route = Route(name: rawRoute.0, startLat: lat, startLng: lng, endLat: rawRoute.1, endLng: rawRoute.2, distance: rawRoute.3!, travelMode: travelMode)
                     routes.append(route)
                 }
                 completion(routes)
@@ -41,7 +41,7 @@ struct PlacesService {
         }
     }
     
-    static func findRoundTripNearbyPlaces(lat: Double, lng: Double, radius: Double, completion: @escaping ([Route]) -> Void) {
+    static func findRoundTripNearbyPlaces(lat: Double, lng: Double, radius: Double, travelMode: String, completion: @escaping ([Route]) -> Void) {
         let radius = (radius/2)+300
         var routes = [Route]()
         var distance: Double = 0
@@ -61,9 +61,9 @@ struct PlacesService {
                 let endLng = resp["geometry"]["location"]["lng"].doubleValue
                 
                 dg.enter()
-                DirectionsServices.findRoundTripRoute(startLat: lat, startLng: lng, waypointLat: endLat, waypointLng: endLng, completion: { (responseDistance) in
+                DirectionsServices.findRoundTripRoute(startLat: lat, startLng: lng, waypointLat: endLat, waypointLng: endLng, travelMode: travelMode, completion: { (responseDistance) in
                     distance = responseDistance
-                    let route = Route(name: name, startLat: lat, startLng: lng, endLat: endLat, endLng: endLng, distance: distance, isOneWay: false)
+                    let route = Route(name: name, startLat: lat, startLng: lng, endLat: endLat, endLng: endLng, distance: distance, isOneWay: false, travelMode: travelMode)
                     routes.append(route)
                     dg.leave()
                 })

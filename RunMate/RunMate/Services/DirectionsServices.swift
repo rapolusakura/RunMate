@@ -13,9 +13,9 @@ import SwiftyJSON
 struct DirectionsServices {
     static let apiKey = "AIzaSyDP_vdpdBSqJobAnUOJTz-hlYKlHKQwDYw"
     
-    static func findRoundTripRoute(startLat: Double, startLng: Double, waypointLat: Double, waypointLng: Double, completion: @escaping (Double) -> Void) {
+    static func findRoundTripRoute(startLat: Double, startLng: Double, waypointLat: Double, waypointLng: Double, travelMode: String, completion: @escaping (Double) -> Void) {
 
-        let parameters = ["key":apiKey,"origin":"37.7808727,-122.4183261","destination":"37.7808727,-122.4183261","mode":"walking","units":"imperial","waypoints":"\(waypointLat),\(waypointLng)"]
+        let parameters = ["key":apiKey,"origin":"37.7808727,-122.4183261","destination":"37.7808727,-122.4183261","mode":travelMode,"units":"imperial","waypoints":"\(waypointLat),\(waypointLng)"]
 
         Alamofire.request("https://maps.googleapis.com/maps/api/directions/json?", parameters: parameters).responseJSON(options:.mutableContainers) { response in
             let response = try! JSON(data: response.data!)

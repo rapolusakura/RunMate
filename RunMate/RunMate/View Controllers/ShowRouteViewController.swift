@@ -39,6 +39,6 @@ class ShowRouteViewController: UIViewController {
         let coordinate = CLLocationCoordinate2DMake((route?.endLat)!, (route?.endLng)!)
         let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary:nil))
         mapItem.name = route?.name
-        mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving])
+        mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeWalking])
     }
 }
