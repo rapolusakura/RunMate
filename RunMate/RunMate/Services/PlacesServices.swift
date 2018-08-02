@@ -20,7 +20,6 @@ struct PlacesService {
         let parameters = ["key":apiKey,"location":"\(lat),\(lng)","radius":"\(radius)","type":"park"]
         Alamofire.request("https://maps.googleapis.com/maps/api/place/nearbysearch/json?", parameters: parameters).responseJSON(options:.mutableContainers) { response in
             let response = try! JSON(data: response.data!)
-            print(response)
             for resp in response["results"].arrayValue {
                 let name = resp["name"].stringValue
                 let endLat = resp["geometry"]["location"]["lat"].doubleValue

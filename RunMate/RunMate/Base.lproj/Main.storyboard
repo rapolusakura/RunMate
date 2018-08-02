@@ -142,12 +142,12 @@
                                         <connections>
                                             <outlet property="distanceLabel" destination="W0x-f3-sT5" id="gBz-Gt-NE1"/>
                                             <outlet property="placeNameLabel" destination="X7u-0P-cNG" id="PdY-Qz-mhq"/>
-                                            <segue destination="Lgf-so-QSh" kind="show" identifier="showPlaceDetails" id="mVd-pX-YGf"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="ZxM-tZ-jM4" id="yvW-mS-vxd"/>
+                                    <outlet property="delegate" destination="ZxM-tZ-jM4" id="mGZ-jx-cyQ"/>
                                     <outlet property="prefetchDataSource" destination="ZxM-tZ-jM4" id="T0Y-6j-CCw"/>
                                 </connections>
                             </tableView>
@@ -163,6 +163,7 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="5Tf-El-B0M" id="fse-qp-Zxc"/>
+                        <segue destination="Lgf-so-QSh" kind="show" identifier="showPlaceDetails" id="vgq-Ew-Mhp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p9b-Og-Srt" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -187,7 +188,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="8sk-3e-lSX">
-                                <rect key="frame" x="109" y="203" width="42" height="56"/>
+                                <rect key="frame" x="109" y="203" width="42" height="91.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ZQ-3g-xu5">
@@ -202,6 +203,12 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8kb-iO-P0U">
+                                        <rect key="frame" x="0.0" y="71" width="42" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -210,6 +217,7 @@
                     </view>
                     <connections>
                         <outlet property="routeDistanceLabel" destination="r51-m6-5yJ" id="b2Y-ob-m07"/>
+                        <outlet property="routeElevationLabel" destination="8kb-iO-P0U" id="7Ka-Kl-Ck2"/>
                         <outlet property="routeNameLabel" destination="6ZQ-3g-xu5" id="uu5-ku-GbB"/>
                     </connections>
                 </viewController>

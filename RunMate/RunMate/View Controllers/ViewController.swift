@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     
     @IBAction func viewResultsButton(_ sender: Any) {
         let miles = Double(distanceTextField.text!)!
-        let distance = miles*1609.34 //distance in meters
+        let distance = Conversion.milestoMeters(miles: miles) //distance in meters
         //hardcoded location, need to update!
         let travelModeIndex = travelModeSegmentedControl.selectedSegmentIndex
         let travelMode: String

@@ -18,7 +18,6 @@ struct ElevationServices {
         
         Alamofire.request("https://maps.googleapis.com/maps/api/elevation/json?", parameters: parameters).responseJSON(options:.mutableContainers) { response in
             let response = try! JSON(data: response.data!)
-            print(response)
             let startElevation: Double = response["results"][0]["elevation"].doubleValue
             let endElevation: Double = response["results"][1]["elevation"].doubleValue
             let elevationDifference: Double = endElevation - startElevation

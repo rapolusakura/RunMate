@@ -18,31 +18,27 @@ class ShowRouteViewController: UIViewController {
     
     @IBOutlet weak var routeDistanceLabel: UILabel!
     
+    @IBOutlet weak var routeElevationLabel: UILabel!
+    
+    
     @IBAction func startRouteButtonPressed(_ sender: Any) {
         getDirections()
     }
     override func viewWillAppear(_ animated: Bool){
         super.viewWillAppear(animated)
         
-        if let route = route {
+        if let route = route, let elevation = route.elevation {
             routeNameLabel.text = route.place.name
             routeDistanceLabel.text = String(format: "%.2f", Conversion.metersToMiles(meters: route.distance))
                 + " mi"
+            routeElevationLabel.text = String(elevation)
             
         } else {
             routeNameLabel.text = ""
             routeDistanceLabel.text = ""
-            //routeElevationLabel.text = ""
+            routeElevationLabel.text = ""
         }
         
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        if let route = route, let elevation = route.elevation {
-            print(route.elevation)
-        }
-        print("yse")
     }
     
     func getDirections(){

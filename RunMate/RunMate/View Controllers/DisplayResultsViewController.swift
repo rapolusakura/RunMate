@@ -27,16 +27,20 @@ class DisplayResultsViewController: UIViewController, UITableViewDelegate, UITab
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        var route = routes[indexPath.row]
+        ElevationServices.findElevationDifference(startLat: route.startLat, startLng: route.startLng, endLat: route.place.lat, endLng: route.place.lng) { (elevation) in
+            route.elevation = elevation
+            self.performSegue(withIdentifier: "showPlaceDetails", sender: route)
+        }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let identifier = segue.identifier else {return}
         
         switch identifier {
         case "showPlaceDetails":
-            guard let indexPath = tableView.indexPathForSelectedRow else {return}
-            var route = routes[indexPath.row]
-            ElevationServices.findElevationDifference(startLat: route.startLat, startLng: route.startLng, endLat: route.place.lat, endLng: route.place.lng) { (elevation) in
-                route.elevation = elevation
-            }
+            let route = sender as! Route
             let destination = segue.destination as! ShowRouteViewController
             destination.route = route
         default:
