@@ -31,7 +31,7 @@ class ShowRouteViewController: UIViewController {
             routeNameLabel.text = route.place.name
             routeDistanceLabel.text = String(format: "%.2f", Conversion.metersToMiles(meters: route.distance))
                 + " mi"
-            routeElevationLabel.text = String(elevation)
+            routeElevationLabel.text = String(format: "%.2f", Conversion.metersToFeet(meters: elevation)) + " ft"
             
         } else {
             routeNameLabel.text = ""
