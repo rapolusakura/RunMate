@@ -9,14 +9,14 @@
 import Foundation
 
 struct Place {
-    let imageURL: String
+    let placeID: String
     let name: String
     let rating: Double
     let lat: Double
     let lng: Double
     
-    init(imageURL: String, name: String, rating: Double, lat: Double, lng: Double) {
-        self.imageURL = imageURL
+    init(placeID: String, name: String, rating: Double, lat: Double, lng: Double) {
+        self.placeID = placeID
         self.name = name
         self.rating = rating
         self.lat = lat

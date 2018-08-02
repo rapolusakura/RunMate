@@ -21,7 +21,7 @@ class DisplayResultsViewController: UIViewController, UITableViewDelegate, UITab
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! DisplayResultTableViewCell
         let route = routes[indexPath.row]
-        cell.placeNameLabel.text = route.name
+        cell.placeNameLabel.text = route.place.name
         cell.distanceLabel.text = String(format: "%.2f", Conversion.metersToMiles(meters: route.distance))
         + " mi"
         return cell

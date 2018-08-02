@@ -25,7 +25,7 @@ class ShowRouteViewController: UIViewController {
         super.viewWillAppear(animated)
         
         if let route = route {
-            routeNameLabel.text = route.name
+            routeNameLabel.text = route.place.name
             routeDistanceLabel.text = String(format: "%.2f", Conversion.metersToMiles(meters: route.distance))
                 + " mi"
         } else {
@@ -38,7 +38,7 @@ class ShowRouteViewController: UIViewController {
     func getDirections(){
         let coordinate = CLLocationCoordinate2DMake((route?.endLat)!, (route?.endLng)!)
         let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary:nil))
-        mapItem.name = route?.name
+        mapItem.name = route?.place.name
         mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeWalking])
     }
 }
