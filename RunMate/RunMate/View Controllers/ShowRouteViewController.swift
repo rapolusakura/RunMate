@@ -10,9 +10,11 @@ import Foundation
 import UIKit
 import CoreLocation
 import MapKit
+import GooglePlaces
 
 class ShowRouteViewController: UIViewController {
     var route: Route?
+    var placesClient: GMSPlacesClient!
     
     @IBOutlet weak var routeNameLabel: UILabel!
     
@@ -33,6 +35,7 @@ class ShowRouteViewController: UIViewController {
             routeDistanceLabel.text = String(format: "%.2f", Conversion.metersToMiles(meters: route.distance))
                 + " mi"
             routeElevationLabel.text = String(format: "%.2f", Conversion.metersToFeet(meters: elevation)) + " ft"
+            loadFirstPhotoForPlace(placeID: route.place.placeID)
             
         } else {
             routeNameLabel.text = ""
@@ -40,6 +43,11 @@ class ShowRouteViewController: UIViewController {
             routeElevationLabel.text = ""
         }
         
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        placesClient = GMSPlacesClient.shared()
     }
     
     func loadFirstPhotoForPlace(placeID: String) {
@@ -63,7 +71,7 @@ class ShowRouteViewController: UIViewController {
                 print("Error: \(error.localizedDescription)")
             } else {
                 self.imageView.image = photo;
-                self.attributionTextView.attributedText = photoMetadata.attributions;
+                //self.attributionTextView.attributedText = photoMetadata.attributions;
             }
         })
     }

@@ -9,5 +9,7 @@ target 'RunMate' do
 pod 'Alamofire', '~> 4.7'
 pod 'AlamofireNetworkActivityIndicator'
 pod 'SwiftyJSON'
+pod 'GooglePlaces'
+pod 'GooglePlacePicker'
 
 end
