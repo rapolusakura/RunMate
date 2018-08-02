@@ -16,6 +16,9 @@ class ShowRouteViewController: UIViewController {
     
     @IBOutlet weak var routeDistanceLabel: UILabel!
     
+    @IBAction func startRouteButtonPressed(_ sender: Any) {
+        getDirections()
+    }
     override func viewWillAppear(_ animated: Bool){
         super.viewWillAppear(animated)
         
@@ -30,4 +33,12 @@ class ShowRouteViewController: UIViewController {
         
     }
     
+    func getDirections(){
+        if (UIApplication.shared.canOpenURL(NSURL(string:"comgooglemaps://")! as URL)) {
+            UIApplication.shared.openURL(NSURL(string:
+                "comgooglemaps://?saddr=&daddr=\(route?.endLat),\(route?.endLng)&directionsmode=driving")!as URL)
+        } else {
+            print("Can't use comgooglemaps://")
+        }
+    }
 }

@@ -21,8 +21,9 @@ class ViewController: UIViewController {
         let miles = Double(distanceTextField.text!)!
         let distance = miles*1609.34 //distance in meters
         //hardcoded location, need to update!
-        let index = tripSettingSegmentedControl.selectedSegmentIndex
-        switch index {
+        let travelModeIndex = travelModeSegmentedControl.selectedSegmentIndex
+        let tripSettingIndex = tripSettingSegmentedControl.selectedSegmentIndex
+        switch tripSettingIndex {
         case 1:
             PlacesService.findRoundTripNearbyPlaces(lat: 37.7808727, lng: -122.4183261, radius: distance) { (routes) in
                 self.performSegue(withIdentifier: "viewResults", sender: routes)
@@ -36,6 +37,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var distanceTextField: UITextField!
     @IBOutlet weak var tripSettingSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var travelModeSegmentedControl: UISegmentedControl!
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let identifier = segue.identifier else {return}

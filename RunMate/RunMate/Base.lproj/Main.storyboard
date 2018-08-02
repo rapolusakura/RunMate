@@ -86,6 +86,7 @@
                     <navigationItem key="navigationItem" id="6EE-Hw-g9o"/>
                     <connections>
                         <outlet property="distanceTextField" destination="MLm-CA-q9I" id="i5q-lZ-SFb"/>
+                        <outlet property="travelModeSegmentedControl" destination="fg5-Km-DmM" id="SBN-3x-1ef"/>
                         <outlet property="tripSettingSegmentedControl" destination="z3i-gC-g6A" id="Xz7-0F-bIi"/>
                         <segue destination="ZxM-tZ-jM4" kind="show" identifier="viewResults" id="8l6-u4-oep"/>
                     </connections>
@@ -199,6 +200,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" name="tcOffWhite"/>
                                 <state key="normal" title="start route"/>
+                                <connections>
+                                    <action selector="startRouteButtonPressed:" destination="Lgf-so-QSh" eventType="touchUpInside" id="J7V-Sx-Tud"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.56801428919999997" green="0.64490850779999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
