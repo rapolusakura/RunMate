@@ -18,6 +18,8 @@ class ShowRouteViewController: UIViewController {
     
     @IBOutlet weak var routeNameLabel: UILabel!
     
+    @IBOutlet weak var placeRatingLabel: UILabel!
+    
     @IBOutlet weak var routeDistanceLabel: UILabel!
     
     @IBOutlet weak var routeElevationLabel: UILabel!
@@ -35,6 +37,8 @@ class ShowRouteViewController: UIViewController {
             routeDistanceLabel.text = String(format: "%.2f", Conversion.metersToMiles(meters: route.distance))
                 + " mi"
             routeElevationLabel.text = String(format: "%.2f", Conversion.metersToFeet(meters: elevation)) + " ft"
+            placeRatingLabel.text = String(route.place.rating) + " stars"
+
             loadFirstPhotoForPlace(placeID: route.place.placeID)
             
         } else {
