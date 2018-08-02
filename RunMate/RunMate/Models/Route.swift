@@ -9,11 +9,9 @@
 import Foundation
 
 struct Route {
-    let name: String
     let startLat: Double
     let startLng: Double
-    let endLat: Double
-    let endLng: Double
+    let place: Place
     let distance: Double
     var isOneWay: Bool = true
     let travelMode: String
