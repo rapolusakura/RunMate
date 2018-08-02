@@ -20,6 +20,7 @@ class ShowRouteViewController: UIViewController {
     
     @IBOutlet weak var routeElevationLabel: UILabel!
     
+    @IBOutlet weak var imageView: UIImageView!
     
     @IBAction func startRouteButtonPressed(_ sender: Any) {
         getDirections()
@@ -39,6 +40,32 @@ class ShowRouteViewController: UIViewController {
             routeElevationLabel.text = ""
         }
         
+    }
+    
+    func loadFirstPhotoForPlace(placeID: String) {
+        GMSPlacesClient.shared().lookUpPhotos(forPlaceID: placeID) { (photos, error) -> Void in
+            if let error = error {
+                // TODO: handle the error.
+                print("Error: \(error.localizedDescription)")
+            } else {
+                if let firstPhoto = photos?.results.first {
+                    self.loadImageForMetadata(photoMetadata: firstPhoto)
+                }
+            }
+        }
+    }
+    
+    func loadImageForMetadata(photoMetadata: GMSPlacePhotoMetadata) {
+        GMSPlacesClient.shared().loadPlacePhoto(photoMetadata, callback: {
+            (photo, error) -> Void in
+            if let error = error {
+                // TODO: handle the error.
+                print("Error: \(error.localizedDescription)")
+            } else {
+                self.imageView.image = photo;
+                self.attributionTextView.attributedText = photoMetadata.attributions;
+            }
+        })
     }
     
     func getDirections(){

@@ -211,11 +211,16 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zax-bC-JUg">
+                                <rect key="frame" x="16" y="314" width="343" height="175"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.56801428919999997" green="0.64490850779999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="uPf-ly-SIV"/>
                     </view>
                     <connections>
+                        <outlet property="imageView" destination="zax-bC-JUg" id="6mC-aa-MoB"/>
                         <outlet property="routeDistanceLabel" destination="r51-m6-5yJ" id="b2Y-ob-m07"/>
                         <outlet property="routeElevationLabel" destination="8kb-iO-P0U" id="7Ka-Kl-Ck2"/>
                         <outlet property="routeNameLabel" destination="6ZQ-3g-xu5" id="uu5-ku-GbB"/>
