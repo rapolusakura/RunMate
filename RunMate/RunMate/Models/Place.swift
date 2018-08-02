@@ -13,5 +13,13 @@ struct Place {
     let name: String
     let rating: Double
     let lat: Double
-    let lng: Double 
+    let lng: Double
+    
+    init(imageURL: String, name: String, rating: Double, lat: Double, lng: Double) {
+        self.imageURL = imageURL
+        self.name = name
+        self.rating = rating
+        self.lat = lat
+        self.lng = lng
+    }
 }

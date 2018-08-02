@@ -12,12 +12,14 @@ struct Route {
     let startLat: Double
     let startLng: Double
     let place: Place
+    let endLat: Double
+    let endLng: Double
     let distance: Double
     var isOneWay: Bool = true
     let travelMode: String
     
-    init(name: String, startLat: Double, startLng: Double, endLat: Double, endLng: Double, distance: Double, travelMode: String){
-        self.name = name
+    init(place: Place, startLat: Double, startLng: Double, endLat: Double, endLng: Double, distance: Double, travelMode: String){
+        self.place = place
         self.startLat = startLat
         self.startLng = startLng
         self.endLat = endLat
@@ -26,8 +28,8 @@ struct Route {
         self.travelMode = travelMode
     }
     
-    init(name: String, startLat: Double, startLng: Double, endLat: Double, endLng: Double, distance: Double, isOneWay: Bool, travelMode: String){
-        self.name = name
+    init(place: Place, startLat: Double, startLng: Double, endLat: Double, endLng: Double, distance: Double, isOneWay: Bool, travelMode: String){
+        self.place = place
         self.startLat = startLat
         self.startLng = startLng
         self.endLat = endLat
@@ -37,6 +39,7 @@ struct Route {
         self.travelMode = travelMode
     }
     
+    //will i ever use this
     func convertCoordToString(lat: Double, lng: Double) -> String {
         return "\(lat),\(lng)"
     }
