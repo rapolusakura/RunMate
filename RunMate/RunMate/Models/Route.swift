@@ -17,6 +17,7 @@ struct Route {
     let distance: Double
     var isOneWay: Bool = true
     let travelMode: String
+    var elevation: Double? = nil 
     
     init(place: Place, startLat: Double, startLng: Double, endLat: Double, endLng: Double, distance: Double, travelMode: String){
         self.place = place

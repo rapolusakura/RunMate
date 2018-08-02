@@ -21,6 +21,8 @@
 		4471D42621118667006D8C14 /* ShowRouteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4471D42521118667006D8C14 /* ShowRouteViewController.swift */; };
 		4471D42821121DC8006D8C14 /* DirectionsServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4471D42721121DC8006D8C14 /* DirectionsServices.swift */; };
 		4471D42C21137DE8006D8C14 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4471D42B21137DE8006D8C14 /* Place.swift */; };
+		4471D42E21138396006D8C14 /* ElevationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4471D42D21138396006D8C14 /* ElevationServices.swift */; };
+		4471D430211383A7006D8C14 /* PhotoServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4471D42F211383A6006D8C14 /* PhotoServices.swift */; };
 		665DC6A25134141D3744C625 /* Pods_RunMate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B91F8FE48A49DAA17ED40192 /* Pods_RunMate.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +45,8 @@
 		4471D42521118667006D8C14 /* ShowRouteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowRouteViewController.swift; sourceTree = "<group>"; };
 		4471D42721121DC8006D8C14 /* DirectionsServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionsServices.swift; sourceTree = "<group>"; };
 		4471D42B21137DE8006D8C14 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		4471D42D21138396006D8C14 /* ElevationServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElevationServices.swift; sourceTree = "<group>"; };
+		4471D42F211383A6006D8C14 /* PhotoServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoServices.swift; sourceTree = "<group>"; };
 		B91F8FE48A49DAA17ED40192 /* Pods_RunMate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RunMate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -107,6 +111,8 @@
 				4471D4152110E845006D8C14 /* PlacesServices.swift */,
 				4471D420211110D4006D8C14 /* DistanceServices.swift */,
 				4471D42721121DC8006D8C14 /* DirectionsServices.swift */,
+				4471D42D21138396006D8C14 /* ElevationServices.swift */,
+				4471D42F211383A6006D8C14 /* PhotoServices.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -271,11 +277,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4471D430211383A7006D8C14 /* PhotoServices.swift in Sources */,
 				4471D4182110EA73006D8C14 /* DisplayResultsViewController.swift in Sources */,
 				4471D4162110E845006D8C14 /* PlacesServices.swift in Sources */,
 				4471D4032110D7F3006D8C14 /* ViewController.swift in Sources */,
 				4471D4242111815B006D8C14 /* Conversion.swift in Sources */,
 				4471D421211110D4006D8C14 /* DistanceServices.swift in Sources */,
+				4471D42E21138396006D8C14 /* ElevationServices.swift in Sources */,
 				4471D42821121DC8006D8C14 /* DirectionsServices.swift in Sources */,
 				4471D41D2110F711006D8C14 /* Route.swift in Sources */,
 				4471D41A2110F212006D8C14 /* DisplayResultsTableViewCell.swift in Sources */,

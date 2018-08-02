@@ -55,8 +55,6 @@ struct PlacesService {
         let parameters = ["key":apiKey,"location":"\(lat),\(lng)","radius":"\(radius)","type":"park"]
         Alamofire.request("https://maps.googleapis.com/maps/api/place/nearbysearch/json?", parameters: parameters).responseJSON(options:.mutableContainers) { response in
             let response = try! JSON(data: response.data!)
-            let locationsCount = response["results"].arrayValue.count
-            //var iterator = response["results"].arrayValue.makeIterator()
             
             let dg = DispatchGroup()
             
@@ -65,11 +63,14 @@ struct PlacesService {
                 let name = resp["name"].stringValue
                 let endLat = resp["geometry"]["location"]["lat"].doubleValue
                 let endLng = resp["geometry"]["location"]["lng"].doubleValue
+                let rating = resp["rating"].doubleValue
+                let placeId = resp["place_id"].stringValue
+                
+                let place = Place(placeID: placeId, name: name, rating: rating, lat: endLat, lng: endLng)
                 
                 dg.enter()
                 DirectionsServices.findRoundTripRoute(startLat: lat, startLng: lng, waypointLat: endLat, waypointLng: endLng, travelMode: travelMode, completion: { (responseDistance) in
                     distance = responseDistance
-                    let place = Place(placeID: "", name: "", rating: 0, lat: 0, lng: 0)
                     let route = Route(place: place, startLat: lat, startLng: lng, endLat: endLat, endLng: endLng, distance: distance, isOneWay: false, travelMode: travelMode)
                     routes.append(route)
                     dg.leave()

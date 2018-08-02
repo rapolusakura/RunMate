@@ -28,11 +28,21 @@ class ShowRouteViewController: UIViewController {
             routeNameLabel.text = route.place.name
             routeDistanceLabel.text = String(format: "%.2f", Conversion.metersToMiles(meters: route.distance))
                 + " mi"
+            
         } else {
             routeNameLabel.text = ""
             routeDistanceLabel.text = ""
+            //routeElevationLabel.text = ""
         }
         
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        if let route = route, let elevation = route.elevation {
+            print(route.elevation)
+        }
+        print("yse")
     }
     
     func getDirections(){

@@ -33,7 +33,10 @@ class DisplayResultsViewController: UIViewController, UITableViewDelegate, UITab
         switch identifier {
         case "showPlaceDetails":
             guard let indexPath = tableView.indexPathForSelectedRow else {return}
-            let route = routes[indexPath.row]
+            var route = routes[indexPath.row]
+            ElevationServices.findElevationDifference(startLat: route.startLat, startLng: route.startLng, endLat: route.place.lat, endLng: route.place.lng) { (elevation) in
+                route.elevation = elevation
+            }
             let destination = segue.destination as! ShowRouteViewController
             destination.route = route
         default:
