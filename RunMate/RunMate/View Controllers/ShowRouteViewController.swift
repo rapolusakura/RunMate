@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import CoreLocation
+import MapKit
 
 class ShowRouteViewController: UIViewController {
     var route: Route?
@@ -34,11 +36,9 @@ class ShowRouteViewController: UIViewController {
     }
     
     func getDirections(){
-        if (UIApplication.shared.canOpenURL(NSURL(string:"comgooglemaps://")! as URL)) {
-            UIApplication.shared.openURL(NSURL(string:
-                "comgooglemaps://?saddr=&daddr=\(route?.endLat),\(route?.endLng)&directionsmode=driving")!as URL)
-        } else {
-            print("Can't use comgooglemaps://")
-        }
+        let coordinate = CLLocationCoordinate2DMake((route?.endLat)!, (route?.endLng)!)
+        let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary:nil))
+        mapItem.name = route?.name
+        mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving])
     }
 }
