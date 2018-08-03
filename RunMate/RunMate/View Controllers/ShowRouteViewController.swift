@@ -36,7 +36,9 @@ class ShowRouteViewController: UIViewController {
             routeNameLabel.text = route.place.name
             routeDistanceLabel.text = String(format: "%.2f", Conversion.metersToMiles(meters: route.distance))
                 + " mi"
-            routeElevationLabel.text = String(format: "%.2f", Conversion.metersToFeet(meters: elevation)) + " ft"
+            if elevation > 0 {
+                routeElevationLabel.text = "+\(String(format: "%.2f", Conversion.metersToFeet(meters: elevation)))" + " ft"
+            }
             placeRatingLabel.text = String(route.place.rating) + " stars"
 
             loadFirstPhotoForPlace(placeID: route.place.placeID)
