@@ -14,7 +14,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let apiToContact = "https://api.yelp.com/v3/businesses/search?term=tourist_attractions&location=chicago,il"
+        let apiToContact = "https://api.yelp.com/v3/businesses/search?attributes=gender_neutral_restrooms&radius=150&latitude=37.7808727&longitude=-122.4183261&open_now=true"
         guard let url = URL(string: apiToContact) else {return assertionFailure("URL Failed")}
         
         var request = URLRequest(url: url)
