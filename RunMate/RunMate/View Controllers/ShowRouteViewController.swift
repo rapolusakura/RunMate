@@ -38,6 +38,10 @@ class ShowRouteViewController: UIViewController {
                 + " mi"
             if elevation > 0 {
                 routeElevationLabel.text = "+\(String(format: "%.2f", Conversion.metersToFeet(meters: elevation)))" + " ft"
+                routeElevationLabel.textColor = .green
+            }
+            else {
+                routeElevationLabel.textColor = .red
             }
             placeRatingLabel.text = String(route.place.rating) + " stars"
 
