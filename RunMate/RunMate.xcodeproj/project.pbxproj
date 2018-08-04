@@ -19,6 +19,10 @@
 		4471D421211110D4006D8C14 /* DistanceServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4471D420211110D4006D8C14 /* DistanceServices.swift */; };
 		4471D4242111815B006D8C14 /* Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4471D4232111815B006D8C14 /* Conversion.swift */; };
 		4471D42621118667006D8C14 /* ShowRouteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4471D42521118667006D8C14 /* ShowRouteViewController.swift */; };
+		4471D42821121DC8006D8C14 /* DirectionsServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4471D42721121DC8006D8C14 /* DirectionsServices.swift */; };
+		4471D42C21137DE8006D8C14 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4471D42B21137DE8006D8C14 /* Place.swift */; };
+		4471D42E21138396006D8C14 /* ElevationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4471D42D21138396006D8C14 /* ElevationServices.swift */; };
+		4471D4322113B456006D8C14 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4471D4312113B456006D8C14 /* Constants.swift */; };
 		665DC6A25134141D3744C625 /* Pods_RunMate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B91F8FE48A49DAA17ED40192 /* Pods_RunMate.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +43,10 @@
 		4471D420211110D4006D8C14 /* DistanceServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceServices.swift; sourceTree = "<group>"; };
 		4471D4232111815B006D8C14 /* Conversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversion.swift; sourceTree = "<group>"; };
 		4471D42521118667006D8C14 /* ShowRouteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowRouteViewController.swift; sourceTree = "<group>"; };
+		4471D42721121DC8006D8C14 /* DirectionsServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionsServices.swift; sourceTree = "<group>"; };
+		4471D42B21137DE8006D8C14 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		4471D42D21138396006D8C14 /* ElevationServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElevationServices.swift; sourceTree = "<group>"; };
+		4471D4312113B456006D8C14 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B91F8FE48A49DAA17ED40192 /* Pods_RunMate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RunMate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -102,6 +110,11 @@
 			children = (
 				4471D4152110E845006D8C14 /* PlacesServices.swift */,
 				4471D420211110D4006D8C14 /* DistanceServices.swift */,
+<<<<<<< HEAD
+=======
+				4471D42721121DC8006D8C14 /* DirectionsServices.swift */,
+				4471D42D21138396006D8C14 /* ElevationServices.swift */,
+>>>>>>> master
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -128,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				4471D41C2110F711006D8C14 /* Route.swift */,
+				4471D42B21137DE8006D8C14 /* Place.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -136,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				4471D4232111815B006D8C14 /* Conversion.swift */,
+				4471D4312113B456006D8C14 /* Constants.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -161,6 +176,7 @@
 				4471D3FA2110D7F3006D8C14 /* Frameworks */,
 				4471D3FB2110D7F3006D8C14 /* Resources */,
 				9EB6CDC802355FAAE713BCE1 /* [CP] Embed Pods Frameworks */,
+				54CE44B1F3BD01AD965BF21C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -218,6 +234,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		54CE44B1F3BD01AD965BF21C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-RunMate/Pods-RunMate-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlacePicker/Frameworks/GooglePlacePicker.framework/Resources/GooglePlacePicker.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlacePicker.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RunMate/Pods-RunMate-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		7157294C7171D1DA582B4821 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -270,9 +308,13 @@
 				4471D4032110D7F3006D8C14 /* ViewController.swift in Sources */,
 				4471D4242111815B006D8C14 /* Conversion.swift in Sources */,
 				4471D421211110D4006D8C14 /* DistanceServices.swift in Sources */,
+				4471D42E21138396006D8C14 /* ElevationServices.swift in Sources */,
+				4471D42821121DC8006D8C14 /* DirectionsServices.swift in Sources */,
+				4471D4322113B456006D8C14 /* Constants.swift in Sources */,
 				4471D41D2110F711006D8C14 /* Route.swift in Sources */,
 				4471D41A2110F212006D8C14 /* DisplayResultsTableViewCell.swift in Sources */,
 				4471D4012110D7F3006D8C14 /* AppDelegate.swift in Sources */,
+				4471D42C21137DE8006D8C14 /* Place.swift in Sources */,
 				4471D42621118667006D8C14 /* ShowRouteViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
