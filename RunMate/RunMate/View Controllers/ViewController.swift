@@ -9,18 +9,36 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import CoreLocation
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, CLLocationManagerDelegate {
+    
+    let locationManager = CLLocationManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.locationManager.requestAlwaysAuthorization()
+        
+        // For use in foreground
+        self.locationManager.requestWhenInUseAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        locationManager.startUpdatingLocation()
     }
     
     @IBAction func viewResultsButton(_ sender: Any) {
         let miles = Double(distanceTextField.text!)!
         let distance = Conversion.milestoMeters(miles: miles) //distance in meters
-        //hardcoded location, need to update!
+        let coordinate = locationManager.location?.coordinate
+        locationManager.stopUpdatingLocation()
         let travelModeIndex = travelModeSegmentedControl.selectedSegmentIndex
         let travelMode: String
         switch travelModeIndex {
@@ -32,11 +50,11 @@ class ViewController: UIViewController {
         let tripSettingIndex = tripSettingSegmentedControl.selectedSegmentIndex
         switch tripSettingIndex {
         case 1:
-            PlacesService.findRoundTripNearbyPlaces(lat: 37.7808727, lng: -122.4183261, originalRadius: distance, travelMode: travelMode) { (routes) in
+            PlacesService.findRoundTripNearbyPlaces(lat: (coordinate?.latitude)!, lng: (coordinate?.longitude)!, originalRadius: distance, travelMode: travelMode) { (routes) in
                 self.performSegue(withIdentifier: "viewResults", sender: routes)
             }
         default:
-            PlacesService.findOneWayNearbyPlaces(lat: 37.7808727, lng: -122.4183261, radius: distance, travelMode: travelMode) { (routes) in
+            PlacesService.findOneWayNearbyPlaces(lat: (coordinate?.latitude)!, lng: (coordinate?.longitude)!, radius: distance, travelMode: travelMode) { (routes) in
                 self.performSegue(withIdentifier: "viewResults", sender: routes)
             }
         }
