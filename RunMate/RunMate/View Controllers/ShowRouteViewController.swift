@@ -86,6 +86,15 @@ class ShowRouteViewController: UIViewController {
     }
     
     func getDirections(){
+        guard let url = URL(string: "http://www.google.com") else {
+            return //be safe
+        }
+        
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else {
+            UIApplication.shared.openURL(url)
+        }
         if (UIApplication.shared.canOpenURL(URL(string:"comgooglemaps://")!))
         {
             UIApplication.shared.openURL(NSURL(string:
