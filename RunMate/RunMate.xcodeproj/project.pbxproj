@@ -23,6 +23,7 @@
 		4471D42C21137DE8006D8C14 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4471D42B21137DE8006D8C14 /* Place.swift */; };
 		4471D42E21138396006D8C14 /* ElevationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4471D42D21138396006D8C14 /* ElevationServices.swift */; };
 		4471D4322113B456006D8C14 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4471D4312113B456006D8C14 /* Constants.swift */; };
+		4471D43821167800006D8C14 /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4471D43721167800006D8C14 /* MainPageViewController.swift */; };
 		665DC6A25134141D3744C625 /* Pods_RunMate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B91F8FE48A49DAA17ED40192 /* Pods_RunMate.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,7 @@
 		4471D42B21137DE8006D8C14 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		4471D42D21138396006D8C14 /* ElevationServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElevationServices.swift; sourceTree = "<group>"; };
 		4471D4312113B456006D8C14 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		4471D43721167800006D8C14 /* MainPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
 		B91F8FE48A49DAA17ED40192 /* Pods_RunMate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RunMate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -130,6 +132,7 @@
 				4471D4022110D7F3006D8C14 /* ViewController.swift */,
 				4471D4172110EA73006D8C14 /* DisplayResultsViewController.swift */,
 				4471D42521118667006D8C14 /* ShowRouteViewController.swift */,
+				4471D43721167800006D8C14 /* MainPageViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 				4471D42E21138396006D8C14 /* ElevationServices.swift in Sources */,
 				4471D42821121DC8006D8C14 /* DirectionsServices.swift in Sources */,
 				4471D4322113B456006D8C14 /* Constants.swift in Sources */,
+				4471D43821167800006D8C14 /* MainPageViewController.swift in Sources */,
 				4471D41D2110F711006D8C14 /* Route.swift in Sources */,
 				4471D41A2110F212006D8C14 /* DisplayResultsTableViewCell.swift in Sources */,
 				4471D4012110D7F3006D8C14 /* AppDelegate.swift in Sources */,
