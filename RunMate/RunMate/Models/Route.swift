@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Route {
+struct lol {
     let startLat: Double
     let startLng: Double
     let place: Place
@@ -38,10 +38,5 @@ struct Route {
         self.distance = distance
         self.isOneWay = isOneWay
         self.travelMode = travelMode
-    }
-    
-    //will i ever use this
-    func convertCoordToString(lat: Double, lng: Double) -> String {
-        return "\(lat),\(lng)"
     }
 }

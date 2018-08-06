@@ -20,12 +20,48 @@ struct CoreDataHelper {
         return context
     }()
     
-    static func createTrip() -> Trip {
-        let trip = NSEntityDescription.insertNewObject(forEntityName: "Trip", into: context) as! Trip
-        return trip
+    static func createRoute(place: Place, startLat: Double, startLng: Double, endLat: Double, endLng: Double, distance: Double, travelMode: String) -> Route {
+        let route = NSEntityDescription.insertNewObject(forEntityName: "Route", into: context) as! Route
+        route.place = place
+        route.distance = distance
+        route.startLat = startLat
+        route.startLng = startLng
+        route.endLat = endLat
+        route.endLng = endLng
+        route.travelMode = travelMode
+        route.dateCompleted = Date()
+        route.isOneWay = true
+        
+        return route
     }
     
-    static func saveTrip() -> Void {
+    static func createRoute(place: Place, startLat: Double, startLng: Double, endLat: Double, endLng: Double, distance: Double, isOneWay: Bool, travelMode: String) -> Route {
+        let route = NSEntityDescription.insertNewObject(forEntityName: "Route", into: context) as! Route
+        route.place = place
+        route.distance = distance
+        route.startLat = startLat
+        route.startLng = startLng
+        route.endLat = endLat
+        route.endLng = endLng
+        route.travelMode = travelMode
+        route.dateCompleted = Date()
+        route.isOneWay = isOneWay 
+        
+        return route
+    }
+    
+    static func createPlace(placeID: String, name: String, rating: Double, lat: Double, lng: Double) -> Place {
+        let place = NSEntityDescription.insertNewObject(forEntityName: "Place", into: context) as! Place
+        place.placeID = placeID
+        place.name = name
+        place.rating = rating
+        place.lat = lat
+        place.lng = lng
+        
+        return place
+    }
+    
+    static func saveRoute() -> Void {
         do{
             try context.save()
         } catch let error {
@@ -33,8 +69,8 @@ struct CoreDataHelper {
         }
     }
     
-    static func retrieveTrips() -> [Trip] {
-        let fetchRequest = NSFetchRequest<Trip>(entityName: "Trip")
+    static func retrieveRoutes() -> [Route] {
+        let fetchRequest = NSFetchRequest<Route>(entityName: "Route")
         do{
             let results = try context.fetch(fetchRequest)
             return results

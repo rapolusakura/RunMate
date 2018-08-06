@@ -27,13 +27,15 @@ class ShowRouteViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     
     @IBAction func startRouteButtonPressed(_ sender: Any) {
+        CoreDataHelper.saveRoute()
         getDirections()
     }
     override func viewWillAppear(_ animated: Bool){
         super.viewWillAppear(animated)
         
-        if let route = route, let elevation = route.elevation {
-            routeNameLabel.text = route.place.name
+        if let route = route {
+            let elevation = route.elevation
+            routeNameLabel.text = route.place?.name
             routeDistanceLabel.text = String(format: "%.2f", Conversion.metersToMiles(meters: route.distance))
                 + " mi"
             if elevation > 0 {
@@ -43,9 +45,9 @@ class ShowRouteViewController: UIViewController {
             else {
                 routeElevationLabel.textColor = .red
             }
-            placeRatingLabel.text = String(route.place.rating) + " stars"
+            placeRatingLabel.text = String((route.place?.rating)!) + " stars"
 
-            loadFirstPhotoForPlace(placeID: route.place.placeID)
+            loadFirstPhotoForPlace(placeID: (route.place?.placeID)!)
             
         } else {
             routeNameLabel.text = ""
@@ -89,7 +91,7 @@ class ShowRouteViewController: UIViewController {
     func getDirections(){
         let coordinate = CLLocationCoordinate2DMake((route?.endLat)!, (route?.endLng)!)
         let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary:nil))
-        mapItem.name = route?.place.name
+        mapItem.name = route?.place?.name
         mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeWalking])
     }
 }

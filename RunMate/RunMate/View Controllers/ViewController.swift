@@ -27,6 +27,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         }
+        print(CoreDataHelper.retrieveRoutes())
     }
     
     override func viewDidAppear(_ animated: Bool) {

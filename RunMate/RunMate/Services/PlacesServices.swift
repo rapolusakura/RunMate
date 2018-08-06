@@ -27,7 +27,7 @@ struct PlacesService {
                 let rating = resp["rating"].doubleValue
                 let placeId = resp["place_id"].stringValue
                 
-                let place = Place(placeID: placeId, name: name, rating: rating, lat: endLat, lng: endLng)
+                let place = CoreDataHelper.createPlace(placeID: placeId, name: name, rating: rating, lat: endLat, lng: endLng)
                 intermediate.append((place, endLat, endLng, nil))
                 coordinates.append("\(endLat),\(endLng)")
             }
@@ -36,7 +36,7 @@ struct PlacesService {
                     intermediate[i-1].3 = distances[i-1]
                 }
                 for rawRoute in intermediate {
-                    let route = Route(place: rawRoute.0, startLat: lat, startLng: lng, endLat: rawRoute.1, endLng: rawRoute.2, distance: rawRoute.3!, travelMode: travelMode)
+                    let route = CoreDataHelper.createRoute(place: rawRoute.0, startLat: lat, startLng: lng, endLat: rawRoute.1, endLng: rawRoute.2, distance: rawRoute.3!, travelMode: travelMode)
                     routes.append(route)
                 }
                 
@@ -65,12 +65,12 @@ struct PlacesService {
                 let rating = resp["rating"].doubleValue
                 let placeId = resp["place_id"].stringValue
                 
-                let place = Place(placeID: placeId, name: name, rating: rating, lat: endLat, lng: endLng)
+                let place = CoreDataHelper.createPlace(placeID: placeId, name: name, rating: rating, lat: endLat, lng: endLng)
                 
                 dg.enter()
                 DirectionsServices.findRoundTripRoute(startLat: lat, startLng: lng, waypointLat: endLat, waypointLng: endLng, travelMode: travelMode, completion: { (responseDistance) in
                     distance = responseDistance
-                    let route = Route(place: place, startLat: lat, startLng: lng, endLat: endLat, endLng: endLng, distance: distance, isOneWay: false, travelMode: travelMode)
+                    let route = CoreDataHelper.createRoute(place: place, startLat: lat, startLng: lng, endLat: endLat, endLng: endLng, distance: distance, isOneWay: false, travelMode: travelMode)
                     routes.append(route)
                     dg.leave()
                 })

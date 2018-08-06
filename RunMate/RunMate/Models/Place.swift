@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Place {
+struct haha {
     let placeID: String
     let name: String
     let rating: Double
