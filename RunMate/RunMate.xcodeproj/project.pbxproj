@@ -23,6 +23,9 @@
 		4471D42C21137DE8006D8C14 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4471D42B21137DE8006D8C14 /* Place.swift */; };
 		4471D42E21138396006D8C14 /* ElevationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4471D42D21138396006D8C14 /* ElevationServices.swift */; };
 		4471D4322113B456006D8C14 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4471D4312113B456006D8C14 /* Constants.swift */; };
+		4471D43B2117E204006D8C14 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4471D43A2117E204006D8C14 /* CoreDataHelper.swift */; };
+		4471D43D2117E309006D8C14 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4471D43C2117E309006D8C14 /* Trip.swift */; };
+		4471D4402117E6B5006D8C14 /* RunMate.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4471D43E2117E6B5006D8C14 /* RunMate.xcdatamodeld */; };
 		665DC6A25134141D3744C625 /* Pods_RunMate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B91F8FE48A49DAA17ED40192 /* Pods_RunMate.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +50,9 @@
 		4471D42B21137DE8006D8C14 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		4471D42D21138396006D8C14 /* ElevationServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElevationServices.swift; sourceTree = "<group>"; };
 		4471D4312113B456006D8C14 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		4471D43A2117E204006D8C14 /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
+		4471D43C2117E309006D8C14 /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
+		4471D43F2117E6B5006D8C14 /* RunMate.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RunMate.xcdatamodel; sourceTree = "<group>"; };
 		B91F8FE48A49DAA17ED40192 /* Pods_RunMate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RunMate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -101,6 +107,7 @@
 				4471D4072110D7F6006D8C14 /* Assets.xcassets */,
 				4471D4092110D7F6006D8C14 /* LaunchScreen.storyboard */,
 				4471D40C2110D7F6006D8C14 /* Info.plist */,
+				4471D43E2117E6B5006D8C14 /* RunMate.xcdatamodeld */,
 			);
 			path = RunMate;
 			sourceTree = "<group>";
@@ -139,6 +146,7 @@
 			children = (
 				4471D41C2110F711006D8C14 /* Route.swift */,
 				4471D42B21137DE8006D8C14 /* Place.swift */,
+				4471D43C2117E309006D8C14 /* Trip.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -148,6 +156,7 @@
 			children = (
 				4471D4232111815B006D8C14 /* Conversion.swift */,
 				4471D4312113B456006D8C14 /* Constants.swift */,
+				4471D43A2117E204006D8C14 /* CoreDataHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -300,6 +309,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4471D43D2117E309006D8C14 /* Trip.swift in Sources */,
 				4471D4182110EA73006D8C14 /* DisplayResultsViewController.swift in Sources */,
 				4471D4162110E845006D8C14 /* PlacesServices.swift in Sources */,
 				4471D4032110D7F3006D8C14 /* ViewController.swift in Sources */,
@@ -307,9 +317,11 @@
 				4471D421211110D4006D8C14 /* DistanceServices.swift in Sources */,
 				4471D42E21138396006D8C14 /* ElevationServices.swift in Sources */,
 				4471D42821121DC8006D8C14 /* DirectionsServices.swift in Sources */,
+				4471D4402117E6B5006D8C14 /* RunMate.xcdatamodeld in Sources */,
 				4471D4322113B456006D8C14 /* Constants.swift in Sources */,
 				4471D41D2110F711006D8C14 /* Route.swift in Sources */,
 				4471D41A2110F212006D8C14 /* DisplayResultsTableViewCell.swift in Sources */,
+				4471D43B2117E204006D8C14 /* CoreDataHelper.swift in Sources */,
 				4471D4012110D7F3006D8C14 /* AppDelegate.swift in Sources */,
 				4471D42C21137DE8006D8C14 /* Place.swift in Sources */,
 				4471D42621118667006D8C14 /* ShowRouteViewController.swift in Sources */,
@@ -512,6 +524,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4471D43E2117E6B5006D8C14 /* RunMate.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4471D43F2117E6B5006D8C14 /* RunMate.xcdatamodel */,
+			);
+			currentVersion = 4471D43F2117E6B5006D8C14 /* RunMate.xcdatamodel */;
+			path = RunMate.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 4471D3F52110D7F3006D8C14 /* Project object */;
 }
