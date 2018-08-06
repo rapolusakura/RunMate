@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class PreviousRouteViewController: UITableViewController {
-    var routes: [Route]?
+    var routes: [Trip]?
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print(routes!.count) 

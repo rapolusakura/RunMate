@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct lol {
+class Route {
     let startLat: Double
     let startLng: Double
     let place: Place

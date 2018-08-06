@@ -21,15 +21,15 @@ class DisplayResultsViewController: UIViewController, UITableViewDelegate, UITab
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! DisplayResultTableViewCell
         let route = routes[indexPath.row]
-        cell.placeNameLabel.text = route.place?.name
+        cell.placeNameLabel.text = route.place.name
         cell.distanceLabel.text = String(format: "%.2f", Conversion.metersToMiles(meters: route.distance))
         + " mi"
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let route = routes[indexPath.row]
-        ElevationServices.findElevationDifference(startLat: route.startLat, startLng: route.startLng, endLat: (route.place?.lat)!, endLng: (route.place?.lng)!) { (elevation) in
+        var route = routes[indexPath.row]
+        ElevationServices.findElevationDifference(startLat: route.startLat, startLng: route.startLng, endLat: (route.place.lat), endLng: (route.place.lng)) { (elevation) in
             route.elevation = elevation
             self.performSegue(withIdentifier: "showPlaceDetails", sender: route)
         }

@@ -11,6 +11,7 @@ import UIKit
 import CoreLocation
 import MapKit
 import GooglePlaces
+import CoreData
 
 class ShowRouteViewController: UIViewController {
     var route: Route?
@@ -27,6 +28,19 @@ class ShowRouteViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     
     @IBAction func startRouteButtonPressed(_ sender: Any) {
+        let location: Location = CoreDataHelper.createPlace(placeID: route!.place.placeID, name: route!.place.name, rating: route!.place.rating, lat: route!.place.lat, lng: route!.place.lng)
+        let trip: Trip = CoreDataHelper.createRoute(place: location, startLat: (self.route?.startLat)!, startLng: self.route!.startLng, endLat: self.route!.endLat, endLng: self.route!.endLng, distance: self.route!.distance, travelMode: self.route!.travelMode)
+        print(trip.place)
+        
+        let fetchRequest = NSFetchRequest<Location>(entityName: "Location")
+        do {
+            let fetch = try (CoreDataHelper.context.count(for: fetchRequest))
+            print(fetch)
+        } catch let error {
+            print("Failed to fetch:", error)
+        }
+        
+        //CoreDataHelper.deletePlace(place: location)
         CoreDataHelper.saveRoute()
         getDirections()
     }
@@ -34,20 +48,20 @@ class ShowRouteViewController: UIViewController {
         super.viewWillAppear(animated)
         
         if let route = route {
-            let elevation = route.elevation
-            routeNameLabel.text = route.place?.name
+            guard let elevation = route.elevation else {return}
+            routeNameLabel.text = route.place.name
             routeDistanceLabel.text = String(format: "%.2f", Conversion.metersToMiles(meters: route.distance))
                 + " mi"
-            if elevation > 0 {
+            if elevation > 0.0 {
                 routeElevationLabel.text = "+\(String(format: "%.2f", Conversion.metersToFeet(meters: elevation)))" + " ft"
                 routeElevationLabel.textColor = .green
             }
             else {
                 routeElevationLabel.textColor = .red
             }
-            placeRatingLabel.text = String((route.place?.rating)!) + " stars"
+            placeRatingLabel.text = String((route.place.rating)) + " stars"
 
-            loadFirstPhotoForPlace(placeID: (route.place?.placeID)!)
+            loadFirstPhotoForPlace(placeID: (route.place.placeID))
             
         } else {
             routeNameLabel.text = ""
@@ -91,7 +105,7 @@ class ShowRouteViewController: UIViewController {
     func getDirections(){
         let coordinate = CLLocationCoordinate2DMake((route?.endLat)!, (route?.endLng)!)
         let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary:nil))
-        mapItem.name = route?.place?.name
+        mapItem.name = route?.place.name
         mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeWalking])
     }
 }
