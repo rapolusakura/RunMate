@@ -27,8 +27,8 @@
 		4471D4402117E6B5006D8C14 /* RunMate.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4471D43E2117E6B5006D8C14 /* RunMate.xcdatamodeld */; };
 		4471D442211808B4006D8C14 /* PreviousRoutesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4471D441211808B4006D8C14 /* PreviousRoutesViewController.swift */; };
 		4471D44421180A32006D8C14 /* ShowPastRoutesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4471D44321180A32006D8C14 /* ShowPastRoutesTableViewCell.swift */; };
-		4471D4482118F947006D8C14 /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = 4471D4472118F947006D8C14 /* image.png */; };
-		4471D44A2118FB54006D8C14 /* lol.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4471D4492118FB54006D8C14 /* lol.jpg */; };
+		4471D44E2119013F006D8C14 /* lol.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4471D44D2119013F006D8C14 /* lol.jpg */; };
+		4471D45021190147006D8C14 /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = 4471D44F21190147006D8C14 /* image.png */; };
 		665DC6A25134141D3744C625 /* Pods_RunMate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B91F8FE48A49DAA17ED40192 /* Pods_RunMate.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,8 +57,8 @@
 		4471D43F2117E6B5006D8C14 /* RunMate.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RunMate.xcdatamodel; sourceTree = "<group>"; };
 		4471D441211808B4006D8C14 /* PreviousRoutesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousRoutesViewController.swift; sourceTree = "<group>"; };
 		4471D44321180A32006D8C14 /* ShowPastRoutesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowPastRoutesTableViewCell.swift; sourceTree = "<group>"; };
-		4471D4472118F947006D8C14 /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image.png; sourceTree = "<group>"; };
-		4471D4492118FB54006D8C14 /* lol.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lol.jpg; sourceTree = "<group>"; };
+		4471D44D2119013F006D8C14 /* lol.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lol.jpg; sourceTree = "<group>"; };
+		4471D44F21190147006D8C14 /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image.png; sourceTree = "<group>"; };
 		B91F8FE48A49DAA17ED40192 /* Pods_RunMate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RunMate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -112,8 +112,8 @@
 				4471D4042110D7F3006D8C14 /* Main.storyboard */,
 				4471D4072110D7F6006D8C14 /* Assets.xcassets */,
 				4471D4092110D7F6006D8C14 /* LaunchScreen.storyboard */,
-				4471D4492118FB54006D8C14 /* lol.jpg */,
-				4471D4472118F947006D8C14 /* image.png */,
+				4471D44D2119013F006D8C14 /* lol.jpg */,
+				4471D44F21190147006D8C14 /* image.png */,
 				4471D40C2110D7F6006D8C14 /* Info.plist */,
 				4471D43E2117E6B5006D8C14 /* RunMate.xcdatamodeld */,
 			);
@@ -241,10 +241,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4471D40B2110D7F6006D8C14 /* LaunchScreen.storyboard in Resources */,
+				4471D44E2119013F006D8C14 /* lol.jpg in Resources */,
 				4471D4082110D7F6006D8C14 /* Assets.xcassets in Resources */,
 				4471D4062110D7F3006D8C14 /* Main.storyboard in Resources */,
-				4471D4482118F947006D8C14 /* image.png in Resources */,
-				4471D44A2118FB54006D8C14 /* lol.jpg in Resources */,
+				4471D45021190147006D8C14 /* image.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
