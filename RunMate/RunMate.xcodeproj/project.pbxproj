@@ -25,6 +25,8 @@
 		4471D4322113B456006D8C14 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4471D4312113B456006D8C14 /* Constants.swift */; };
 		4471D43B2117E204006D8C14 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4471D43A2117E204006D8C14 /* CoreDataHelper.swift */; };
 		4471D4402117E6B5006D8C14 /* RunMate.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4471D43E2117E6B5006D8C14 /* RunMate.xcdatamodeld */; };
+		4471D442211808B4006D8C14 /* PreviousRoutesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4471D441211808B4006D8C14 /* PreviousRoutesViewController.swift */; };
+		4471D44421180A32006D8C14 /* ShowPastRoutesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4471D44321180A32006D8C14 /* ShowPastRoutesTableViewCell.swift */; };
 		665DC6A25134141D3744C625 /* Pods_RunMate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B91F8FE48A49DAA17ED40192 /* Pods_RunMate.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +53,8 @@
 		4471D4312113B456006D8C14 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4471D43A2117E204006D8C14 /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		4471D43F2117E6B5006D8C14 /* RunMate.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RunMate.xcdatamodel; sourceTree = "<group>"; };
+		4471D441211808B4006D8C14 /* PreviousRoutesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousRoutesViewController.swift; sourceTree = "<group>"; };
+		4471D44321180A32006D8C14 /* ShowPastRoutesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowPastRoutesTableViewCell.swift; sourceTree = "<group>"; };
 		B91F8FE48A49DAA17ED40192 /* Pods_RunMate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RunMate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -125,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				4471D4192110F212006D8C14 /* DisplayResultsTableViewCell.swift */,
+				4471D44321180A32006D8C14 /* ShowPastRoutesTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -135,6 +140,7 @@
 				4471D4022110D7F3006D8C14 /* ViewController.swift */,
 				4471D4172110EA73006D8C14 /* DisplayResultsViewController.swift */,
 				4471D42521118667006D8C14 /* ShowRouteViewController.swift */,
+				4471D441211808B4006D8C14 /* PreviousRoutesViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -312,7 +318,9 @@
 				4471D4242111815B006D8C14 /* Conversion.swift in Sources */,
 				4471D421211110D4006D8C14 /* DistanceServices.swift in Sources */,
 				4471D42E21138396006D8C14 /* ElevationServices.swift in Sources */,
+				4471D44421180A32006D8C14 /* ShowPastRoutesTableViewCell.swift in Sources */,
 				4471D42821121DC8006D8C14 /* DirectionsServices.swift in Sources */,
+				4471D442211808B4006D8C14 /* PreviousRoutesViewController.swift in Sources */,
 				4471D4402117E6B5006D8C14 /* RunMate.xcdatamodeld in Sources */,
 				4471D4322113B456006D8C14 /* Constants.swift in Sources */,
 				4471D41D2110F711006D8C14 /* Route.swift in Sources */,

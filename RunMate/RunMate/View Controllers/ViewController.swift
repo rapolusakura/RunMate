@@ -67,6 +67,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
+    @IBAction func viewPreviousRoutesButtonPressed(_ sender: Any) {
+        self.performSegue(withIdentifier: "showPastRoutes", sender: self)
+    }
+    
+    
     @IBOutlet weak var distanceTextField: UITextField!
     @IBOutlet weak var tripSettingSegmentedControl: UISegmentedControl!
     @IBOutlet weak var travelModeSegmentedControl: UISegmentedControl!
@@ -79,7 +84,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             let routes = sender as! [Route]
             let destination = segue.destination as! DisplayResultsViewController
             destination.routes = routes
-            
+        case "showPastRoutes":
+            let destination = segue.destination as! PreviousRouteViewController
+            destination.routes = CoreDataHelper.retrieveRoutes()
         default:
             print("i dont recognize this")
         }
