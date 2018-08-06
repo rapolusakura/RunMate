@@ -27,7 +27,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="#miles" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MLm-CA-q9I">
-                                <rect key="frame" x="42" y="117" width="291" height="104"/>
+                                <rect key="frame" x="30" y="117" width="300" height="104"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.98823529409999999" green="0.97254901959999995" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="textColor"/>
@@ -44,9 +44,8 @@
                                 </segments>
                                 <color key="tintColor" red="0.087111398960000003" green="0.087111398960000003" blue="0.087111398960000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </segmentedControl>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vuv-Cn-Xae">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vuv-Cn-Xae">
                                 <rect key="frame" x="99" y="546" width="153" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.98823529409999999" green="0.97254901959999995" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="0.58471943520000003" green="1" blue="0.72584326720000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="View Results">
@@ -57,9 +56,8 @@
                                     <action selector="viewResultsButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VOH-Ge-49f"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cmy-Zg-4bz">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cmy-Zg-4bz">
                                 <rect key="frame" x="109" y="617" width="143" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.98823529409999999" green="0.97254901959999995" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="View previous routes">
                                     <color key="titleColor" red="0.087111398960000003" green="0.087111398960000003" blue="0.087111398960000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -68,9 +66,8 @@
                                     <action selector="viewPreviousRoutesButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WvJ-Hi-K1p"/>
                                 </connections>
                             </button>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="z3i-gC-g6A">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="z3i-gC-g6A">
                                 <rect key="frame" x="47" y="329" width="246" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.98823529409999999" green="0.97254901959999995" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <segments>
                                     <segment title="One-way"/>
@@ -80,6 +77,12 @@
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="0.49019607840000001" green="0.81176470590000005" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="vuv-Cn-Xae" firstAttribute="top" secondItem="z3i-gC-g6A" secondAttribute="bottom" constant="15" id="EJp-da-z9z"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vuv-Cn-Xae" secondAttribute="trailing" constant="15" id="Gqg-8D-HdD"/>
+                            <constraint firstItem="cmy-Zg-4bz" firstAttribute="top" secondItem="vuv-Cn-Xae" secondAttribute="bottom" constant="15" id="QM7-xK-cSD"/>
+                            <constraint firstItem="vuv-Cn-Xae" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="tCg-t0-Kb3"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="RunMate" largeTitleDisplayMode="always" id="6EE-Hw-g9o"/>
