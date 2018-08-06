@@ -159,9 +159,9 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5Tf-El-B0M">
                                 <rect key="frame" x="15" y="79" width="345" height="573"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="140" id="36q-wb-sbY" customClass="DisplayResultTableViewCell" customModule="RunMate" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" alpha="0.75" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="140" id="36q-wb-sbY" customClass="DisplayResultTableViewCell" customModule="RunMate" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="345" height="140"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="36q-wb-sbY" id="ltH-3s-XOe" customClass="DisplayResultsTableViewCell" customModule="RunMate" customModuleProvider="target">
@@ -193,6 +193,8 @@
                                                 <constraint firstItem="iDk-8x-lCp" firstAttribute="top" secondItem="ltH-3s-XOe" secondAttribute="topMargin" id="YzO-K3-7Kf"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.83263860771241427" green="1" blue="0.94564359802214648" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="distanceLabel" destination="W0x-f3-sT5" id="gBz-Gt-NE1"/>
                                             <outlet property="placeNameLabel" destination="X7u-0P-cNG" id="PdY-Qz-mhq"/>
