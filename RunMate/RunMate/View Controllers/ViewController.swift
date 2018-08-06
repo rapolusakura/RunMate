@@ -31,6 +31,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         viewResultsOutlet.layer.masksToBounds = true
         showPastRoutesOutlet.layer.cornerRadius = 10
         showPastRoutesOutlet.layer.masksToBounds = true
+        tripSettingSegmentedControl.frame = CGRect(x: 30, y: 250, width: 300, height: 100)
+        travelModeSegmentedControl.frame = CGRect(x: 30, y: 400, width: 300, height: 100)
     }
     
     @IBOutlet weak var showPastRoutesOutlet: UIButton!

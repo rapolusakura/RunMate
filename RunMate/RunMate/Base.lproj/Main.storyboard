@@ -34,26 +34,10 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="83"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="z3i-gC-g6A">
-                                <rect key="frame" x="48" y="459" width="246" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="One-way"/>
-                                    <segment title="Round-trip"/>
-                                </segments>
-                                <color key="tintColor" red="0.087111398960000003" green="0.087111398960000003" blue="0.087111398960000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Running or biking? " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yy2-Pm-Fao">
-                                <rect key="frame" x="48" y="234" width="146" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="fg5-Km-DmM">
-                                <rect key="frame" x="48" y="284" width="151" height="29"/>
+                                <rect key="frame" x="47" y="262" width="151" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <rect key="contentStretch" x="0.0" y="0.0" width="0.65000000000000002" height="1"/>
+                                <color key="backgroundColor" red="0.98823529409999999" green="0.97254901959999995" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <segments>
                                     <segment title="Run"/>
                                     <segment title="Bike"/>
@@ -84,13 +68,16 @@
                                     <action selector="viewPreviousRoutesButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WvJ-Hi-K1p"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="One-way trip or round-trip? " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RJt-xe-Z3l">
-                                <rect key="frame" x="48" y="406" width="214" height="21"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="z3i-gC-g6A">
+                                <rect key="frame" x="47" y="329" width="246" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <color key="backgroundColor" red="0.98823529409999999" green="0.97254901959999995" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <segments>
+                                    <segment title="One-way"/>
+                                    <segment title="Round-trip"/>
+                                </segments>
+                                <color key="tintColor" red="0.087111398960000003" green="0.087111398960000003" blue="0.087111398960000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="0.49019607840000001" green="0.81176470590000005" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
