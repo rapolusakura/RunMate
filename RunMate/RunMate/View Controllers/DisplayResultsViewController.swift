@@ -29,7 +29,7 @@ class DisplayResultsViewController: UIViewController, UITableViewDelegate, UITab
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         var route = routes[indexPath.row]
-        ElevationServices.findElevationDifference(startLat: route.startLat, startLng: route.startLng, endLat: route.place.lat, endLng: route.place.lng) { (elevation) in
+        ElevationServices.findElevationDifference(startLat: route.startLat, startLng: route.startLng, endLat: (route.place.lat), endLng: (route.place.lng)) { (elevation) in
             route.elevation = elevation
             self.performSegue(withIdentifier: "showPlaceDetails", sender: route)
         }

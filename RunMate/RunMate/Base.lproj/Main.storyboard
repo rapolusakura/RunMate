@@ -79,6 +79,14 @@
                                     <action selector="viewResultsButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VOH-Ge-49f"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cmy-Zg-4bz">
+                                <rect key="frame" x="95" y="573" width="143" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="View previous routes"/>
+                                <connections>
+                                    <action selector="viewPreviousRoutesButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WvJ-Hi-K1p"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.85106109240000005" green="0.88449973250000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -89,11 +97,57 @@
                         <outlet property="travelModeSegmentedControl" destination="fg5-Km-DmM" id="SBN-3x-1ef"/>
                         <outlet property="tripSettingSegmentedControl" destination="z3i-gC-g6A" id="Xz7-0F-bIi"/>
                         <segue destination="ZxM-tZ-jM4" kind="show" identifier="viewResults" id="8l6-u4-oep"/>
+                        <segue destination="fLc-2s-HQQ" kind="show" identifier="showPastRoutes" id="hgO-9X-5ej"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1076" y="106.59670164917542"/>
+        </scene>
+        <!--Previous Route View Controller-->
+        <scene sceneID="Kgy-VC-J03">
+            <objects>
+                <tableViewController id="fLc-2s-HQQ" customClass="PreviousRouteViewController" customModule="RunMate" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="roD-A7-Ytu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="100" id="m1p-EY-Hhr" customClass="ShowPastRoutesTableViewCell" customModule="RunMate" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="100"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="m1p-EY-Hhr" id="klS-eO-PXl">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="route name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bxt-ny-Bxd">
+                                            <rect key="frame" x="31" y="26" width="313" height="48"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="bxt-ny-Bxd" firstAttribute="top" secondItem="klS-eO-PXl" secondAttribute="topMargin" constant="15" id="Cv9-x3-dr8"/>
+                                        <constraint firstItem="bxt-ny-Bxd" firstAttribute="leading" secondItem="klS-eO-PXl" secondAttribute="leadingMargin" constant="15" id="HdZ-7g-c2I"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="bxt-ny-Bxd" secondAttribute="trailing" constant="15" id="q8L-6Z-7th"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="bxt-ny-Bxd" secondAttribute="bottom" constant="15" id="xOl-cP-bTK"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="routeNameLabel" destination="bxt-ny-Bxd" id="2y3-I9-lfI"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="fLc-2s-HQQ" id="AbF-Nn-VMq"/>
+                            <outlet property="delegate" destination="fLc-2s-HQQ" id="UBw-i4-Bmb"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zCH-vT-7l4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1508" y="889"/>
         </scene>
         <!--Display Results View Controller-->
         <scene sceneID="Mrh-sD-G0m">

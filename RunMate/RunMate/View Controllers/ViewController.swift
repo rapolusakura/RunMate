@@ -27,6 +27,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         }
+        print(CoreDataHelper.retrieveRoutes())
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -50,21 +51,38 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         let tripSettingIndex = tripSettingSegmentedControl.selectedSegmentIndex
         switch tripSettingIndex {
         case 1:
+<<<<<<< HEAD
             //            PlacesService.findRoundTripNearbyPlaces(lat: (coordinate?.latitude)!, lng: (coordinate?.longitude)!, originalRadius: distance, travelMode: travelMode) { (routes) in
             //                self.performSegue(withIdentifier: "viewResults", sender: routes)
             //            }
+=======
+>>>>>>> master
             PlacesService.findRoundTripNearbyPlaces(lat: 37.7808727, lng: -122.4183261, originalRadius: distance, travelMode: travelMode) { (routes) in
                 self.performSegue(withIdentifier: "viewResults", sender: routes)
             }
+//            PlacesService.findRoundTripNearbyPlaces(lat: (coordinate?.latitude)!, lng: (coordinate?.longitude)!, originalRadius: distance, travelMode: travelMode) { (routes) in
+//                self.performSegue(withIdentifier: "viewResults", sender: routes)
+//            }
         default:
+<<<<<<< HEAD
             //            PlacesService.findOneWayNearbyPlaces(lat: (coordinate?.latitude)!, lng: (coordinate?.longitude)!, radius: distance, travelMode: travelMode) { (routes) in
             //                self.performSegue(withIdentifier: "viewResults", sender: routes)
             //            }
+=======
+>>>>>>> master
             PlacesService.findOneWayNearbyPlaces(lat: 37.7808727, lng: -122.4183261, radius: distance, travelMode: travelMode) { (routes) in
                 self.performSegue(withIdentifier: "viewResults", sender: routes)
             }
+//            PlacesService.findOneWayNearbyPlaces(lat: (coordinate?.latitude)!, lng: (coordinate?.longitude)!, radius: distance, travelMode: travelMode) { (routes) in
+//                self.performSegue(withIdentifier: "viewResults", sender: routes)
+//            }
         }
     }
+    
+    @IBAction func viewPreviousRoutesButtonPressed(_ sender: Any) {
+        self.performSegue(withIdentifier: "showPastRoutes", sender: self)
+    }
+    
     
     @IBOutlet weak var distanceTextField: UITextField!
     @IBOutlet weak var tripSettingSegmentedControl: UISegmentedControl!
@@ -78,7 +96,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             let routes = sender as! [Route]
             let destination = segue.destination as! DisplayResultsViewController
             destination.routes = routes
-            
+        case "showPastRoutes":
+            let destination = segue.destination as! PreviousRouteViewController
+            //print(CoreDataHelper.retrieveRoutes().count)
+            destination.routes = CoreDataHelper.retrieveRoutes()
         default:
             print("i dont recognize this")
         }
