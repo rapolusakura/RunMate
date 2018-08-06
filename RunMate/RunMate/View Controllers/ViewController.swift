@@ -86,7 +86,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             destination.routes = routes
         case "showPastRoutes":
             let destination = segue.destination as! PreviousRouteViewController
-            print(CoreDataHelper.retrieveRoutes().count)
+            //print(CoreDataHelper.retrieveRoutes().count)
             destination.routes = CoreDataHelper.retrieveRoutes()
         default:
             print("i dont recognize this")

@@ -30,18 +30,17 @@ class ShowRouteViewController: UIViewController {
     @IBAction func startRouteButtonPressed(_ sender: Any) {
         let location: Location = CoreDataHelper.createPlace(placeID: route!.place.placeID, name: route!.place.name, rating: route!.place.rating, lat: route!.place.lat, lng: route!.place.lng)
         let trip: Trip = CoreDataHelper.createRoute(place: location, startLat: (self.route?.startLat)!, startLng: self.route!.startLng, endLat: self.route!.endLat, endLng: self.route!.endLng, distance: self.route!.distance, travelMode: self.route!.travelMode)
-        print(trip.place)
         
-        let fetchRequest = NSFetchRequest<Location>(entityName: "Location")
-        do {
-            let fetch = try (CoreDataHelper.context.count(for: fetchRequest))
-            print(fetch)
-        } catch let error {
-            print("Failed to fetch:", error)
-        }
-        
+//        let fetchRequest = NSFetchRequest<Location>(entityName: "Location")
+//        do {
+//            let fetch = try (CoreDataHelper.context.count(for: fetchRequest))
+//            print(fetch)
+//        } catch let error {
+//            print("Failed to fetch:", error)
+//        }
         //CoreDataHelper.deletePlace(place: location)
         CoreDataHelper.saveRoute()
+        
         getDirections()
     }
     override func viewWillAppear(_ animated: Bool){
