@@ -27,13 +27,21 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         }
-        print(CoreDataHelper.retrieveRoutes())
+        viewResultsOutlet.layer.cornerRadius = 15
+        viewResultsOutlet.layer.masksToBounds = true
+        showPastRoutesOutlet.layer.cornerRadius = 10
+        showPastRoutesOutlet.layer.masksToBounds = true
     }
+    
+    @IBOutlet weak var showPastRoutesOutlet: UIButton!
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         locationManager.startUpdatingLocation()
     }
+    
+    
+    @IBOutlet weak var viewResultsOutlet: UIButton!
     
     @IBAction func viewResultsButton(_ sender: Any) {
         let miles = Double(distanceTextField.text!)!

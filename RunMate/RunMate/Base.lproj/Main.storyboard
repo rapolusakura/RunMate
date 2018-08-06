@@ -7,12 +7,11 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--RunMate-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RunMate" customModuleProvider="target" sceneMemberID="viewController">
@@ -96,11 +95,13 @@
                         <color key="backgroundColor" red="0.49019607840000001" green="0.81176470590000005" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="6EE-Hw-g9o"/>
+                    <navigationItem key="navigationItem" title="RunMate" largeTitleDisplayMode="always" id="6EE-Hw-g9o"/>
                     <connections>
                         <outlet property="distanceTextField" destination="MLm-CA-q9I" id="i5q-lZ-SFb"/>
+                        <outlet property="showPastRoutesOutlet" destination="cmy-Zg-4bz" id="0z6-sQ-Las"/>
                         <outlet property="travelModeSegmentedControl" destination="fg5-Km-DmM" id="SBN-3x-1ef"/>
                         <outlet property="tripSettingSegmentedControl" destination="z3i-gC-g6A" id="Xz7-0F-bIi"/>
+                        <outlet property="viewResultsOutlet" destination="vuv-Cn-Xae" id="PNH-93-eSG"/>
                         <segue destination="ZxM-tZ-jM4" kind="show" identifier="viewResults" id="8l6-u4-oep"/>
                         <segue destination="fLc-2s-HQQ" kind="show" identifier="showPastRoutes" id="hgO-9X-5ej"/>
                     </connections>
@@ -242,47 +243,52 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zax-bC-JUg">
                                 <rect key="frame" x="0.0" y="64" width="375" height="317"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gay-hQ-b8H">
-                                <rect key="frame" x="96" y="571" width="183" height="76"/>
-                                <color key="backgroundColor" name="tcOffWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="183" id="ZlE-1z-WeS"/>
-                                </constraints>
-                                <state key="normal" title="start route"/>
-                                <connections>
-                                    <action selector="startRouteButtonPressed:" destination="Lgf-so-QSh" eventType="touchUpInside" id="J7V-Sx-Tud"/>
-                                </connections>
-                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="8sk-3e-lSX">
-                                <rect key="frame" x="0.0" y="402" width="375" height="152.5"/>
+                                <rect key="frame" x="0.0" y="402" width="375" height="236"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ZQ-3g-xu5">
-                                        <rect key="frame" x="0.0" y="0.0" width="91" height="46"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="46"/>
                                         <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="40"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r51-m6-5yJ">
-                                        <rect key="frame" x="0.0" y="61" width="42" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="61" width="375" height="32.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lml-QB-8wF">
-                                        <rect key="frame" x="0.0" y="96.5" width="42" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="108.5" width="375" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8kb-iO-P0U">
-                                        <rect key="frame" x="0.0" y="132" width="42" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="152.5" width="375" height="27.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gay-hQ-b8H">
+                                        <rect key="frame" x="0.0" y="195" width="375" height="41"/>
+                                        <color key="backgroundColor" red="0.98823529409999999" green="0.97254901959999995" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                                        <state key="normal" title="Start Route">
+                                            <color key="titleColor" red="0.087111398960000003" green="0.087111398960000003" blue="0.087111398960000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="startRouteButtonPressed:" destination="Lgf-so-QSh" eventType="touchUpInside" id="J7V-Sx-Tud"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="Gay-hQ-b8H" firstAttribute="centerX" secondItem="8sk-3e-lSX" secondAttribute="centerX" id="780-eh-gHY"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="N5T-FA-8XZ"/>
+                                    <constraint firstItem="r51-m6-5yJ" firstAttribute="centerX" secondItem="8sk-3e-lSX" secondAttribute="centerX" id="WzH-lt-iSE"/>
+                                    <constraint firstItem="Lml-QB-8wF" firstAttribute="centerX" secondItem="8sk-3e-lSX" secondAttribute="centerX" id="hT2-MQ-kqZ"/>
+                                    <constraint firstItem="6ZQ-3g-xu5" firstAttribute="centerX" secondItem="8sk-3e-lSX" secondAttribute="centerX" id="lsS-Rw-qWu"/>
+                                    <constraint firstItem="8kb-iO-P0U" firstAttribute="centerX" secondItem="8sk-3e-lSX" secondAttribute="centerX" id="vKI-kF-Lo6"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -291,7 +297,6 @@
                             <constraint firstItem="8sk-3e-lSX" firstAttribute="top" secondItem="zax-bC-JUg" secondAttribute="bottom" id="67L-lo-9wl"/>
                             <constraint firstItem="8sk-3e-lSX" firstAttribute="leading" secondItem="uPf-ly-SIV" secondAttribute="leading" id="DxU-Cb-Rsy"/>
                             <constraint firstItem="uPf-ly-SIV" firstAttribute="trailing" secondItem="8sk-3e-lSX" secondAttribute="trailing" id="L1q-hi-Mbn"/>
-                            <constraint firstItem="Gay-hQ-b8H" firstAttribute="top" secondItem="8sk-3e-lSX" secondAttribute="bottom" constant="30" id="RiH-kp-pm4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uPf-ly-SIV"/>
                     </view>
@@ -326,9 +331,4 @@
             <point key="canvasLocation" x="136.80000000000001" y="106.59670164917542"/>
         </scene>
     </scenes>
-    <resources>
-        <namedColor name="tcOffWhite">
-            <color red="0.96899998190000003" green="0.96899998190000003" blue="0.96899998190000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-    </resources>
 </document>
