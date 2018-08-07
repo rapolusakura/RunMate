@@ -12,7 +12,7 @@ import SwiftyJSON
 
 struct YelpService {
     
-    static func searchYelpPlaces(lat: Double, lng: Double, radius: Double) -> [YelpPlace]{
+    static func searchYelpPlaces(lat: Double, lng: Double, radius: Double, completion: @escaping ([YelpPlace]) -> Void) {
         //not sorting by review count, default sort by best match
         var yelpPlaces = [YelpPlace]()
         let apiToContact = "https://api.yelp.com/v3/businesses/search?radius=1600&latitude=\(lat)&longitude=\(lng)&categories=lakes,parks,publicplazas,parklets,publicart,communitygardens,forestry,landmarks,gardens,castles"
@@ -42,13 +42,12 @@ struct YelpService {
                         yelpPlaces.append(yelpPlace)
                     }
                     print(json)
-                    
                 }
             case .failure(let error):
                 print(error)
             }
+            completion(yelpPlaces)
         }
-        return yelpPlaces
     }
     // Do any additional setup after loading the view, typically from a nib.
 }
