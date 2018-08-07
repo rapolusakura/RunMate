@@ -15,6 +15,7 @@ import CoreData
 
 class ShowRouteViewController: UIViewController {
     var route: Route?
+    
     var placesClient: GMSPlacesClient!
     
     @IBOutlet weak var routeNameLabel: UILabel!
@@ -31,7 +32,7 @@ class ShowRouteViewController: UIViewController {
     
     @IBAction func startRouteButtonPressed(_ sender: Any) {
         let location: Location = CoreDataHelper.createPlace(placeID: route!.place.placeID, name: route!.place.name, rating: route!.place.rating, lat: route!.place.lat, lng: route!.place.lng)
-        let trip: Trip = CoreDataHelper.createRoute(place: location, startLat: (self.route?.startLat)!, startLng: self.route!.startLng, endLat: self.route!.endLat, endLng: self.route!.endLng, distance: self.route!.distance, travelMode: self.route!.travelMode)
+        let trip: Trip = CoreDataHelper.createRoute(place: location, startLat: (self.route?.startLat)!, startLng: self.route!.startLng, endLat: self.route!.endLat, endLng: self.route!.endLng, distance: self.route!.distance, travelMode: self.route!.travelMode, elevation: route!.elevation ?? 0.0)
         
 //        let fetchRequest = NSFetchRequest<Location>(entityName: "Location")
 //        do {
@@ -49,7 +50,10 @@ class ShowRouteViewController: UIViewController {
         super.viewWillAppear(animated)
         
         if let route = route {
-            guard let elevation = route.elevation else {return}
+            guard let elevation = route.elevation
+                else {
+                    return
+            }
             routeNameLabel.text = route.place.name
             routeDistanceLabel.text = String(format: "%.2f", Conversion.metersToMiles(meters: route.distance))
                 + " mi"

@@ -20,7 +20,7 @@ struct CoreDataHelper {
         return context
     }()
     
-    static func createRoute(place: Location, startLat: Double, startLng: Double, endLat: Double, endLng: Double, distance: Double, travelMode: String) -> Trip {
+    static func createRoute(place: Location, startLat: Double, startLng: Double, endLat: Double, endLng: Double, distance: Double, travelMode: String, elevation: Double) -> Trip {
         let route = NSEntityDescription.insertNewObject(forEntityName: "Trip", into: context) as! Trip
         route.place = place
         route.distance = distance
@@ -31,6 +31,7 @@ struct CoreDataHelper {
         route.travelMode = travelMode
         route.dateCompleted = Date()
         route.isOneWay = true
+        route.elevation = elevation
         
         return route
     }

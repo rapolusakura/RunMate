@@ -39,4 +39,16 @@ class Route {
         self.isOneWay = isOneWay
         self.travelMode = travelMode
     }
+    
+    init(place: Place, startLat: Double, startLng: Double, endLat: Double, endLng: Double, distance: Double, isOneWay: Bool, travelMode: String, elevation: Double){
+        self.place = place
+        self.startLat = startLat
+        self.startLng = startLng
+        self.endLat = endLat
+        self.endLng = endLng
+        self.distance = distance
+        self.isOneWay = isOneWay
+        self.travelMode = travelMode
+        self.elevation = elevation
+    }
 }

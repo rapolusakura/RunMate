@@ -93,38 +93,57 @@
             </objects>
             <point key="canvasLocation" x="1076" y="106.59670164917542"/>
         </scene>
-        <!--Previous Route View Controller-->
+        <!--Previous Trips-->
         <scene sceneID="Kgy-VC-J03">
             <objects>
-                <tableViewController id="fLc-2s-HQQ" customClass="PreviousRouteViewController" customModule="RunMate" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Previous Trips" id="fLc-2s-HQQ" customClass="PreviousRouteViewController" customModule="RunMate" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="roD-A7-Ytu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.49019607840000001" green="0.75294117650000003" blue="0.68627450980000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="100" id="m1p-EY-Hhr" customClass="ShowPastRoutesTableViewCell" customModule="RunMate" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="100"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="200" id="m1p-EY-Hhr" customClass="ShowPastRoutesTableViewCell" customModule="RunMate" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="200"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="m1p-EY-Hhr" id="klS-eO-PXl">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="route name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bxt-ny-Bxd">
-                                            <rect key="frame" x="31" y="26" width="313" height="48"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="oWn-Ry-W76">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Place Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="327-Z5-Jd4">
+                                                    <rect key="frame" x="0.0" y="0.0" width="157.5" height="81.5"/>
+                                                    <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="30"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ada-4n-Vmh">
+                                                    <rect key="frame" x="0.0" y="111.5" width="106" height="28"/>
+                                                    <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="28"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Date Completed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D96-d7-8tB">
+                                                    <rect key="frame" x="0.0" y="169.5" width="176" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="bxt-ny-Bxd" firstAttribute="top" secondItem="klS-eO-PXl" secondAttribute="topMargin" constant="15" id="Cv9-x3-dr8"/>
-                                        <constraint firstItem="bxt-ny-Bxd" firstAttribute="leading" secondItem="klS-eO-PXl" secondAttribute="leadingMargin" constant="15" id="HdZ-7g-c2I"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="bxt-ny-Bxd" secondAttribute="trailing" constant="15" id="q8L-6Z-7th"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="bxt-ny-Bxd" secondAttribute="bottom" constant="15" id="xOl-cP-bTK"/>
+                                        <constraint firstItem="oWn-Ry-W76" firstAttribute="top" secondItem="klS-eO-PXl" secondAttribute="top" id="7J9-YX-FXY"/>
+                                        <constraint firstAttribute="bottom" secondItem="oWn-Ry-W76" secondAttribute="bottom" id="rfG-tz-HFh"/>
+                                        <constraint firstAttribute="trailing" secondItem="oWn-Ry-W76" secondAttribute="trailing" id="vdd-FT-MTA"/>
+                                        <constraint firstItem="oWn-Ry-W76" firstAttribute="leading" secondItem="klS-eO-PXl" secondAttribute="leading" id="yQ9-Zj-XHq"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="routeNameLabel" destination="bxt-ny-Bxd" id="2y3-I9-lfI"/>
+                                    <outlet property="dateCompletedLabel" destination="D96-d7-8tB" id="diL-Tk-RGo"/>
+                                    <outlet property="routeDistanceLabel" destination="Ada-4n-Vmh" id="43h-H3-5Z5"/>
+                                    <outlet property="routeNameLabel" destination="327-Z5-Jd4" id="uu9-qk-e2L"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -133,15 +152,18 @@
                             <outlet property="delegate" destination="fLc-2s-HQQ" id="UBw-i4-Bmb"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="Lgf-so-QSh" kind="show" identifier="showRouteDetails" id="wga-Ip-Ze7"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zCH-vT-7l4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1508" y="889"/>
+            <point key="canvasLocation" x="1508" y="888.30584707646187"/>
         </scene>
-        <!--Display Results View Controller-->
+        <!--Search Results-->
         <scene sceneID="Mrh-sD-G0m">
             <objects>
-                <viewController id="ZxM-tZ-jM4" customClass="DisplayResultsViewController" customModule="RunMate" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Search Results" id="ZxM-tZ-jM4" customClass="DisplayResultsViewController" customModule="RunMate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CCb-gO-p8N">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -216,10 +238,10 @@
             </objects>
             <point key="canvasLocation" x="1796" y="110.19490254872565"/>
         </scene>
-        <!--Show Route View Controller-->
+        <!--Route-->
         <scene sceneID="3Aa-f1-3Pe">
             <objects>
-                <viewController id="Lgf-so-QSh" customClass="ShowRouteViewController" customModule="RunMate" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Route" id="Lgf-so-QSh" customClass="ShowRouteViewController" customModule="RunMate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sso-G4-98l">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -327,4 +349,7 @@
             <point key="canvasLocation" x="136.80000000000001" y="106.59670164917542"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="wga-Ip-Ze7"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -12,5 +12,7 @@ import UIKit
 class ShowPastRoutesTableViewCell: UITableViewCell {
     
     @IBOutlet weak var routeNameLabel: UILabel!
+    @IBOutlet weak var routeDistanceLabel: UILabel!
     
+    @IBOutlet weak var dateCompletedLabel: UILabel!
 }
