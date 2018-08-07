@@ -16,7 +16,7 @@ struct PlacesService {
     static func findOneWayNearbyPlaces(lat: Double, lng: Double, radius: Double, travelMode: String, completion: @escaping ([Route]) -> Void) {
             //not sorting by review count, default sort by best match
             var routes = [Route]()
-            let integerRadius = Int(radius)
+            let integerRadius = Int(radius) + 500 
             let apiToContact = "https://api.yelp.com/v3/businesses/search?radius=\(integerRadius)&latitude=\(lat)&longitude=\(lng)&categories=lakes,parks,publicplazas,parklets,publicart,communitygardens,forestry,landmarks,gardens,castles"
             
             guard let url = URL(string: apiToContact) else {return assertionFailure("URL Failed")}
