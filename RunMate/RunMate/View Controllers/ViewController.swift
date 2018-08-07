@@ -81,19 +81,26 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDe
             let tripSettingIndex = tripSettingSegmentedControl.selectedSegmentIndex
             switch tripSettingIndex {
             case 1:
-                PlacesService.findRoundTripNearbyPlaces(lat: 37.7808727, lng: -122.4183261, originalRadius: distance, travelMode: travelMode) { (routes) in
-                    self.performSegue(withIdentifier: "viewResults", sender: routes)
+                if let _ = (coordinate?.latitude) {
+                    PlacesService.findRoundTripNearbyPlaces(lat: (coordinate?.latitude)!, lng: (coordinate?.longitude)!, originalRadius: distance, travelMode: travelMode) { (routes) in
+                        self.performSegue(withIdentifier: "viewResults", sender: routes)
+                    }
+                } else {
+                    PlacesService.findRoundTripNearbyPlaces(lat: 37.7808727, lng: -122.4183261, originalRadius: distance, travelMode: travelMode) { (routes) in
+                        self.performSegue(withIdentifier: "viewResults", sender: routes)
+                    }
                 }
-                //            PlacesService.findRoundTripNearbyPlaces(lat: (coordinate?.latitude)!, lng: (coordinate?.longitude)!, originalRadius: distance, travelMode: travelMode) { (routes) in
-                //                self.performSegue(withIdentifier: "viewResults", sender: routes)
-            //            }
+
             default:
-                PlacesService.findOneWayNearbyPlaces(lat: 37.7808727, lng: -122.4183261, radius: distance, travelMode: travelMode) { (routes) in
-                    self.performSegue(withIdentifier: "viewResults", sender: routes)
+                if let _ = (coordinate?.latitude) {
+                    PlacesService.findOneWayNearbyPlaces(lat: (coordinate?.latitude)!, lng: (coordinate?.longitude)!, radius: distance, travelMode: travelMode) { (routes) in
+                        self.performSegue(withIdentifier: "viewResults", sender: routes)
+                    }
+                } else {
+                    PlacesService.findOneWayNearbyPlaces(lat: 37.7808727, lng: -122.4183261, radius: distance, travelMode: travelMode) { (routes) in
+                        self.performSegue(withIdentifier: "viewResults", sender: routes)
+                    }
                 }
-                //            PlacesService.findOneWayNearbyPlaces(lat: (coordinate?.latitude)!, lng: (coordinate?.longitude)!, radius: distance, travelMode: travelMode) { (routes) in
-                //                self.performSegue(withIdentifier: "viewResults", sender: routes)
-                //            }
             }
         }
         else {
