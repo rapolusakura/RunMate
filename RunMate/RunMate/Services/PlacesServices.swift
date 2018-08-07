@@ -57,7 +57,7 @@ struct PlacesService {
     
     static func findRoundTripNearbyPlaces(lat: Double, lng: Double, originalRadius: Double, travelMode: String, completion: @escaping ([Route]) -> Void) {
 
-        let radius = (originalRadius/2)+300
+        let radius = (originalRadius/2)+800
         var routes = [Route]()
         
         PlacesService.findOneWayNearbyPlaces(lat: lat, lng: lng, radius: radius, travelMode: travelMode) { (returnedRoutes) in
