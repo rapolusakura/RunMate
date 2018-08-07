@@ -12,9 +12,10 @@ import SwiftyJSON
 
 struct YelpService {
     
-    static func getPitStops(lat: Double, lng: Double) {
-        let apiToContact = "https://api.yelp.com/v3/businesses/search?attributes=gender_neutral_restrooms&radius=300&sort_by=distance&latitude=\(lat)&longitude=\(lng)&limit=5&open_now=true"
-        
+    static func getPitStops(lat: Double, lng: Double, radius: Double) {
+        //not sorting by review count, default sort by best match
+        let apiToContact = "https://api.yelp.com/v3/businesses/search?radius=1600&latitude=\(lat)&longitude=\(lng)&categories=lakes,parks,publicplazas,parklets,publicart,communitygardens,forestry,landmarks,gardens,castles"
+
         guard let url = URL(string: apiToContact) else {return assertionFailure("URL Failed")}
         
         var request = URLRequest(url: url)

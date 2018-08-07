@@ -18,25 +18,27 @@ class ViewController: UIViewController {
         let miles = Double(distanceTextField.text!)!
         let distance = Conversion.milestoMeters(miles: miles) //distance in meters
         //hardcoded location, need to update!
-        let travelModeIndex = travelModeSegmentedControl.selectedSegmentIndex
-        let travelMode: String
-        switch travelModeIndex {
-        case 1:
-            travelMode = "bicycling"
-        default:
-            travelMode = "walking"
-        }
-        let tripSettingIndex = tripSettingSegmentedControl.selectedSegmentIndex
-        switch tripSettingIndex {
-        case 1:
-            PlacesService.findRoundTripNearbyPlaces(lat: 37.7808727, lng: -122.4183261, originalRadius: distance, travelMode: travelMode) { (routes) in
-                self.performSegue(withIdentifier: "viewResults", sender: routes)
-            }
-        default:
-            PlacesService.findOneWayNearbyPlaces(lat: 37.7808727, lng: -122.4183261, radius: distance, travelMode: travelMode) { (routes) in
-                self.performSegue(withIdentifier: "viewResults", sender: routes)
-            }
-        }
+        
+        YelpService.getPitStops(lat: 37.7808727, lng: -122.4183261, radius: distance)
+//        let travelModeIndex = travelModeSegmentedControl.selectedSegmentIndex
+//        let travelMode: String
+//        switch travelModeIndex {
+//        case 1:
+//            travelMode = "bicycling"
+//        default:
+//            travelMode = "walking"
+//        }
+//        let tripSettingIndex = tripSettingSegmentedControl.selectedSegmentIndex
+//        switch tripSettingIndex {
+//        case 1:
+//            PlacesService.findRoundTripNearbyPlaces(lat: 37.7808727, lng: -122.4183261, originalRadius: distance, travelMode: travelMode) { (routes) in
+//                self.performSegue(withIdentifier: "viewResults", sender: routes)
+//            }
+//        default:
+//            PlacesService.findOneWayNearbyPlaces(lat: 37.7808727, lng: -122.4183261, radius: distance, travelMode: travelMode) { (routes) in
+//                self.performSegue(withIdentifier: "viewResults", sender: routes)
+//            }
+//        }
     }
     
     @IBOutlet weak var distanceTextField: UITextField!
