@@ -11,7 +11,7 @@ import Alamofire
 import SwiftyJSON
 import CoreLocation
 
-class ViewController: UIViewController, CLLocationManagerDelegate {
+class ViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDelegate {
     
     let locationManager = CLLocationManager()
 
@@ -27,6 +27,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         }
+        //constraining text field to only allow numerics
+        distanceTextField.delegate = self
+        distanceTextField.keyboardType = UIKeyboardType.numberPad
+        
+        //UI stuff
         viewResultsOutlet.layer.cornerRadius = 15
         viewResultsOutlet.layer.masksToBounds = true
         showPastRoutesOutlet.layer.cornerRadius = 10
