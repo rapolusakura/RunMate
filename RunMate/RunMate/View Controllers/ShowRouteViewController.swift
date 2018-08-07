@@ -31,7 +31,7 @@ class ShowRouteViewController: UIViewController {
     @IBOutlet weak var startRouteOutlet: UIButton!
     
     @IBAction func startRouteButtonPressed(_ sender: Any) {
-        let location: Location = CoreDataHelper.createPlace(placeID: route!.place.placeID, name: route!.place.name, rating: route!.place.rating, lat: route!.place.lat, lng: route!.place.lng)
+        let location: Location = CoreDataHelper.createPlace(imageURL: route!.place.imageURL, name: route!.place.name, rating: route!.place.rating, lat: route!.place.lat, lng: route!.place.lng, distance: route!.place.distance, types: route!.place.types)
         let trip: Trip = CoreDataHelper.createRoute(place: location, startLat: (self.route?.startLat)!, startLng: self.route!.startLng, endLat: self.route!.endLat, endLng: self.route!.endLng, distance: self.route!.distance, travelMode: self.route!.travelMode, elevation: route!.elevation ?? 0.0)
         
 //        let fetchRequest = NSFetchRequest<Location>(entityName: "Location")
@@ -66,7 +66,7 @@ class ShowRouteViewController: UIViewController {
             }
             placeRatingLabel.text = String((route.place.rating)) + " stars"
 
-            loadFirstPhotoForPlace(placeID: (route.place.placeID))
+            loadFirstPhotoForPlace(placeID: (route.place.imageURL))
             
         } else {
             routeNameLabel.text = ""
