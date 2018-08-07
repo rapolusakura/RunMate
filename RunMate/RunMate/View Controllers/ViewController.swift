@@ -19,7 +19,7 @@ class ViewController: UIViewController {
         let distance = Conversion.milestoMeters(miles: miles) //distance in meters
         //hardcoded location, need to update!
         //,
-        YelpService.getPitStops(lat: 37.7666483, lng: -121.5559897, radius: distance)
+        YelpService.getPitStops(lat: 37.7808727, lng: -122.4183261, radius: distance)
 //        let travelModeIndex = travelModeSegmentedControl.selectedSegmentIndex
 //        let travelMode: String
 //        switch travelModeIndex {

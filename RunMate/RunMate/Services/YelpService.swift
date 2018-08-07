@@ -12,8 +12,9 @@ import SwiftyJSON
 
 struct YelpService {
     
-    static func getPitStops(lat: Double, lng: Double, radius: Double) {
+    static func searchYelpPlaces(lat: Double, lng: Double, radius: Double) -> [YelpPlace]{
         //not sorting by review count, default sort by best match
+        var yelpPlaces = [YelpPlace]()
         let apiToContact = "https://api.yelp.com/v3/businesses/search?radius=1600&latitude=\(lat)&longitude=\(lng)&categories=lakes,parks,publicplazas,parklets,publicart,communitygardens,forestry,landmarks,gardens,castles"
 
         guard let url = URL(string: apiToContact) else {return assertionFailure("URL Failed")}
@@ -25,8 +26,21 @@ struct YelpService {
             switch response.result {
             case .success:
                 if let value = response.result.value {
-                    
                     let json = JSON(value)
+                    for business in json["businesses"].arrayValue {
+                        let name = business["name"].stringValue
+                        let lat = business["coordinates"]["latitude"].doubleValue
+                        let lng = business["coordinates"]["longitude"].doubleValue
+                        let rating = business["rating"].doubleValue
+                        let distance = business["distance"].doubleValue //in meters
+                        var types = [String]()
+                        for category in business["categories"].arrayValue {
+                            types.append(category["title"].stringValue)
+                        }
+                        let imageURL = business["image_url"].stringValue
+                        let yelpPlace = YelpPlace(imageURL: imageURL, name: name, rating: rating, lat: lat, lng: lng, distance: distance, types: types)
+                        yelpPlaces.append(yelpPlace)
+                    }
                     print(json)
                     
                 }
@@ -34,6 +48,7 @@ struct YelpService {
                 print(error)
             }
         }
+        return yelpPlaces
     }
     // Do any additional setup after loading the view, typically from a nib.
 }

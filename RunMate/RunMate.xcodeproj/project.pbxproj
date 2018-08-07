@@ -24,6 +24,7 @@
 		4471D42E21138396006D8C14 /* ElevationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4471D42D21138396006D8C14 /* ElevationServices.swift */; };
 		4471D4322113B456006D8C14 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4471D4312113B456006D8C14 /* Constants.swift */; };
 		4471D4342114EDEA006D8C14 /* YelpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4471D4332114EDEA006D8C14 /* YelpService.swift */; };
+		44859058211A180300654A5E /* YelpPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44859057211A180300654A5E /* YelpPlace.swift */; };
 		665DC6A25134141D3744C625 /* Pods_RunMate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B91F8FE48A49DAA17ED40192 /* Pods_RunMate.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,7 @@
 		4471D42D21138396006D8C14 /* ElevationServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElevationServices.swift; sourceTree = "<group>"; };
 		4471D4312113B456006D8C14 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4471D4332114EDEA006D8C14 /* YelpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpService.swift; sourceTree = "<group>"; };
+		44859057211A180300654A5E /* YelpPlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpPlace.swift; sourceTree = "<group>"; };
 		B91F8FE48A49DAA17ED40192 /* Pods_RunMate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RunMate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -142,6 +144,7 @@
 			children = (
 				4471D41C2110F711006D8C14 /* Route.swift */,
 				4471D42B21137DE8006D8C14 /* Place.swift */,
+				44859057211A180300654A5E /* YelpPlace.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 				4471D4242111815B006D8C14 /* Conversion.swift in Sources */,
 				4471D421211110D4006D8C14 /* DistanceServices.swift in Sources */,
 				4471D42E21138396006D8C14 /* ElevationServices.swift in Sources */,
+				44859058211A180300654A5E /* YelpPlace.swift in Sources */,
 				4471D42821121DC8006D8C14 /* DirectionsServices.swift in Sources */,
 				4471D4322113B456006D8C14 /* Constants.swift in Sources */,
 				4471D41D2110F711006D8C14 /* Route.swift in Sources */,
