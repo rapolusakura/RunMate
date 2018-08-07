@@ -9,11 +9,13 @@
 import Foundation
 
 struct Place {
-    let placeID: String
+    let imageURL: String
     let name: String
     let rating: Double
     let lat: Double
     let lng: Double
+    let distance: Double
+    let 
     
     init(placeID: String, name: String, rating: Double, lat: Double, lng: Double) {
         self.placeID = placeID
