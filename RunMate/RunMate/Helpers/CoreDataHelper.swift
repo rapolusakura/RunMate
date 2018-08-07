@@ -76,6 +76,7 @@ struct CoreDataHelper {
     
     static func retrieveRoutes() -> [Trip] {
         let fetchRequest = NSFetchRequest<Trip>(entityName: "Trip")
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "dateCompleted", ascending: false)]
         do{
             let results = try context.fetch(fetchRequest)
             return results

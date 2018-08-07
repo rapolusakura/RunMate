@@ -13,8 +13,11 @@ class PreviousRouteViewController: UITableViewController {
     var routes: [Trip]?
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(routes!.count) 
         return routes!.count
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

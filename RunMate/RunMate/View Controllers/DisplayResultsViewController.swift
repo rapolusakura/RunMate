@@ -65,7 +65,6 @@ class DisplayResultsViewController: UIViewController, UITableViewDelegate, UITab
             let route = sender as! Route
             let destination = segue.destination as! ShowRouteViewController
             destination.route = route
-            print("this is the routes elevation", route.elevation)
         default:
             print("i dont recognize this")
         }
