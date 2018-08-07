@@ -7,12 +7,9 @@
 //
 
 import UIKit
-<<<<<<< HEAD
 import Alamofire
 import SwiftyJSON
 import CoreLocation
-=======
->>>>>>> yelp-api
 
 class ViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDelegate {
     
@@ -20,7 +17,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDe
 
     override func viewDidLoad() {
         super.viewDidLoad()
-<<<<<<< HEAD
         // Do any additional setup after loading the view, typically from a nib.
         self.locationManager.requestAlwaysAuthorization()
         
@@ -57,8 +53,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDe
                                                 for: .normal)
         travelModeSegmentedControl.setTitleTextAttributes([NSAttributedStringKey.font: font],
                                                           for: .normal)
-=======
->>>>>>> yelp-api
     }
     
     @IBOutlet weak var showPastRoutesOutlet: UIButton!
@@ -72,7 +66,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDe
     @IBOutlet weak var viewResultsOutlet: UIButton!
     
     @IBAction func viewResultsButton(_ sender: Any) {
-<<<<<<< HEAD
         if let miles = Double(distanceTextField.text!) {
             let distance = Conversion.milestoMeters(miles: miles) //distance in meters
             let coordinate = locationManager.location?.coordinate
@@ -108,31 +101,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDe
                         self.performSegue(withIdentifier: "viewResults", sender: routes)
                     }
                 }
-=======
-        let miles = Double(distanceTextField.text!)!
-        let distance = Conversion.milestoMeters(miles: miles) //distance in meters
-        //hardcoded location, need to update!
-        //,
-        YelpService.searchYelpPlaces(lat: 37.7808727, lng: -122.4183261, radius: distance)
-        let travelModeIndex = travelModeSegmentedControl.selectedSegmentIndex
-        let travelMode: String
-        switch travelModeIndex {
-        case 1:
-            travelMode = "bicycling"
-        default:
-            travelMode = "walking"
-        }
-        let tripSettingIndex = tripSettingSegmentedControl.selectedSegmentIndex
-        switch tripSettingIndex {
-        case 1:
-//            PlacesService.findRoundTripNearbyPlaces(lat: 37.7808727, lng: -122.4183261, originalRadius: distance, travelMode: travelMode) { (routes) in
-//                self.performSegue(withIdentifier: "viewResults", sender: routes)
-//            }
-            YelpService.
-        default:
-            PlacesService.findOneWayNearbyPlaces(lat: 37.7808727, lng: -122.4183261, radius: distance, travelMode: travelMode) { (routes) in
-                self.performSegue(withIdentifier: "viewResults", sender: routes)
->>>>>>> yelp-api
             }
         }
         else {

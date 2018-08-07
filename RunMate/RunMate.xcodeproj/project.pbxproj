@@ -23,17 +23,12 @@
 		4471D42C21137DE8006D8C14 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4471D42B21137DE8006D8C14 /* Place.swift */; };
 		4471D42E21138396006D8C14 /* ElevationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4471D42D21138396006D8C14 /* ElevationServices.swift */; };
 		4471D4322113B456006D8C14 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4471D4312113B456006D8C14 /* Constants.swift */; };
-<<<<<<< HEAD
 		4471D43B2117E204006D8C14 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4471D43A2117E204006D8C14 /* CoreDataHelper.swift */; };
 		4471D4402117E6B5006D8C14 /* RunMate.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4471D43E2117E6B5006D8C14 /* RunMate.xcdatamodeld */; };
 		4471D442211808B4006D8C14 /* PreviousRoutesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4471D441211808B4006D8C14 /* PreviousRoutesViewController.swift */; };
 		4471D44421180A32006D8C14 /* ShowPastRoutesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4471D44321180A32006D8C14 /* ShowPastRoutesTableViewCell.swift */; };
 		4471D44E2119013F006D8C14 /* lol.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4471D44D2119013F006D8C14 /* lol.jpg */; };
 		4471D45021190147006D8C14 /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = 4471D44F21190147006D8C14 /* image.png */; };
-=======
-		4471D4342114EDEA006D8C14 /* YelpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4471D4332114EDEA006D8C14 /* YelpService.swift */; };
-		44859058211A180300654A5E /* YelpPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44859057211A180300654A5E /* YelpPlace.swift */; };
->>>>>>> yelp-api
 		665DC6A25134141D3744C625 /* Pods_RunMate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B91F8FE48A49DAA17ED40192 /* Pods_RunMate.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,17 +53,12 @@
 		4471D42B21137DE8006D8C14 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		4471D42D21138396006D8C14 /* ElevationServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElevationServices.swift; sourceTree = "<group>"; };
 		4471D4312113B456006D8C14 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-<<<<<<< HEAD
 		4471D43A2117E204006D8C14 /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		4471D43F2117E6B5006D8C14 /* RunMate.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RunMate.xcdatamodel; sourceTree = "<group>"; };
 		4471D441211808B4006D8C14 /* PreviousRoutesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousRoutesViewController.swift; sourceTree = "<group>"; };
 		4471D44321180A32006D8C14 /* ShowPastRoutesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowPastRoutesTableViewCell.swift; sourceTree = "<group>"; };
 		4471D44D2119013F006D8C14 /* lol.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lol.jpg; sourceTree = "<group>"; };
 		4471D44F21190147006D8C14 /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image.png; sourceTree = "<group>"; };
-=======
-		4471D4332114EDEA006D8C14 /* YelpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpService.swift; sourceTree = "<group>"; };
-		44859057211A180300654A5E /* YelpPlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpPlace.swift; sourceTree = "<group>"; };
->>>>>>> yelp-api
 		B91F8FE48A49DAA17ED40192 /* Pods_RunMate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RunMate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -134,7 +124,6 @@
 			isa = PBXGroup;
 			children = (
 				4471D4152110E845006D8C14 /* PlacesServices.swift */,
-				4471D4332114EDEA006D8C14 /* YelpService.swift */,
 				4471D420211110D4006D8C14 /* DistanceServices.swift */,
 				4471D42721121DC8006D8C14 /* DirectionsServices.swift */,
 				4471D42D21138396006D8C14 /* ElevationServices.swift */,
@@ -167,7 +156,6 @@
 			children = (
 				4471D41C2110F711006D8C14 /* Route.swift */,
 				4471D42B21137DE8006D8C14 /* Place.swift */,
-				44859057211A180300654A5E /* YelpPlace.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -333,17 +321,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				4471D4182110EA73006D8C14 /* DisplayResultsViewController.swift in Sources */,
-				4471D4342114EDEA006D8C14 /* YelpService.swift in Sources */,
 				4471D4162110E845006D8C14 /* PlacesServices.swift in Sources */,
 				4471D4032110D7F3006D8C14 /* ViewController.swift in Sources */,
 				4471D4242111815B006D8C14 /* Conversion.swift in Sources */,
 				4471D421211110D4006D8C14 /* DistanceServices.swift in Sources */,
 				4471D42E21138396006D8C14 /* ElevationServices.swift in Sources */,
-<<<<<<< HEAD
 				4471D44421180A32006D8C14 /* ShowPastRoutesTableViewCell.swift in Sources */,
-=======
-				44859058211A180300654A5E /* YelpPlace.swift in Sources */,
->>>>>>> yelp-api
 				4471D42821121DC8006D8C14 /* DirectionsServices.swift in Sources */,
 				4471D442211808B4006D8C14 /* PreviousRoutesViewController.swift in Sources */,
 				4471D4402117E6B5006D8C14 /* RunMate.xcdatamodeld in Sources */,
