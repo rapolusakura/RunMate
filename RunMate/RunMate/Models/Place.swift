@@ -15,13 +15,15 @@ struct Place {
     let lat: Double
     let lng: Double
     let distance: Double
-    let 
+    let types: [String]
     
-    init(placeID: String, name: String, rating: Double, lat: Double, lng: Double) {
-        self.placeID = placeID
+    init(imageURL: String, name: String, rating: Double, lat: Double, lng: Double, distance: Double, types: [String]){
+        self.imageURL = imageURL
         self.name = name
         self.rating = rating
         self.lat = lat
         self.lng = lng
+        self.distance = distance
+        self.types = types
     }
 }
