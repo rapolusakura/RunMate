@@ -38,8 +38,7 @@ class DisplayResultsViewController: UIViewController, UITableViewDelegate, UITab
         cell.placeNameLabel.text = route.place.name
         cell.distanceLabel.text = String(format: "%.2f", Conversion.metersToMiles(meters: route.distance))
         + " mi"
-        cell.layer.borderColor = UIColor.black.cgColor
-        cell.layer.borderWidth = 1
+        
         cell.layer.cornerRadius = 8
         cell.clipsToBounds = true
         

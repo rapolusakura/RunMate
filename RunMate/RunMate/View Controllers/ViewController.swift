@@ -31,8 +31,23 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         viewResultsOutlet.layer.masksToBounds = true
         showPastRoutesOutlet.layer.cornerRadius = 10
         showPastRoutesOutlet.layer.masksToBounds = true
+        distanceTextField.layer.cornerRadius = 15
+        distanceTextField.layer.masksToBounds = true
+        tripSettingSegmentedControl.layer.cornerRadius = 10
+        tripSettingSegmentedControl.layer.masksToBounds = true
+        travelModeSegmentedControl.layer.cornerRadius = 10
+        travelModeSegmentedControl.layer.masksToBounds = true
         tripSettingSegmentedControl.frame = CGRect(x: 30, y: 250, width: 300, height: 100)
         travelModeSegmentedControl.frame = CGRect(x: 30, y: 400, width: 300, height: 100)
+        tripSettingSegmentedControl.removeBorders()
+        travelModeSegmentedControl.removeBorders()
+        
+        //changes font of segmented control
+        let font = UIFont.systemFont(ofSize: 24)
+        tripSettingSegmentedControl.setTitleTextAttributes([NSAttributedStringKey.font: font],
+                                                for: .normal)
+        travelModeSegmentedControl.setTitleTextAttributes([NSAttributedStringKey.font: font],
+                                                          for: .normal)
     }
     
     @IBOutlet weak var showPastRoutesOutlet: UIButton!
@@ -81,6 +96,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         self.performSegue(withIdentifier: "showPastRoutes", sender: self)
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
     
     @IBOutlet weak var distanceTextField: UITextField!
     @IBOutlet weak var tripSettingSegmentedControl: UISegmentedControl!
@@ -103,5 +122,25 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
+}
+
+extension UISegmentedControl {
+    func removeBorders() {
+        setBackgroundImage(imageWithColor(color: backgroundColor!), for: .normal, barMetrics: .default)
+        setBackgroundImage(imageWithColor(color: tintColor!), for: .selected, barMetrics: .default)
+        setDividerImage(imageWithColor(color: UIColor.clear), forLeftSegmentState: .normal, rightSegmentState: .normal, barMetrics: .default)
+    }
+    
+    // create a 1x1 image with this color
+    private func imageWithColor(color: UIColor) -> UIImage {
+        let rect = CGRect(x: 0.0, y: 0.0, width:  1.0, height: 1.0)
+        UIGraphicsBeginImageContext(rect.size)
+        let context = UIGraphicsGetCurrentContext()
+        context!.setFillColor(color.cgColor);
+        context!.fill(rect);
+        let image = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        return image!
+    }
 }
 

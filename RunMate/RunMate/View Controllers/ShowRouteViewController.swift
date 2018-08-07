@@ -27,6 +27,8 @@ class ShowRouteViewController: UIViewController {
     
     @IBOutlet weak var imageView: UIImageView!
     
+    @IBOutlet weak var startRouteOutlet: UIButton!
+    
     @IBAction func startRouteButtonPressed(_ sender: Any) {
         let location: Location = CoreDataHelper.createPlace(placeID: route!.place.placeID, name: route!.place.name, rating: route!.place.rating, lat: route!.place.lat, lng: route!.place.lng)
         let trip: Trip = CoreDataHelper.createRoute(place: location, startLat: (self.route?.startLat)!, startLng: self.route!.startLng, endLat: self.route!.endLat, endLng: self.route!.endLng, distance: self.route!.distance, travelMode: self.route!.travelMode)
@@ -53,10 +55,10 @@ class ShowRouteViewController: UIViewController {
                 + " mi"
             if elevation > 0.0 {
                 routeElevationLabel.text = "+\(String(format: "%.2f", Conversion.metersToFeet(meters: elevation)))" + " ft"
-                routeElevationLabel.textColor = .green
+  //              routeElevationLabel.textColor = .green
             }
             else {
-                routeElevationLabel.textColor = .red
+                routeElevationLabel.text = "\(String(format: "%.2f", Conversion.metersToFeet(meters: elevation)))" + " ft"
             }
             placeRatingLabel.text = String((route.place.rating)) + " stars"
 
@@ -73,6 +75,11 @@ class ShowRouteViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         placesClient = GMSPlacesClient.shared()
+        
+        
+        startRouteOutlet.layer.cornerRadius = 15
+        startRouteOutlet.layer.masksToBounds = true
+        
     }
     
     func loadFirstPhotoForPlace(placeID: String) {
