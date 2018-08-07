@@ -33,15 +33,6 @@ class ShowRouteViewController: UIViewController {
     @IBAction func startRouteButtonPressed(_ sender: Any) {
         let location: Location = CoreDataHelper.createPlace(imageURL: route!.place.imageURL, name: route!.place.name, rating: route!.place.rating, lat: route!.place.lat, lng: route!.place.lng, distance: route!.place.distance, types: route!.place.types)
         let trip: Trip = CoreDataHelper.createRoute(place: location, startLat: (self.route?.startLat)!, startLng: self.route!.startLng, endLat: self.route!.endLat, endLng: self.route!.endLng, distance: self.route!.distance, travelMode: self.route!.travelMode, elevation: route!.elevation ?? 0.0)
-        
-//        let fetchRequest = NSFetchRequest<Location>(entityName: "Location")
-//        do {
-//            let fetch = try (CoreDataHelper.context.count(for: fetchRequest))
-//            print(fetch)
-//        } catch let error {
-//            print("Failed to fetch:", error)
-//        }
-        //CoreDataHelper.deletePlace(place: location)
         CoreDataHelper.saveRoute()
         
         getDirections()
@@ -65,8 +56,8 @@ class ShowRouteViewController: UIViewController {
                 routeElevationLabel.text = "\(String(format: "%.2f", Conversion.metersToFeet(meters: elevation)))" + " ft"
             }
             placeRatingLabel.text = String((route.place.rating)) + " stars"
-
-            loadFirstPhotoForPlace(placeID: (route.place.imageURL))
+            imageView.imageFromUrl(urlString: route.place.imageURL)
+//            loadFirstPhotoForPlace(placeID: (route.place.imageURL))
             
         } else {
             routeNameLabel.text = ""
@@ -86,36 +77,50 @@ class ShowRouteViewController: UIViewController {
         
     }
     
-    func loadFirstPhotoForPlace(placeID: String) {
-        GMSPlacesClient.shared().lookUpPhotos(forPlaceID: placeID) { (photos, error) -> Void in
-            if let error = error {
-                // TODO: handle the error.
-                print("Error: \(error.localizedDescription)")
-            } else {
-                if let firstPhoto = photos?.results.first {
-                    self.loadImageForMetadata(photoMetadata: firstPhoto)
-                }
-            }
-        }
-    }
-    
-    func loadImageForMetadata(photoMetadata: GMSPlacePhotoMetadata) {
-        GMSPlacesClient.shared().loadPlacePhoto(photoMetadata, callback: {
-            (photo, error) -> Void in
-            if let error = error {
-                // TODO: handle the error.
-                print("Error: \(error.localizedDescription)")
-            } else {
-                self.imageView.image = photo;
-                //self.attributionTextView.attributedText = photoMetadata.attributions;
-            }
-        })
-    }
+//    func loadFirstPhotoForPlace(placeID: String) {
+//        GMSPlacesClient.shared().lookUpPhotos(forPlaceID: placeID) { (photos, error) -> Void in
+//            if let error = error {
+//                // TODO: handle the error.
+//                print("Error: \(error.localizedDescription)")
+//            } else {
+//                if let firstPhoto = photos?.results.first {
+//                    self.loadImageForMetadata(photoMetadata: firstPhoto)
+//                }
+//            }
+//        }
+//    }
+//
+//    func loadImageForMetadata(photoMetadata: GMSPlacePhotoMetadata) {
+//        GMSPlacesClient.shared().loadPlacePhoto(photoMetadata, callback: {
+//            (photo, error) -> Void in
+//            if let error = error {
+//                // TODO: handle the error.
+//                print("Error: \(error.localizedDescription)")
+//            } else {
+//                self.imageView.image = photo;
+//                //self.attributionTextView.attributedText = photoMetadata.attributions;
+//            }
+//        })
+//    }
     
     func getDirections(){
         let coordinate = CLLocationCoordinate2DMake((route?.endLat)!, (route?.endLng)!)
         let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary:nil))
         mapItem.name = route?.place.name
         mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeWalking])
+    }
+}
+
+extension UIImageView {
+    public func imageFromUrl(urlString: String) {
+        if let url = NSURL(string: urlString) {
+            let request = NSURLRequest(url: url as URL)
+            NSURLConnection.sendAsynchronousRequest(request as URLRequest, queue: OperationQueue.main) {
+                (response: URLResponse?, data: Data?, error: Error?) -> Void in
+                if let imageData = data as NSData? {
+                    self.image = UIImage(data: imageData as Data)
+                }
+            }
+        }
     }
 }
