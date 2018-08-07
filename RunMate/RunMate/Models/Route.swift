@@ -14,7 +14,7 @@ class Route {
     let place: Place
     let endLat: Double
     let endLng: Double
-    let distance: Double
+    var distance: Double
     var isOneWay: Bool = true
     let travelMode: String
     var elevation: Double? = nil 
