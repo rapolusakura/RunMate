@@ -12,8 +12,12 @@ import UIKit
 class PreviousRouteViewController: UITableViewController {
     var routes: [Trip]?
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return routes!.count
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
     }
     
     override func viewDidLoad() {
@@ -22,7 +26,7 @@ class PreviousRouteViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ShowPastRoutesTableViewCell
-        let route = routes![indexPath.row]
+        let route = routes![indexPath.section]
         cell.routeNameLabel.text = route.place?.name
         cell.routeDistanceLabel.text = String(format: "%.2f", Conversion.metersToMiles(meters: route.distance))
             + " mi"
@@ -32,11 +36,29 @@ class PreviousRouteViewController: UITableViewController {
         let result = formatter.string(from: route.dateCompleted!)
         cell.dateCompletedLabel.text = result
         
+        cell.layer.cornerRadius = 8
+        cell.clipsToBounds = true
+        
+        cell.layer.shadowOffset = CGSize(width: 1, height: 0)
+        cell.layer.shadowColor = UIColor.black.cgColor
+        cell.layer.shadowRadius = 5
+        cell.layer.shadowOpacity = 0.8
+        
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 25
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = UIColor.clear
+        return headerView
+    }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let route = routes![indexPath.row]
+        let route = routes![indexPath.section]
         self.performSegue(withIdentifier: "showRouteDetails", sender: route)
     }
     
