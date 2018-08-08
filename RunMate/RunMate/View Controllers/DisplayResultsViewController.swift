@@ -14,6 +14,10 @@ class DisplayResultsViewController: UIViewController, UITableViewDelegate, UITab
     
     @IBOutlet weak var tableView: UITableView!
     
+    override func viewDidLoad() {
+        dropShadow(scale: true, sender: tableView)
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
@@ -71,5 +75,15 @@ class DisplayResultsViewController: UIViewController, UITableViewDelegate, UITab
         default:
             print("i dont recognize this")
         }
+    }
+    
+    func dropShadow(scale: Bool = true, sender: UIView) {
+        sender.layer.masksToBounds = false
+        sender.layer.shadowColor = UIColor.black.cgColor
+        sender.layer.shadowOpacity = 0.6
+        sender.layer.shadowOffset = CGSize(width: -1, height: 1)
+        sender.layer.shadowRadius = 1.5
+        sender.layer.shouldRasterize = true
+        sender.layer.rasterizationScale = scale ? UIScreen.main.scale : 1
     }
 }

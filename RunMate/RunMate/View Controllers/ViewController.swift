@@ -32,18 +32,23 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDe
         distanceTextField.keyboardType = UIKeyboardType.numberPad
         
         //UI stuff
-        viewResultsOutlet.layer.cornerRadius = 15
+        viewResultsOutlet.layer.cornerRadius = 20
         viewResultsOutlet.layer.masksToBounds = true
         showPastRoutesOutlet.layer.cornerRadius = 10
         showPastRoutesOutlet.layer.masksToBounds = true
-        distanceTextField.layer.cornerRadius = 15
+        distanceTextField.layer.cornerRadius = 20
         distanceTextField.layer.masksToBounds = true
-        tripSettingSegmentedControl.layer.cornerRadius = 10
-        tripSettingSegmentedControl.layer.masksToBounds = true
-        travelModeSegmentedControl.layer.cornerRadius = 10
-        travelModeSegmentedControl.layer.masksToBounds = true
         tripSettingSegmentedControl.removeBorders()
         travelModeSegmentedControl.removeBorders()
+        tripSettingSegmentedControl.layer.cornerRadius = 15
+        tripSettingSegmentedControl.layer.masksToBounds = true
+        travelModeSegmentedControl.layer.cornerRadius = 15
+        travelModeSegmentedControl.layer.masksToBounds = true
+        dropShadow(scale: true, sender: tripSettingSegmentedControl)
+        dropShadow(scale: true, sender: distanceTextField)
+        dropShadow(scale: true, sender: travelModeSegmentedControl)
+        dropShadow(scale: true, sender: viewResultsOutlet)
+        dropShadow(scale: true, sender: showPastRoutesOutlet)
         
         //changes font of segmented control
         let font = UIFont.systemFont(ofSize: 24)
@@ -139,6 +144,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDe
         default:
             print("i dont recognize this")
         }
+    }
+    
+    func dropShadow(scale: Bool = true, sender: UIView) {
+        sender.layer.masksToBounds = false
+        sender.layer.shadowColor = UIColor.black.cgColor
+        sender.layer.shadowOpacity = 0.6
+        sender.layer.shadowOffset = CGSize(width: -1, height: 1)
+        sender.layer.shadowRadius = 1.5
+        sender.layer.shouldRasterize = true
+        sender.layer.rasterizationScale = scale ? UIScreen.main.scale : 1
     }
 }
 
