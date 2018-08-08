@@ -19,18 +19,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="nNr-VC-lQv">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="nNr-VC-lQv">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="# of miles" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MLm-CA-q9I">
-                                        <rect key="frame" x="8" y="25" width="359" height="167"/>
+                                        <rect key="frame" x="20" y="25" width="335" height="107"/>
                                         <color key="backgroundColor" red="0.90196078431372551" green="0.9882352941176471" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="textColor" red="0.29411764705882354" green="0.29411764705882354" blue="0.29411764705882354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="84"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="79"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="fg5-Km-DmM">
-                                        <rect key="frame" x="15" y="217" width="345" height="91"/>
+                                        <rect key="frame" x="20" y="172" width="335" height="91"/>
                                         <color key="backgroundColor" white="0.49603949652777779" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="90" id="cTT-GH-3mW"/>
@@ -42,7 +42,7 @@
                                         <color key="tintColor" red="0.98823529409999999" green="0.97647058819999999" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </segmentedControl>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="z3i-gC-g6A">
-                                        <rect key="frame" x="15" y="332" width="345" height="91"/>
+                                        <rect key="frame" x="20" y="302" width="335" height="91"/>
                                         <color key="backgroundColor" white="0.5" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="90" id="jLg-A0-0jf"/>
@@ -54,7 +54,7 @@
                                         <color key="tintColor" red="0.98823529409999999" green="0.97647058819999999" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </segmentedControl>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vuv-Cn-Xae">
-                                        <rect key="frame" x="50" y="447" width="275" height="72"/>
+                                        <rect key="frame" x="50" y="432" width="275" height="72"/>
                                         <color key="backgroundColor" red="0.90196078431372551" green="0.9882352941176471" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="72" id="tD7-Bi-HeO"/>
@@ -83,12 +83,10 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="z3i-gC-g6A" firstAttribute="leading" secondItem="nNr-VC-lQv" secondAttribute="leading" constant="15" id="9th-ce-0uz"/>
-                                    <constraint firstItem="fg5-Km-DmM" firstAttribute="leading" secondItem="nNr-VC-lQv" secondAttribute="leading" constant="15" id="Zsg-yD-qg3"/>
-                                    <constraint firstAttribute="trailing" secondItem="fg5-Km-DmM" secondAttribute="trailing" constant="15" id="gqa-VE-4Lq"/>
-                                    <constraint firstAttribute="trailing" secondItem="z3i-gC-g6A" secondAttribute="trailing" constant="15" id="kmn-ZA-ig1"/>
+                                    <constraint firstItem="fg5-Km-DmM" firstAttribute="width" secondItem="MLm-CA-q9I" secondAttribute="width" id="JtW-7t-lYv"/>
+                                    <constraint firstItem="z3i-gC-g6A" firstAttribute="width" secondItem="MLm-CA-q9I" secondAttribute="width" id="YZg-6e-CPA"/>
                                 </constraints>
-                                <edgeInsets key="layoutMargins" top="25" left="8" bottom="25" right="8"/>
+                                <edgeInsets key="layoutMargins" top="25" left="20" bottom="25" right="20"/>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.49019607843137253" green="0.75294117647058822" blue="0.68627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
