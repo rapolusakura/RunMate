@@ -10,30 +10,35 @@ import Foundation
 
 class Place {
     var placeId: String = ""
+    let imageURL: String
+    let numRatings: Double
     let name: String
     let rating: Double
     let lat: Double
     let lng: Double
     let distance: Double
-    let types: [String]
+    var city: String = ""
     
-    init(name: String, rating: Double, lat: Double, lng: Double, distance: Double, types: [String]){
+    init(name: String, rating: Double, numRatings: Double, lat: Double, lng: Double, distance: Double, imageURL: String, city: String){
         self.name = name
         self.rating = rating
+        self.numRatings = numRatings
         self.lat = lat
         self.lng = lng
         self.distance = distance
-        self.types = types
+        self.imageURL = imageURL
+        self.city = city
     }
     
-    init(placeId: String, name: String, rating: Double, lat: Double, lng: Double, distance: Double, types: [String]){
+    init(placeId: String, imageURL: String, name: String, rating: Double, numRatings: Double, lat: Double, lng: Double, distance: Double){
         self.name = name
         self.rating = rating
         self.lat = lat
         self.lng = lng
         self.distance = distance
-        self.types = types
         self.placeId = placeId
+        self.imageURL = imageURL
+        self.numRatings = numRatings
     }
     
 }

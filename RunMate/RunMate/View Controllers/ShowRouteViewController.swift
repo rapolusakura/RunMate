@@ -31,7 +31,7 @@ class ShowRouteViewController: UIViewController {
     @IBOutlet weak var startRouteOutlet: UIButton!
     
     @IBAction func startRouteButtonPressed(_ sender: Any) {
-        let location: Location = CoreDataHelper.createPlace(placeId: route!.place.placeId, name: route!.place.name, rating: route!.place.rating, lat: route!.place.lat, lng: route!.place.lng, distance: route!.place.distance, types: route!.place.types)
+        let location: Location = CoreDataHelper.createPlace(placeId: route!.place.placeId, name: route!.place.name, rating: route!.place.rating, lat: route!.place.lat, lng: route!.place.lng, distance: route!.place.distance, imageURL: route!.place.imageURL, numRatings: route!.place.numRatings)
         let trip: Trip = CoreDataHelper.createRoute(place: location, startLat: (self.route?.startLat)!, startLng: self.route!.startLng, endLat: self.route!.endLat, endLng: self.route!.endLng, distance: self.route!.distance, travelMode: self.route!.travelMode, elevation: route!.elevation ?? 0.0)
         CoreDataHelper.saveRoute()
         
@@ -56,8 +56,11 @@ class ShowRouteViewController: UIViewController {
                 routeElevationLabel.text = "\(String(format: "%.2f", Conversion.metersToFeet(meters: elevation)))" + " ft"
             }
             placeRatingLabel.text = String((route.place.rating)) + " stars"
-           // imageView.imageFromUrl(urlString: route.place.imageURL)
-            loadFirstPhotoForPlace(placeID: (route.place.placeId))
+            if route.place.placeId != "" {
+                loadFirstPhotoForPlace(placeID: (route.place.placeId))
+            } else {
+                imageView.imageFromUrl(urlString: route.place.imageURL)
+            }
             
         } else {
             routeNameLabel.text = ""

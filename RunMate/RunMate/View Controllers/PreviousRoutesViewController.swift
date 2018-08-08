@@ -69,7 +69,7 @@ class PreviousRouteViewController: UITableViewController {
         case "showRouteDetails":
             let trip = sender as! Trip
             print("the trip elevation is", trip.elevation)
-            let place = Place(placeId: (trip.place?.placeId)!, name: (trip.place?.name)!, rating: (trip.place?.rating)!, lat: (trip.place?.lat)!, lng: (trip.place!.lng), distance: trip.distance, types: (trip.place?.types)! as! [String])
+            let place = Place(placeId: (trip.place?.placeId)!, imageURL: (trip.place?.imageURL)!, name: (trip.place?.name)!, rating: (trip.place?.rating)!, numRatings: (trip.place?.numRatings)!,  lat: (trip.place?.lat)!, lng: (trip.place!.lng), distance: trip.distance)
             let route = Route(place: place, startLat: trip.startLat, startLng: trip.startLng, endLat: trip.endLat, endLng: trip.endLng, distance: trip.distance, isOneWay: trip.isOneWay, travelMode: trip.travelMode!, elevation: trip.elevation)
             let destination = segue.destination as! ShowRouteViewController
             destination.route = route

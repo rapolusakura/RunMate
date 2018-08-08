@@ -51,7 +51,7 @@ struct CoreDataHelper {
         return route
     }
     
-    static func createPlace(placeId: String, name: String, rating: Double, lat: Double, lng: Double, distance: Double, types: [String]) -> Location {
+    static func createPlace(placeId: String, name: String, rating: Double, lat: Double, lng: Double, distance: Double, imageURL: String, numRatings: Double) -> Location {
         let place = NSEntityDescription.insertNewObject(forEntityName: "Location", into: context) as! Location
         place.placeId = placeId
         place.name = name
@@ -59,7 +59,8 @@ struct CoreDataHelper {
         place.lat = lat
         place.lng = lng
         place.distance = distance
-        place.types = types as NSObject
+        place.imageURL = imageURL
+        place.numRatings = numRatings
         
         return place
     }

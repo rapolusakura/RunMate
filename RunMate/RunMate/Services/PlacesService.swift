@@ -34,14 +34,11 @@ struct PlacesService {
                             let endLat = business["coordinates"]["latitude"].doubleValue
                             let endLng = business["coordinates"]["longitude"].doubleValue
                             let rating = business["rating"].doubleValue
+                            let numRatings = business["review_count"].doubleValue
                             let distance = business["distance"].doubleValue //in meters
-                            var types = [String]()
-                            for category in business["categories"].arrayValue {
-                                types.append(category["title"].stringValue)
-                            }
+                            let imageURL = business["image_url"].stringValue
                             let city = business["location"]["city"].stringValue
-                            types.append(city)
-                            let place = Place(name: name, rating: rating, lat: endLat, lng: endLng, distance: distance, types: types)
+                            let place = Place(name: name, rating: rating, numRatings: numRatings, lat: lat, lng: lng, distance: distance, imageURL: imageURL, city: city)
                             let route = Route(place: place, startLat: lat, startLng: lng, endLat: endLat, endLng: endLng, distance: distance, travelMode: travelMode)
                             routes.append(route)
                             
@@ -70,15 +67,12 @@ struct PlacesService {
         }
     }
     
-    static func getCurrPlaceID(lat: Double, long: Double, name: String, city: String, completion: @escaping (String) -> Void) {
-        print("\(city) \(name)")
-        let parameters = ["key":apiKey,"point":"\(lat),\(long)","input":"\(city) \(name)","inputtype":"textquery"]
+    static func getCurrPlaceID(route: Route, completion: @escaping (String) -> Void) {
+        let parameters = ["key":apiKey,"point":"\(route.place.lat),\(route.place.lng)","input":"\(route.place.city) \(route.place.name)","inputtype":"textquery"]
         Alamofire.request("https://maps.googleapis.com/maps/api/place/findplacefromtext/json?", parameters: parameters).responseJSON(options:.mutableContainers) {pathData in
             let json = try! JSON(data: pathData.data!)
             let placeId = json["candidates"][0]["place_id"].stringValue
-            print(json)
             completion(placeId)
-            
         }
     }
 }
