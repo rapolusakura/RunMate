@@ -12,7 +12,7 @@
 		4471D4062110D7F3006D8C14 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4471D4042110D7F3006D8C14 /* Main.storyboard */; };
 		4471D4082110D7F6006D8C14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4471D4072110D7F6006D8C14 /* Assets.xcassets */; };
 		4471D40B2110D7F6006D8C14 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4471D4092110D7F6006D8C14 /* LaunchScreen.storyboard */; };
-		4471D4162110E845006D8C14 /* PlacesServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4471D4152110E845006D8C14 /* PlacesServices.swift */; };
+		4471D4162110E845006D8C14 /* PlacesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4471D4152110E845006D8C14 /* PlacesService.swift */; };
 		4471D4182110EA73006D8C14 /* DisplayResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4471D4172110EA73006D8C14 /* DisplayResultsViewController.swift */; };
 		4471D41A2110F212006D8C14 /* DisplayResultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4471D4192110F212006D8C14 /* DisplayResultsTableViewCell.swift */; };
 		4471D41D2110F711006D8C14 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4471D41C2110F711006D8C14 /* Route.swift */; };
@@ -42,7 +42,7 @@
 		4471D4072110D7F6006D8C14 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4471D40A2110D7F6006D8C14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4471D40C2110D7F6006D8C14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4471D4152110E845006D8C14 /* PlacesServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesServices.swift; sourceTree = "<group>"; };
+		4471D4152110E845006D8C14 /* PlacesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesService.swift; sourceTree = "<group>"; };
 		4471D4172110EA73006D8C14 /* DisplayResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayResultsViewController.swift; sourceTree = "<group>"; };
 		4471D4192110F212006D8C14 /* DisplayResultsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayResultsTableViewCell.swift; sourceTree = "<group>"; };
 		4471D41C2110F711006D8C14 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
@@ -123,7 +123,7 @@
 		4471D4122110E80B006D8C14 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				4471D4152110E845006D8C14 /* PlacesServices.swift */,
+				4471D4152110E845006D8C14 /* PlacesService.swift */,
 				4471D420211110D4006D8C14 /* DistanceServices.swift */,
 				4471D42721121DC8006D8C14 /* DirectionsServices.swift */,
 				4471D42D21138396006D8C14 /* ElevationServices.swift */,
@@ -321,7 +321,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4471D4182110EA73006D8C14 /* DisplayResultsViewController.swift in Sources */,
-				4471D4162110E845006D8C14 /* PlacesServices.swift in Sources */,
+				4471D4162110E845006D8C14 /* PlacesService.swift in Sources */,
 				4471D4032110D7F3006D8C14 /* ViewController.swift in Sources */,
 				4471D4242111815B006D8C14 /* Conversion.swift in Sources */,
 				4471D421211110D4006D8C14 /* DistanceServices.swift in Sources */,

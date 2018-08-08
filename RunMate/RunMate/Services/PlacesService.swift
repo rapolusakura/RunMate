@@ -16,7 +16,7 @@ struct PlacesService {
     static func findOneWayNearbyPlaces(lat: Double, lng: Double, radius: Double, travelMode: String, completion: @escaping ([Route]) -> Void) {
             //not sorting by review count, default sort by best match
             var routes = [Route]()
-            let integerRadius = Int(radius) + 500 
+            let integerRadius = Int(radius) + 500
             let apiToContact = "https://api.yelp.com/v3/businesses/search?radius=\(integerRadius)&latitude=\(lat)&longitude=\(lng)&categories=lakes,parks,publicplazas,parklets,publicart,communitygardens,forestry,landmarks,gardens,castles"
             
             guard let url = URL(string: apiToContact) else {return assertionFailure("URL Failed")}
@@ -39,13 +39,13 @@ struct PlacesService {
                             for category in business["categories"].arrayValue {
                                 types.append(category["title"].stringValue)
                             }
-                            let imageURL = business["image_url"].stringValue
-                            let place = Place(imageURL: imageURL, name: name, rating: rating, lat: endLat, lng: endLng, distance: distance, types: types)
+                            let city = business["location"]["city"].stringValue
+                            types.append(city)
+                            let place = Place(name: name, rating: rating, lat: endLat, lng: endLng, distance: distance, types: types)
                             let route = Route(place: place, startLat: lat, startLng: lng, endLat: endLat, endLng: endLng, distance: distance, travelMode: travelMode)
                             routes.append(route)
                             
                         }
-                        print(json)
                     }
                 case .failure(let error):
                     print(error)
@@ -67,6 +67,18 @@ struct PlacesService {
             }
             routes = routes.sorted(by: {abs($0.distance - originalRadius) < abs($1.distance - originalRadius)})
             completion(routes)
+        }
+    }
+    
+    static func getCurrPlaceID(lat: Double, long: Double, name: String, city: String, completion: @escaping (String) -> Void) {
+        print("\(city) \(name)")
+        let parameters = ["key":apiKey,"point":"\(lat),\(long)","input":"\(city) \(name)","inputtype":"textquery"]
+        Alamofire.request("https://maps.googleapis.com/maps/api/place/findplacefromtext/json?", parameters: parameters).responseJSON(options:.mutableContainers) {pathData in
+            let json = try! JSON(data: pathData.data!)
+            let placeId = json["candidates"][0]["place_id"].stringValue
+            print(json)
+            completion(placeId)
+            
         }
     }
 }

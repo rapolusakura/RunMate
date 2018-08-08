@@ -31,7 +31,7 @@ class ShowRouteViewController: UIViewController {
     @IBOutlet weak var startRouteOutlet: UIButton!
     
     @IBAction func startRouteButtonPressed(_ sender: Any) {
-        let location: Location = CoreDataHelper.createPlace(imageURL: route!.place.imageURL, name: route!.place.name, rating: route!.place.rating, lat: route!.place.lat, lng: route!.place.lng, distance: route!.place.distance, types: route!.place.types)
+        let location: Location = CoreDataHelper.createPlace(placeId: route!.place.placeId, name: route!.place.name, rating: route!.place.rating, lat: route!.place.lat, lng: route!.place.lng, distance: route!.place.distance, types: route!.place.types)
         let trip: Trip = CoreDataHelper.createRoute(place: location, startLat: (self.route?.startLat)!, startLng: self.route!.startLng, endLat: self.route!.endLat, endLng: self.route!.endLng, distance: self.route!.distance, travelMode: self.route!.travelMode, elevation: route!.elevation ?? 0.0)
         CoreDataHelper.saveRoute()
         
@@ -56,8 +56,8 @@ class ShowRouteViewController: UIViewController {
                 routeElevationLabel.text = "\(String(format: "%.2f", Conversion.metersToFeet(meters: elevation)))" + " ft"
             }
             placeRatingLabel.text = String((route.place.rating)) + " stars"
-            imageView.imageFromUrl(urlString: route.place.imageURL)
-//            loadFirstPhotoForPlace(placeID: (route.place.imageURL))
+           // imageView.imageFromUrl(urlString: route.place.imageURL)
+            loadFirstPhotoForPlace(placeID: (route.place.placeId))
             
         } else {
             routeNameLabel.text = ""
@@ -77,31 +77,31 @@ class ShowRouteViewController: UIViewController {
         
     }
     
-//    func loadFirstPhotoForPlace(placeID: String) {
-//        GMSPlacesClient.shared().lookUpPhotos(forPlaceID: placeID) { (photos, error) -> Void in
-//            if let error = error {
-//                // TODO: handle the error.
-//                print("Error: \(error.localizedDescription)")
-//            } else {
-//                if let firstPhoto = photos?.results.first {
-//                    self.loadImageForMetadata(photoMetadata: firstPhoto)
-//                }
-//            }
-//        }
-//    }
-//
-//    func loadImageForMetadata(photoMetadata: GMSPlacePhotoMetadata) {
-//        GMSPlacesClient.shared().loadPlacePhoto(photoMetadata, callback: {
-//            (photo, error) -> Void in
-//            if let error = error {
-//                // TODO: handle the error.
-//                print("Error: \(error.localizedDescription)")
-//            } else {
-//                self.imageView.image = photo;
-//                //self.attributionTextView.attributedText = photoMetadata.attributions;
-//            }
-//        })
-//    }
+    func loadFirstPhotoForPlace(placeID: String) {
+        GMSPlacesClient.shared().lookUpPhotos(forPlaceID: placeID) { (photos, error) -> Void in
+            if let error = error {
+                // TODO: handle the error.
+                print("Error: \(error.localizedDescription)")
+            } else {
+                if let firstPhoto = photos?.results.first {
+                    self.loadImageForMetadata(photoMetadata: firstPhoto)
+                }
+            }
+        }
+    }
+
+    func loadImageForMetadata(photoMetadata: GMSPlacePhotoMetadata) {
+        GMSPlacesClient.shared().loadPlacePhoto(photoMetadata, callback: {
+            (photo, error) -> Void in
+            if let error = error {
+                // TODO: handle the error.
+                print("Error: \(error.localizedDescription)")
+            } else {
+                self.imageView.image = photo;
+                //self.attributionTextView.attributedText = photoMetadata.attributions;
+            }
+        })
+    }
     
     func getDirections(){
         let coordinate = CLLocationCoordinate2DMake((route?.endLat)!, (route?.endLng)!)

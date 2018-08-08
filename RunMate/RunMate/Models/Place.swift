@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct Place {
-    let imageURL: String
+class Place {
+    var placeId: String = ""
     let name: String
     let rating: Double
     let lat: Double
@@ -17,8 +17,7 @@ struct Place {
     let distance: Double
     let types: [String]
     
-    init(imageURL: String, name: String, rating: Double, lat: Double, lng: Double, distance: Double, types: [String]){
-        self.imageURL = imageURL
+    init(name: String, rating: Double, lat: Double, lng: Double, distance: Double, types: [String]){
         self.name = name
         self.rating = rating
         self.lat = lat
@@ -26,4 +25,5 @@ struct Place {
         self.distance = distance
         self.types = types
     }
+    
 }
