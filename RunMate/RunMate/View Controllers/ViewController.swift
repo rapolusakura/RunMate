@@ -42,8 +42,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDe
         tripSettingSegmentedControl.layer.masksToBounds = true
         travelModeSegmentedControl.layer.cornerRadius = 10
         travelModeSegmentedControl.layer.masksToBounds = true
-        tripSettingSegmentedControl.frame = CGRect(x: 30, y: 250, width: 300, height: 100)
-        travelModeSegmentedControl.frame = CGRect(x: 30, y: 400, width: 300, height: 100)
         tripSettingSegmentedControl.removeBorders()
         travelModeSegmentedControl.removeBorders()
         
