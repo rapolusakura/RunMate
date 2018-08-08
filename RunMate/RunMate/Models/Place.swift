@@ -26,4 +26,14 @@ class Place {
         self.types = types
     }
     
+    init(placeId: String, name: String, rating: Double, lat: Double, lng: Double, distance: Double, types: [String]){
+        self.name = name
+        self.rating = rating
+        self.lat = lat
+        self.lng = lng
+        self.distance = distance
+        self.types = types
+        self.placeId = placeId
+    }
+    
 }
