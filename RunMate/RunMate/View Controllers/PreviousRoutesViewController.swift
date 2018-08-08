@@ -9,22 +9,24 @@
 import Foundation
 import UIKit
 
-class PreviousRouteViewController: UITableViewController {
+class PreviousRouteViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     var routes: [Trip]?
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    @IBOutlet weak var tableView: UITableView!
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
         return routes!.count
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
     
-    override func viewDidLoad() {
+     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ShowPastRoutesTableViewCell
         let route = routes![indexPath.section]
         cell.routeNameLabel.text = route.place?.name
@@ -36,28 +38,20 @@ class PreviousRouteViewController: UITableViewController {
         let result = formatter.string(from: route.dateCompleted!)
         cell.dateCompletedLabel.text = result
         
-        cell.layer.cornerRadius = 8
-        cell.clipsToBounds = true
-        
-        cell.layer.shadowOffset = CGSize(width: 1, height: 0)
-        cell.layer.shadowColor = UIColor.black.cgColor
-        cell.layer.shadowRadius = 5
-        cell.layer.shadowOpacity = 0.8
-        
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 25
     }
     
-    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView()
         headerView.backgroundColor = UIColor.clear
         return headerView
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let route = routes![indexPath.section]
         self.performSegue(withIdentifier: "showRouteDetails", sender: route)
     }
@@ -73,7 +67,6 @@ class PreviousRouteViewController: UITableViewController {
             let route = Route(place: place, startLat: trip.startLat, startLng: trip.startLng, endLat: trip.endLat, endLng: trip.endLng, distance: trip.distance, isOneWay: trip.isOneWay, travelMode: trip.travelMode!, elevation: trip.elevation)
             let destination = segue.destination as! ShowRouteViewController
             destination.route = route
-            print(route.elevation)
         default:
             print("i dont recognize this")
         }

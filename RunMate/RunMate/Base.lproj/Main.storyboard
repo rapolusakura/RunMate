@@ -106,7 +106,7 @@
                         <outlet property="tripSettingSegmentedControl" destination="z3i-gC-g6A" id="Xz7-0F-bIi"/>
                         <outlet property="viewResultsOutlet" destination="vuv-Cn-Xae" id="PNH-93-eSG"/>
                         <segue destination="ZxM-tZ-jM4" kind="show" identifier="viewResults" id="8l6-u4-oep"/>
-                        <segue destination="fLc-2s-HQQ" kind="show" identifier="showPastRoutes" id="hgO-9X-5ej"/>
+                        <segue destination="8zw-PC-WuW" kind="show" identifier="showPastRoutes" id="Cpz-8q-j9d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -114,71 +114,88 @@
             <point key="canvasLocation" x="1076" y="106.59670164917542"/>
         </scene>
         <!--Previous Trips-->
-        <scene sceneID="Kgy-VC-J03">
+        <scene sceneID="j70-I9-EcR">
             <objects>
-                <tableViewController title="Previous Trips" id="fLc-2s-HQQ" customClass="PreviousRouteViewController" customModule="RunMate" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="roD-A7-Ytu">
+                <viewController title="Previous Trips" id="8zw-PC-WuW" customClass="PreviousRouteViewController" customModule="RunMate" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Kce-QY-xKl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.49019607840000001" green="0.75294117650000003" blue="0.68627450980000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="200" id="m1p-EY-Hhr" customClass="ShowPastRoutesTableViewCell" customModule="RunMate" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="200"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="m1p-EY-Hhr" id="klS-eO-PXl">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="oWn-Ry-W76">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1Lk-qa-7Cv">
+                                <rect key="frame" x="15" y="79" width="345" height="573"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" rowHeight="170" id="m1p-EY-Hhr" customClass="ShowPastRoutesTableViewCell" customModule="RunMate" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="345" height="170"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="m1p-EY-Hhr" id="klS-eO-PXl">
+                                            <rect key="frame" x="0.0" y="0.0" width="312" height="169.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Place Name" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="327-Z5-Jd4">
-                                                    <rect key="frame" x="0.0" y="0.0" width="131" height="91.5"/>
-                                                    <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="25"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ada-4n-Vmh">
-                                                    <rect key="frame" x="0.0" y="116.5" width="106" height="28"/>
-                                                    <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="28"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Date Completed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D96-d7-8tB">
-                                                    <rect key="frame" x="0.0" y="169.5" width="176" height="30"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="oWn-Ry-W76">
+                                                    <rect key="frame" x="0.0" y="0.0" width="312" height="169.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Place Name" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="327-Z5-Jd4">
+                                                            <rect key="frame" x="18" y="15" width="139.5" height="32.5"/>
+                                                            <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="25"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ada-4n-Vmh">
+                                                            <rect key="frame" x="18" y="72.5" width="106" height="28"/>
+                                                            <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="28"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Date Completed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D96-d7-8tB">
+                                                            <rect key="frame" x="18" y="125.5" width="176" height="29"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <edgeInsets key="layoutMargins" top="15" left="18" bottom="15" right="18"/>
+                                                </stackView>
                                             </subviews>
-                                        </stackView>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="oWn-Ry-W76" firstAttribute="top" secondItem="klS-eO-PXl" secondAttribute="top" id="7J9-YX-FXY"/>
-                                        <constraint firstAttribute="bottom" secondItem="oWn-Ry-W76" secondAttribute="bottom" id="rfG-tz-HFh"/>
-                                        <constraint firstAttribute="trailing" secondItem="oWn-Ry-W76" secondAttribute="trailing" id="vdd-FT-MTA"/>
-                                        <constraint firstItem="oWn-Ry-W76" firstAttribute="leading" secondItem="klS-eO-PXl" secondAttribute="leading" id="yQ9-Zj-XHq"/>
-                                    </constraints>
-                                </tableViewCellContentView>
+                                            <color key="backgroundColor" red="0.90196078430000004" green="0.98823529409999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="oWn-Ry-W76" firstAttribute="top" secondItem="klS-eO-PXl" secondAttribute="top" id="7J9-YX-FXY"/>
+                                                <constraint firstAttribute="bottom" secondItem="oWn-Ry-W76" secondAttribute="bottom" id="rfG-tz-HFh"/>
+                                                <constraint firstAttribute="trailing" secondItem="oWn-Ry-W76" secondAttribute="trailing" id="vdd-FT-MTA"/>
+                                                <constraint firstItem="oWn-Ry-W76" firstAttribute="leading" secondItem="klS-eO-PXl" secondAttribute="leading" id="yQ9-Zj-XHq"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.90196078430000004" green="0.98823529409999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="dateCompletedLabel" destination="D96-d7-8tB" id="diL-Tk-RGo"/>
+                                            <outlet property="routeDistanceLabel" destination="Ada-4n-Vmh" id="43h-H3-5Z5"/>
+                                            <outlet property="routeNameLabel" destination="327-Z5-Jd4" id="uu9-qk-e2L"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
-                                    <outlet property="dateCompletedLabel" destination="D96-d7-8tB" id="diL-Tk-RGo"/>
-                                    <outlet property="routeDistanceLabel" destination="Ada-4n-Vmh" id="43h-H3-5Z5"/>
-                                    <outlet property="routeNameLabel" destination="327-Z5-Jd4" id="uu9-qk-e2L"/>
+                                    <outlet property="dataSource" destination="8zw-PC-WuW" id="iuc-Ds-zXE"/>
+                                    <outlet property="delegate" destination="8zw-PC-WuW" id="LCu-SH-0Tv"/>
                                 </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="fLc-2s-HQQ" id="AbF-Nn-VMq"/>
-                            <outlet property="delegate" destination="fLc-2s-HQQ" id="UBw-i4-Bmb"/>
-                        </connections>
-                    </tableView>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.49019607840000001" green="0.75294117650000003" blue="0.68627450980000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="S6d-Oi-sJE" firstAttribute="trailing" secondItem="1Lk-qa-7Cv" secondAttribute="trailing" constant="15" id="DQx-FL-igI"/>
+                            <constraint firstItem="1Lk-qa-7Cv" firstAttribute="leading" secondItem="S6d-Oi-sJE" secondAttribute="leading" constant="15" id="TUv-BQ-Ma2"/>
+                            <constraint firstItem="1Lk-qa-7Cv" firstAttribute="top" secondItem="S6d-Oi-sJE" secondAttribute="top" constant="15" id="ga8-dA-JZR"/>
+                            <constraint firstItem="S6d-Oi-sJE" firstAttribute="bottom" secondItem="1Lk-qa-7Cv" secondAttribute="bottom" constant="15" id="i6J-0h-Ql3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="S6d-Oi-sJE"/>
+                    </view>
                     <connections>
-                        <segue destination="Lgf-so-QSh" kind="show" identifier="showRouteDetails" id="wga-Ip-Ze7"/>
+                        <outlet property="tableView" destination="1Lk-qa-7Cv" id="Td2-Di-hyC"/>
+                        <segue destination="Lgf-so-QSh" kind="show" identifier="showRouteDetails" id="80o-iQ-kLF"/>
                     </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zCH-vT-7l4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mj8-Sl-8jN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1508" y="888.30584707646187"/>
+            <point key="canvasLocation" x="1711" y="1007"/>
         </scene>
         <!--Search Results-->
         <scene sceneID="Mrh-sD-G0m">
@@ -379,6 +396,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="wga-Ip-Ze7"/>
+        <segue reference="80o-iQ-kLF"/>
     </inferredMetricsTieBreakers>
 </document>
