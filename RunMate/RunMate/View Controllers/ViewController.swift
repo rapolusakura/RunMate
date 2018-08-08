@@ -87,7 +87,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDe
                         self.performSegue(withIdentifier: "viewResults", sender: routes)
                     }
                 } else {
-                    PlacesService.findRoundTripNearbyPlaces(lat: 37.7808727, lng: -122.4183261, originalRadius: distance, travelMode: travelMode) { (routes) in
+                    PlacesService.findRoundTripNearbyPlaces(lat: 52.530095, lng: 13.3889753, originalRadius: distance, travelMode: travelMode) { (routes) in
                         self.performSegue(withIdentifier: "viewResults", sender: routes)
                     }
                 }
@@ -98,7 +98,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDe
                         self.performSegue(withIdentifier: "viewResults", sender: routes)
                     }
                 } else {
-                    PlacesService.findOneWayNearbyPlaces(lat: 37.7808727, lng: -122.4183261, radius: distance, travelMode: travelMode) { (routes) in
+//                    PlacesService.findOneWayNearbyPlaces(lat: 37.7808727, lng: -122.4183261, radius: distance, travelMode: travelMode) { (routes) in
+//                        self.performSegue(withIdentifier: "viewResults", sender: routes)
+//                    }
+                    PlacesService.findOneWayNearbyPlaces(lat: 52.530095, lng: 13.3889753, radius: distance, travelMode: travelMode) { (routes) in
                         self.performSegue(withIdentifier: "viewResults", sender: routes)
                     }
                 }
