@@ -15,6 +15,7 @@ class PreviousRouteViewController: UIViewController, UITableViewDelegate, UITabl
     @IBOutlet weak var tableView: UITableView!
     
     func numberOfSections(in tableView: UITableView) -> Int {
+        print(routes!.count)
         return routes!.count
     }
     
@@ -22,8 +23,9 @@ class PreviousRouteViewController: UIViewController, UITableViewDelegate, UITabl
         return 1
     }
     
-     override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
+        dropShadow(scale: true, sender: tableView)
     }
     
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -37,6 +39,14 @@ class PreviousRouteViewController: UIViewController, UITableViewDelegate, UITabl
         formatter.dateFormat = "dd/MM/yyyy"
         let result = formatter.string(from: route.dateCompleted!)
         cell.dateCompletedLabel.text = result
+        
+        cell.layer.cornerRadius = 8
+        cell.clipsToBounds = true
+        
+        cell.layer.shadowOffset = CGSize(width: 1, height: 0)
+        cell.layer.shadowColor = UIColor.black.cgColor
+        cell.layer.shadowRadius = 5
+        cell.layer.shadowOpacity = 0.8
         
         return cell
     }
@@ -70,6 +80,16 @@ class PreviousRouteViewController: UIViewController, UITableViewDelegate, UITabl
         default:
             print("i dont recognize this")
         }
+    }
+    
+    func dropShadow(scale: Bool = true, sender: UIView) {
+        sender.layer.masksToBounds = false
+        sender.layer.shadowColor = UIColor.black.cgColor
+        sender.layer.shadowOpacity = 0.6
+        sender.layer.shadowOffset = CGSize(width: -1, height: 1)
+        sender.layer.shadowRadius = 1.5
+        sender.layer.shouldRasterize = true
+        sender.layer.rasterizationScale = scale ? UIScreen.main.scale : 1
     }
     
 }

@@ -31,7 +31,7 @@
                                     </textField>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="fg5-Km-DmM">
                                         <rect key="frame" x="20" y="172" width="335" height="91"/>
-                                        <color key="backgroundColor" white="0.49603949652777779" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" red="0.90980392156862744" green="0.95294117647058818" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="90" id="cTT-GH-3mW"/>
                                         </constraints>
@@ -39,11 +39,11 @@
                                             <segment title="Run"/>
                                             <segment title="Bike"/>
                                         </segments>
-                                        <color key="tintColor" red="0.98823529409999999" green="0.97647058819999999" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" red="0.32941176470588235" green="0.32941176470588235" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </segmentedControl>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="z3i-gC-g6A">
                                         <rect key="frame" x="20" y="302" width="335" height="91"/>
-                                        <color key="backgroundColor" white="0.5" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" red="0.90980392156862744" green="0.95294117647058818" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="90" id="jLg-A0-0jf"/>
                                         </constraints>
@@ -51,7 +51,7 @@
                                             <segment title="One-way"/>
                                             <segment title="Round-trip"/>
                                         </segments>
-                                        <color key="tintColor" red="0.98823529409999999" green="0.97647058819999999" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" red="0.32941176470588235" green="0.32941176470588235" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </segmentedControl>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vuv-Cn-Xae">
                                         <rect key="frame" x="50" y="432" width="275" height="72"/>
@@ -89,7 +89,7 @@
                                 <edgeInsets key="layoutMargins" top="25" left="20" bottom="25" right="20"/>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.49019607843137253" green="0.75294117647058822" blue="0.68627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.66274509803921566" blue="0.52941176470588236" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="nNr-VC-lQv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="5Jb-oG-sXi"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nNr-VC-lQv" secondAttribute="trailing" id="O6T-h9-2iX"/>
@@ -123,7 +123,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1Lk-qa-7Cv">
                                 <rect key="frame" x="15" y="79" width="345" height="573"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" rowHeight="170" id="m1p-EY-Hhr" customClass="ShowPastRoutesTableViewCell" customModule="RunMate" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="345" height="170"/>
@@ -165,7 +165,7 @@
                                                 <constraint firstItem="oWn-Ry-W76" firstAttribute="leading" secondItem="klS-eO-PXl" secondAttribute="leading" id="yQ9-Zj-XHq"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.90196078430000004" green="0.98823529409999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.90980392156862744" green="0.95294117647058818" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="dateCompletedLabel" destination="D96-d7-8tB" id="diL-Tk-RGo"/>
                                             <outlet property="routeDistanceLabel" destination="Ada-4n-Vmh" id="43h-H3-5Z5"/>
@@ -179,7 +179,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="0.49019607840000001" green="0.75294117650000003" blue="0.68627450980000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.32941176470588235" green="0.32941176470588235" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="S6d-Oi-sJE" firstAttribute="trailing" secondItem="1Lk-qa-7Cv" secondAttribute="trailing" constant="15" id="DQx-FL-igI"/>
                             <constraint firstItem="1Lk-qa-7Cv" firstAttribute="leading" secondItem="S6d-Oi-sJE" secondAttribute="leading" constant="15" id="TUv-BQ-Ma2"/>

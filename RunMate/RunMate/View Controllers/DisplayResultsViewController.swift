@@ -15,6 +15,7 @@ class DisplayResultsViewController: UIViewController, UITableViewDelegate, UITab
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         dropShadow(scale: true, sender: tableView)
     }
     
