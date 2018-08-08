@@ -21,7 +21,7 @@ struct ElevationServices {
             let startElevation: Double = response["results"][0]["elevation"].doubleValue
             let endElevation: Double = response["results"][1]["elevation"].doubleValue
             let elevationDifference: Double = endElevation - startElevation
-            
+
             completion(elevationDifference)
         }
     }

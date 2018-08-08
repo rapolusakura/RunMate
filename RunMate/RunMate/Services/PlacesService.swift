@@ -38,10 +38,9 @@ struct PlacesService {
                             let distance = business["distance"].doubleValue //in meters
                             let imageURL = business["image_url"].stringValue
                             let city = business["location"]["city"].stringValue
-                            let place = Place(name: name, rating: rating, numRatings: numRatings, lat: lat, lng: lng, distance: distance, imageURL: imageURL, city: city)
+                            let place = Place(name: name, rating: rating, numRatings: numRatings, lat: endLat, lng: endLng, distance: distance, imageURL: imageURL, city: city)
                             let route = Route(place: place, startLat: lat, startLng: lng, endLat: endLat, endLng: endLng, distance: distance, travelMode: travelMode)
                             routes.append(route)
-                            
                         }
                     }
                 case .failure(let error):

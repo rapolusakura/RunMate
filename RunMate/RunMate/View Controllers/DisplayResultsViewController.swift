@@ -52,7 +52,10 @@ class DisplayResultsViewController: UIViewController, UITableViewDelegate, UITab
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let route = routes[indexPath.section]
         ElevationServices.findElevationDifference(startLat: route.startLat, startLng: route.startLng, endLat: (route.place.lat), endLng: (route.place.lng)) { (elevation) in
+            print("start: \(route.startLat), \(route.startLng)")
+            print("end: \(route.place.lat), \(route.place.lng)")
             route.elevation = elevation
+            print("thisis the elevation", elevation)
             PlacesService.getCurrPlaceID(route: route, completion: { (placeId) in
                 route.place.placeId = placeId
                 self.performSegue(withIdentifier: "showPlaceDetails", sender: route)
