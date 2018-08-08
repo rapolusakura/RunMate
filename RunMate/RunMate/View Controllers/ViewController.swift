@@ -32,21 +32,29 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDe
         distanceTextField.keyboardType = UIKeyboardType.numberPad
         
         //UI stuff
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: UIFont(name: "Futura", size: 25)!]
+        self.navigationController?.navigationBar.tintColor = UIColor(red: 230, green: 252, blue: 249, alpha: 0.8)
         viewResultsOutlet.layer.cornerRadius = 20
         viewResultsOutlet.layer.masksToBounds = true
         showPastRoutesOutlet.layer.cornerRadius = 10
         showPastRoutesOutlet.layer.masksToBounds = true
         distanceTextField.layer.cornerRadius = 20
         distanceTextField.layer.masksToBounds = true
-        tripSettingSegmentedControl.removeBorders()
-        travelModeSegmentedControl.removeBorders()
-        tripSettingSegmentedControl.layer.cornerRadius = 15
-        tripSettingSegmentedControl.layer.masksToBounds = true
-        travelModeSegmentedControl.layer.cornerRadius = 15
-        travelModeSegmentedControl.layer.masksToBounds = true
-        dropShadow(scale: true, sender: tripSettingSegmentedControl)
+//        tripSettingSegmentedControl.removeBorders()
+//        travelModeSegmentedControl.removeBorders()
+        self.tripSettingSegmentedControl.layer.cornerRadius = 25.0
+        self.tripSettingSegmentedControl.layer.borderColor = UIColor.white.cgColor
+        self.tripSettingSegmentedControl.layer.borderWidth = 0
+        self.tripSettingSegmentedControl.layer.masksToBounds = true
+        
+        self.travelModeSegmentedControl.layer.cornerRadius = 25.0
+        self.travelModeSegmentedControl.layer.borderColor = UIColor.white.cgColor
+        self.travelModeSegmentedControl.layer.borderWidth = 0
+        self.travelModeSegmentedControl.layer.masksToBounds = true
+        
+        //dropShadow(scale: true, sender: tripSettingSegmentedControl)
         dropShadow(scale: true, sender: distanceTextField)
-        dropShadow(scale: true, sender: travelModeSegmentedControl)
+        //dropShadow(scale: true, sender: travelModeSegmentedControl)
         dropShadow(scale: true, sender: viewResultsOutlet)
         dropShadow(scale: true, sender: showPastRoutesOutlet)
         

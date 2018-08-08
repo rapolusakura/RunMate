@@ -23,15 +23,15 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="# of miles" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MLm-CA-q9I">
-                                        <rect key="frame" x="20" y="25" width="335" height="109"/>
+                                        <rect key="frame" x="25" y="25" width="325" height="109"/>
                                         <color key="backgroundColor" red="0.90196078431372551" green="0.9882352941176471" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="textColor" red="0.29411764705882354" green="0.29411764705882354" blue="0.29411764705882354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="79"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="76"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="fg5-Km-DmM">
-                                        <rect key="frame" x="20" y="174" width="335" height="85"/>
-                                        <color key="backgroundColor" red="0.90980392156862744" green="0.95294117647058818" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <rect key="frame" x="25" y="174" width="325" height="85"/>
+                                        <color key="backgroundColor" red="0.90196078430000004" green="0.95686274510000002" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="84" id="biE-cY-LH9"/>
                                         </constraints>
@@ -39,10 +39,10 @@
                                             <segment title="Run"/>
                                             <segment title="Bike"/>
                                         </segments>
-                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" red="0.3294117647" green="0.3294117647" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </segmentedControl>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="z3i-gC-g6A">
-                                        <rect key="frame" x="20" y="298" width="335" height="85"/>
+                                        <rect key="frame" x="25" y="298" width="325" height="85"/>
                                         <color key="backgroundColor" red="0.90980392156862744" green="0.95294117647058818" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="84" id="gVS-5v-1FN"/>
@@ -51,20 +51,19 @@
                                             <segment title="One-way"/>
                                             <segment title="Round-trip"/>
                                         </segments>
-                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" red="0.3294117647" green="0.3294117647" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </segmentedControl>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vuv-Cn-Xae">
-                                        <rect key="frame" x="22.5" y="422" width="330" height="72"/>
-                                        <color key="backgroundColor" red="0.90196078431372551" green="0.9882352941176471" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <rect key="frame" x="25" y="422" width="325" height="72"/>
+                                        <color key="backgroundColor" red="0.3294117647" green="0.3294117647" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="72" id="tD7-Bi-HeO"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="38"/>
-                                        <color key="tintColor" red="0.58471943520000003" green="1" blue="0.72584326720000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <size key="titleShadowOffset" width="1" height="2"/>
                                         <state key="normal" title="     View Results     ">
-                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleColor" red="0.98823529409999999" green="0.97647058819999999" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="viewResultsButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VOH-Ge-49f"/>
@@ -86,7 +85,7 @@
                                     <constraint firstItem="fg5-Km-DmM" firstAttribute="width" secondItem="MLm-CA-q9I" secondAttribute="width" id="JtW-7t-lYv"/>
                                     <constraint firstItem="z3i-gC-g6A" firstAttribute="width" secondItem="MLm-CA-q9I" secondAttribute="width" id="YZg-6e-CPA"/>
                                 </constraints>
-                                <edgeInsets key="layoutMargins" top="25" left="20" bottom="25" right="20"/>
+                                <edgeInsets key="layoutMargins" top="25" left="25" bottom="25" right="25"/>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.49019607843137253" green="0.75294117647058822" blue="0.68627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -162,7 +161,7 @@
                                                     <edgeInsets key="layoutMargins" top="8" left="10" bottom="15" right="8"/>
                                                 </stackView>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.90196078430000004" green="0.98823529409999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="a8z-br-9GT" firstAttribute="leading" secondItem="klS-eO-PXl" secondAttribute="leading" id="Gr7-JF-SZf"/>
                                                 <constraint firstItem="a8z-br-9GT" firstAttribute="top" secondItem="klS-eO-PXl" secondAttribute="top" id="MwV-Ug-NcV"/>
@@ -170,7 +169,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="a8z-br-9GT" secondAttribute="trailing" id="uzp-nb-Iar"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.90980392156862744" green="0.95294117647058818" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.90196078431372551" green="0.95686274509803926" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="dateCompletedLabel" destination="D96-d7-8tB" id="diL-Tk-RGo"/>
                                             <outlet property="routeDistanceLabel" destination="Ada-4n-Vmh" id="43h-H3-5Z5"/>
@@ -290,25 +289,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zax-bC-JUg">
-                                <rect key="frame" x="0.0" y="64" width="375" height="348.5"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="339"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="3aY-Ub-73c">
-                                <rect key="frame" x="0.0" y="412.5" width="375" height="254.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="3aY-Ub-73c">
+                                <rect key="frame" x="0.0" y="403" width="375" height="264"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ZQ-3g-xu5">
-                                        <rect key="frame" x="132.5" y="8" width="110" height="49.5"/>
-                                        <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="38"/>
+                                        <rect key="frame" x="135.5" y="8" width="104" height="47"/>
+                                        <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="36"/>
                                         <color key="textColor" red="0.1960784314" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lml-QB-8wF">
-                                        <rect key="frame" x="159.5" y="77.5" width="56.5" height="30"/>
+                                        <rect key="frame" x="159.5" y="79" width="56.5" height="30"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="23"/>
                                         <color key="textColor" red="0.098039215686274508" green="0.098039215686274508" blue="0.098039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="azJ-Bc-Ok8">
-                                        <rect key="frame" x="67.5" y="127.5" width="240" height="39"/>
+                                        <rect key="frame" x="67.5" y="133" width="240" height="39"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r51-m6-5yJ">
                                                 <rect key="frame" x="0.0" y="0.0" width="73.5" height="39"/>
@@ -325,7 +324,7 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gay-hQ-b8H">
-                                        <rect key="frame" x="86" y="186.5" width="203" height="48"/>
+                                        <rect key="frame" x="86" y="196" width="203" height="48"/>
                                         <color key="backgroundColor" red="0.32941176470588235" green="0.32941176470588235" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="27"/>
                                         <state key="normal" title="    Start Route    ">
@@ -369,7 +368,8 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7Yw-E1-s9d" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dK4-QQ-flR">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="dK4-QQ-flR">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
