@@ -32,26 +32,31 @@ struct PlacesService {
                     if let value = response.result.value {
                         let json = JSON(value)
                         for business in json["businesses"].arrayValue {
+                            dg.enter()
                             let name = business["name"].stringValue
                             let endLat = business["coordinates"]["latitude"].doubleValue
                             let endLng = business["coordinates"]["longitude"].doubleValue
                             let rating = business["rating"].doubleValue
                             let numRatings = business["review_count"].doubleValue
-                            let distance = business["distance"].doubleValue //in meters
                             let imageURL = business["image_url"].stringValue
                             let city = business["location"]["city"].stringValue
-                            let place = Place(name: name, rating: rating, numRatings: numRatings, lat: endLat, lng: endLng, distance: distance, imageURL: imageURL, city: city)
-                            let route = Route(place: place, startLat: lat, startLng: lng, endLat: endLat, endLng: endLng, distance: distance, travelMode: travelMode)
-                            routes.append(route)
+                            
+                            DistanceServices.findDistance(startLat: lat, startLng: lng, endLat: endLat, endLng: endLng, travelMode: travelMode, completion: { (distance) in
+                                let place = Place(name: name, rating: rating, numRatings: numRatings, lat: endLat, lng: endLng, distance: distance, imageURL: imageURL, city: city)
+                                let route = Route(place: place, startLat: lat, startLng: lng, endLat: endLat, endLng: endLng, distance: distance, travelMode: travelMode)
+                                routes.append(route)
+                                dg.leave()
+                            })
                         }
                     }
                 case .failure(let error):
                     print(error)
                 }
                 
-                dg.no
-                routes = routes.sorted(by: {abs($0.distance - radius) < abs($1.distance - radius)})
-                completion(routes)
+                dg.notify(queue: DispatchQueue.main, execute: {
+                    routes = routes.sorted(by: {abs($0.distance - radius) < abs($1.distance - radius)})
+                    completion(routes)
+                })
             }
     }
     
