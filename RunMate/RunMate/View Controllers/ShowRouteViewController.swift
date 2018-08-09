@@ -56,10 +56,14 @@ class ShowRouteViewController: UIViewController {
                 routeElevationLabel.text = "\(String(format: "%.2f", Conversion.metersToFeet(meters: elevation)))" + " ft"
             }
             placeRatingLabel.text = String((route.place.rating)) + "⭐ (" + String(Int(route.place.numRatings)) + " ratings)"
+            
             if route.place.placeId != "" {
                 loadFirstPhotoForPlace(placeID: (route.place.placeId))
-            } else {
+            } else if route.place.imageURL != "" {
                 imageView.imageFromUrl(urlString: route.place.imageURL)
+            } else {
+                //placeholder image
+                imageView.image = UIImage(named: "image-not-found.png")
             }
             
         } else {

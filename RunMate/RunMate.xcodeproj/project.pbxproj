@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		44429C8D211BC0CE00D56F4D /* image-not-found.png in Resources */ = {isa = PBXBuildFile; fileRef = 44429C8C211BC0CD00D56F4D /* image-not-found.png */; };
 		4471D4012110D7F3006D8C14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4471D4002110D7F3006D8C14 /* AppDelegate.swift */; };
 		4471D4032110D7F3006D8C14 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4471D4022110D7F3006D8C14 /* ViewController.swift */; };
 		4471D4062110D7F3006D8C14 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4471D4042110D7F3006D8C14 /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 /* Begin PBXFileReference section */
 		2165847FA2894E3CD78CEB96 /* Pods-RunMate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunMate.release.xcconfig"; path = "Pods/Target Support Files/Pods-RunMate/Pods-RunMate.release.xcconfig"; sourceTree = "<group>"; };
 		2A57981CD271E7E03F429210 /* Pods-RunMate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunMate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RunMate/Pods-RunMate.debug.xcconfig"; sourceTree = "<group>"; };
+		44429C8C211BC0CD00D56F4D /* image-not-found.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "image-not-found.png"; path = "Assets.xcassets/image-not-found.png"; sourceTree = "<group>"; };
 		4471D3FD2110D7F3006D8C14 /* RunMate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RunMate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4471D4002110D7F3006D8C14 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4471D4022110D7F3006D8C14 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				4471D4092110D7F6006D8C14 /* LaunchScreen.storyboard */,
 				4471D44D2119013F006D8C14 /* lol.jpg */,
 				4471D44F21190147006D8C14 /* image.png */,
+				44429C8C211BC0CD00D56F4D /* image-not-found.png */,
 				4471D40C2110D7F6006D8C14 /* Info.plist */,
 				4471D43E2117E6B5006D8C14 /* RunMate.xcdatamodeld */,
 			);
@@ -244,6 +247,7 @@
 				4471D44E2119013F006D8C14 /* lol.jpg in Resources */,
 				4471D4082110D7F6006D8C14 /* Assets.xcassets in Resources */,
 				4471D4062110D7F3006D8C14 /* Main.storyboard in Resources */,
+				44429C8D211BC0CE00D56F4D /* image-not-found.png in Resources */,
 				4471D45021190147006D8C14 /* image.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
