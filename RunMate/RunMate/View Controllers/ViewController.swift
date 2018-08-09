@@ -14,10 +14,21 @@ import CoreLocation
 class ViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDelegate {
     
     let locationManager = CLLocationManager()
+    let numberToolbar: UIToolbar = UIToolbar()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        numberToolbar.barStyle = UIBarStyle.blackTranslucent
+        numberToolbar.items=[
+            UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.plain, target: self, action: #selector(hoopla)),
+            UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: self, action: nil),
+            UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.plain, target: self, action: #selector(boopla))
+        ]
+        
+        numberToolbar.sizeToFit()
+        
+        distanceTextField.inputAccessoryView = numberToolbar //do it for every relevant textfield if there are more than one
         self.locationManager.requestAlwaysAuthorization()
         
         // For use in foreground
@@ -162,6 +173,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDe
         sender.layer.shadowRadius = 1.5
         sender.layer.shouldRasterize = true
         sender.layer.rasterizationScale = scale ? UIScreen.main.scale : 1
+    }
+    
+    @objc func boopla() {
+        distanceTextField.resignFirstResponder()
+    }
+    
+    @objc func hoopla() {
+        distanceTextField.resignFirstResponder()
     }
 }
 
