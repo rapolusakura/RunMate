@@ -54,9 +54,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDe
         self.travelModeSegmentedControl.layer.borderWidth = 1
         self.travelModeSegmentedControl.layer.masksToBounds = true
         
-        //dropShadow(scale: true, sender: tripSettingSegmentedControl)
         dropShadow(scale: true, sender: distanceTextField)
-        //dropShadow(scale: true, sender: travelModeSegmentedControl)
         dropShadow(scale: true, sender: viewResultsOutlet)
         dropShadow(scale: true, sender: showPastRoutesOutlet)
         
