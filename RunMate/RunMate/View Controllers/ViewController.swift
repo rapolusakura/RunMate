@@ -65,7 +65,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDe
         self.travelModeSegmentedControl.layer.borderWidth = 1
         self.travelModeSegmentedControl.layer.masksToBounds = true
         
-        dropShadow(scale: true, sender: distanceTextField)
+       // dropShadow(scale: true, sender: distanceTextField)
         dropShadow(scale: true, sender: viewResultsOutlet)
         dropShadow(scale: true, sender: showPastRoutesOutlet)
         
@@ -170,7 +170,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDe
         sender.layer.shadowColor = UIColor.black.cgColor
         sender.layer.shadowOpacity = 0.6
         sender.layer.shadowOffset = CGSize(width: -1, height: 1)
-        sender.layer.shadowRadius = 1.5
+        sender.layer.shadowRadius = 2
         sender.layer.shouldRasterize = true
         sender.layer.rasterizationScale = scale ? UIScreen.main.scale : 1
     }

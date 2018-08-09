@@ -55,7 +55,7 @@ class ShowRouteViewController: UIViewController {
             else {
                 routeElevationLabel.text = "\(String(format: "%.2f", Conversion.metersToFeet(meters: elevation)))" + " ft"
             }
-            placeRatingLabel.text = String((route.place.rating)) + "⭐ (" + String(Int(route.place.numRatings)) + " ratings)"
+            placeRatingLabel.text = String((route.place.rating)) + " ★ (" + String(Int(route.place.numRatings)) + " ratings)"
             
             if route.place.placeId != "" {
                 loadFirstPhotoForPlace(placeID: (route.place.placeId))
