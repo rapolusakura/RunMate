@@ -23,6 +23,8 @@ struct PlacesService {
             
             var request = URLRequest(url: url)
             request.setValue("Bearer 704azzpEPQYj74YGBz1mwE0yp96vB5VjV9ytQluciKI0EC46ZA6kprJMwgml2ffxqPngLUmlkh2jBK6t3c4eOcMqPSjvyurPthNZo1jyS-HgBfUl2bYsTVUQPJFkW3Yx", forHTTPHeaderField: "Authorization")
+        
+            let dg = DispatchGroup()
             
             Alamofire.request(request).validate().responseJSON() { response in
                 switch response.result {
@@ -46,6 +48,8 @@ struct PlacesService {
                 case .failure(let error):
                     print(error)
                 }
+                
+                dg.no
                 routes = routes.sorted(by: {abs($0.distance - radius) < abs($1.distance - radius)})
                 completion(routes)
             }
