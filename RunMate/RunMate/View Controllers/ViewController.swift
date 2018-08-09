@@ -19,7 +19,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDe
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        numberToolbar.barStyle = UIBarStyle.blackTranslucent
+        numberToolbar.barStyle = .default
         numberToolbar.items=[
             UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.plain, target: self, action: #selector(hoopla)),
             UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: self, action: nil),
