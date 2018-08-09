@@ -42,14 +42,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDe
         distanceTextField.layer.masksToBounds = true
 //        tripSettingSegmentedControl.removeBorders()
 //        travelModeSegmentedControl.removeBorders()
-        self.tripSettingSegmentedControl.layer.cornerRadius = 25.0
-        self.tripSettingSegmentedControl.layer.borderColor = UIColor.white.cgColor
-        self.tripSettingSegmentedControl.layer.borderWidth = 0
-        self.tripSettingSegmentedControl.layer.masksToBounds = true
         
+        self.tripSettingSegmentedControl.layer.cornerRadius = 25.0
+        let colorLiteral = UIColor(red: 125, green: 192, blue: 175, alpha: 1)
+        self.tripSettingSegmentedControl.layer.borderColor = colorLiteral.cgColor
+        self.tripSettingSegmentedControl.layer.borderWidth = 1
+        self.tripSettingSegmentedControl.layer.masksToBounds = true
+
         self.travelModeSegmentedControl.layer.cornerRadius = 25.0
-        self.travelModeSegmentedControl.layer.borderColor = UIColor.white.cgColor
-        self.travelModeSegmentedControl.layer.borderWidth = 0
+        self.travelModeSegmentedControl.layer.borderColor = colorLiteral.cgColor
+        self.travelModeSegmentedControl.layer.borderWidth = 1
         self.travelModeSegmentedControl.layer.masksToBounds = true
         
         //dropShadow(scale: true, sender: tripSettingSegmentedControl)
