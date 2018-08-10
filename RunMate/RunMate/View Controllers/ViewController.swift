@@ -89,8 +89,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDe
     
     @IBAction func viewResultsButton(_ sender: Any) {
         if let miles = Double(distanceTextField.text!) {
-            let distance = Conversion.milestoMeters(miles: miles)
-            print(distance) //distance in meters
+            let distance = Conversion.milestoMeters(miles: miles) 
             let coordinate = locationManager.location?.coordinate
             locationManager.stopUpdatingLocation()
             let travelModeIndex = travelModeSegmentedControl.selectedSegmentIndex
