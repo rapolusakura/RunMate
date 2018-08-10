@@ -36,7 +36,7 @@ class PreviousRouteViewController: UIViewController, UITableViewDelegate, UITabl
             + " mi"
         
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd/MM/yyyy"
+        formatter.dateFormat = "MM/dd/yyyy"
         let result = formatter.string(from: route.dateCompleted!)
         cell.dateCompletedLabel.text = result
         
