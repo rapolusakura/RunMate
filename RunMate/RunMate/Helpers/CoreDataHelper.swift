@@ -88,4 +88,46 @@ struct CoreDataHelper {
             return []
         }
     }
+    
+    static func createPreferenceObject() -> MapsPreference {
+        let preference = NSEntityDescription.insertNewObject(forEntityName: "MapsPreference", into: context) as! MapsPreference
+        return preference
+    }
+    
+    static func isPreferenceSet() -> Bool {
+        let fetchRequest = NSFetchRequest<MapsPreference>(entityName: "MapsPreference")
+        do{
+            let results = try context.fetch(fetchRequest)
+            if results.count == 0 {
+                return false
+            } else {
+                return true
+            }
+        } catch let error {
+            print("could not save \(error.localizedDescription)")
+            return false
+        }
+    }
+    
+    static func retrieveMapsPreference() -> MapsPreference? {
+        let fetchRequest = NSFetchRequest<MapsPreference>(entityName: "MapsPreference")
+        do{
+            let results = try context.fetch(fetchRequest)
+            return results[0]
+        } catch let error {
+            print("could not retrieve maps preference \(error.localizedDescription)")
+            return nil
+        }
+    }
+    
+    static func doesPreferGoogleMaps() -> Bool {
+        let fetchRequest = NSFetchRequest<MapsPreference>(entityName: "MapsPreference")
+        do{
+            let results = try context.fetch(fetchRequest)
+            return results[0].prefersGoogleMaps
+        } catch let error {
+            print("could not save \(error.localizedDescription)")
+            return false
+        }
+    }
 }

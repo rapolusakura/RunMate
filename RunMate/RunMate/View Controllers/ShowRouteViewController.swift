@@ -33,9 +33,13 @@ class ShowRouteViewController: UIViewController {
     @IBAction func startRouteButtonPressed(_ sender: Any) {
         let location: Location = CoreDataHelper.createPlace(placeId: route!.place.placeId, name: route!.place.name, rating: route!.place.rating, lat: route!.place.lat, lng: route!.place.lng, distance: route!.place.distance, imageURL: route!.place.imageURL, numRatings: route!.place.numRatings)
         let trip: Trip = CoreDataHelper.createRoute(place: location, startLat: (self.route?.startLat)!, startLng: self.route!.startLng, endLat: self.route!.endLat, endLng: self.route!.endLng, distance: self.route!.distance, travelMode: self.route!.travelMode, elevation: route!.elevation ?? 0.0)
-        CoreDataHelper.saveRoute()
         
-        getDirections()
+        if !CoreDataHelper.isPreferenceSet() {
+            let preferenceObject = CoreDataHelper.createPreferenceObject()
+            presentMapsPreferenceAlert(prefObject: preferenceObject, completion: getDirections)
+        } else {
+            getDirections()
+        }
     }
     override func viewWillAppear(_ animated: Bool){
         super.viewWillAppear(animated)
@@ -120,7 +124,7 @@ class ShowRouteViewController: UIViewController {
         
         //&dir_action=navigate
         
-        if UIApplication.shared.canOpenURL(url) {
+        if CoreDataHelper.doesPreferGoogleMaps() {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         } else {
             let coordinate = CLLocationCoordinate2DMake((route?.endLat)!, (route?.endLng)!)
@@ -128,6 +132,32 @@ class ShowRouteViewController: UIViewController {
             mapItem.name = route?.place.name
             mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeWalking])
         }
+    }
+    
+    func presentMapsPreferenceAlert(prefObject: MapsPreference, completion: @escaping () -> Void) {
+        let alertController = UIAlertController(title: "Select Preference for Maps App", message: "", preferredStyle: UIAlertControllerStyle.alert)
+
+        // Create the actions
+        let googleMaps = UIAlertAction(title: "Google Maps", style: UIAlertActionStyle.default) {
+            UIAlertAction in
+            prefObject.prefersGoogleMaps = true
+            CoreDataHelper.saveRoute()
+            completion()
+        }
+        
+        let appleMaps = UIAlertAction(title: "Apple Maps", style: UIAlertActionStyle.default) {
+            UIAlertAction in
+            prefObject.prefersGoogleMaps = false
+            CoreDataHelper.saveRoute()
+            completion()
+        }
+        
+        // Add the actions
+        alertController.addAction(googleMaps)
+        alertController.addAction(appleMaps)
+        
+        // Present the controller
+        self.present(alertController, animated: true, completion: nil)
     }
 }
 
