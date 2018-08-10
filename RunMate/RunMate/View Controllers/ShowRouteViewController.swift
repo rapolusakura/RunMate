@@ -111,10 +111,25 @@ class ShowRouteViewController: UIViewController {
     }
     
     func getDirections(){
-        let coordinate = CLLocationCoordinate2DMake((route?.endLat)!, (route?.endLng)!)
-        let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary:nil))
-        mapItem.name = route?.place.name
-        mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeWalking])
+        let lat: Double = (route?.endLat)!
+        let lng: Double = (route?.endLng)!
+        let travelMode: String = (route?.travelMode)!
+        
+//        let coordinate = CLLocationCoordinate2DMake((route?.endLat)!, (route?.endLng)!)
+//        let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary:nil))
+//        mapItem.name = route?.place.name
+//        mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeWalking])
+        
+        guard let url = URL(string: "https://www.google.com/maps/dir/?api=1&destination=\(String(lat)),\(String(lng))&travelmode=\(travelMode)")
+            else { return }
+        
+        //&dir_action=navigate
+        
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else {
+            UIApplication.shared.openURL(url)
+        }
     }
 }
 
