@@ -88,6 +88,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDe
     @IBOutlet weak var viewResultsOutlet: UIButton!
     
     @IBAction func viewResultsButton(_ sender: Any) {
+        
         if let miles = Double(distanceTextField.text!) {
             let distance = Conversion.milestoMeters(miles: miles) 
             let coordinate = locationManager.location?.coordinate
@@ -116,6 +117,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDe
             default:
                 if let _ = (coordinate?.latitude) {
                     PlacesService.findOneWayNearbyPlaces(lat: (coordinate?.latitude)!, lng: (coordinate?.longitude)!, radius: distance, travelMode: travelMode) { (routes) in
+                        print(routes)
                         self.performSegue(withIdentifier: "viewResults", sender: routes)
                     }
                 } else {

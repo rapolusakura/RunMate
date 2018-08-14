@@ -38,6 +38,7 @@ class ShowRouteViewController: UIViewController {
             let preferenceObject = CoreDataHelper.createPreferenceObject()
             presentMapsPreferenceAlert(prefObject: preferenceObject, completion: getDirections)
         } else {
+            CoreDataHelper.saveRoute()
             getDirections()
         }
     }
@@ -119,10 +120,8 @@ class ShowRouteViewController: UIViewController {
         let lng: Double = (route?.endLng)!
         let travelMode: String = (route?.travelMode)!
         
-        guard let url = URL(string: "https://www.google.com/maps/dir/?api=1&destination=\(String(lat)),\(String(lng))&travelmode=\(travelMode)")
+        guard let url = URL(string: "https://www.google.com/maps/dir/?api=1&destination=\(String(lat)),\(String(lng))&travelmode=\(travelMode)&dir_action=navigate")
             else { return }
-        
-        //&dir_action=navigate
         
         if CoreDataHelper.doesPreferGoogleMaps() {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
